@@ -1,0 +1,8 @@
+{
+  "WindowTitle": "Luminax Desktop Shell",
+  "DefaultUrl": "",
+  "UrlEnvironmentVariable": "LUMINAX_SHELL_URL",
+  "SpeakingStatePlaceholder": "Idle (placeholder)",
+  "InitialWidth": 1440,
+  "InitialHeight": 920
+}

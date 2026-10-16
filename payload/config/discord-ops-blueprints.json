@@ -1,0 +1,512 @@
+{
+  "version": "2026-03-13",
+  "templates": [
+    {
+      "key": "mount_olympus_control_guild",
+      "title": "Mount Olympus Control Guild",
+      "project_key": "mount-olympus-core",
+      "guild_name": "Olympus",
+      "aliases": [
+        "Mount Olympus",
+        "Olympus Control",
+        "Welcome2Olympus"
+      ],
+      "target_env": "OLYMPUS_GUILD_ID",
+      "legacy_target_envs": [
+        "PAPR_GUILD_ID"
+      ],
+      "description": "Zeus command deck, Hermes relays, Oracle review, and operator-safe governance lanes.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/zeus-sigil-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/olympus-control-banner.png",
+      "onboarding_copy": "Welcome to Olympus. Hermes handles dispatch, Zeus approves guarded action, and Hermes Ops keeps the guild structure aligned.",
+      "roles": [
+        "Olympus Owner",
+        "Zeus",
+        "Hermes",
+        "Hermes Ops",
+        "Oracle of Siwa",
+        "Oracle of Delphi",
+        "Operator"
+      ],
+      "categories": [
+        {
+          "name": "Zeus Deck",
+          "channels": [
+            "zeus-briefing",
+            "hermes-dispatch",
+            "oracle-chamber",
+            "ops-audit"
+          ]
+        },
+        {
+          "name": "Projects",
+          "channels": [
+            "mount-olympus-web",
+            "world-of-epoch-war-table",
+            "underfoot-lane"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "zeus-briefing",
+          "title": "Olympus briefing",
+          "body": "Use this room for sovereign summaries, release state, and approval-sensitive updates. Maintained by Hermes Ops under Zeus review."
+        },
+        {
+          "channel": "hermes-dispatch",
+          "title": "Hermes dispatch protocol",
+          "body": "State the project, goal, urgency, and visibility. Hermes will infer the repo path, service target, and deploy lane whenever the answer is clear."
+        }
+      ]
+    },
+    {
+      "key": "revamp_staging",
+      "title": "Revamp Staging Guild",
+      "project_key": "mount-olympus-web",
+      "guild_name": "Revamp // Olympus Staging",
+      "aliases": [
+        "Revamp",
+        "Olympus Staging"
+      ],
+      "description": "Staging guild for Mount Olympus web, Discord branding, and Hermes execution tests.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/hermes-avatar-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/revamp-staging-banner.png",
+      "onboarding_copy": "This staging guild mirrors Olympus branding and channel structure before live rollout.",
+      "roles": [
+        "Olympus Owner",
+        "Zeus",
+        "Hermes",
+        "Hermes Ops",
+        "Website Admin",
+        "Builder"
+      ],
+      "categories": [
+        {
+          "name": "Launch Surface",
+          "channels": [
+            "welcome-briefing",
+            "olympus-web-changes",
+            "visual-forge"
+          ]
+        },
+        {
+          "name": "Operations",
+          "channels": [
+            "revamp-audit",
+            "oracle-review",
+            "deploy-watch"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "welcome-briefing",
+          "title": "Staging purpose",
+          "body": "Use Revamp to test Olympus landing changes, Discord rename flows, logo sync, and pinned onboarding copy before promotion."
+        }
+      ]
+    },
+    {
+      "key": "underfoot_unity_lane",
+      "title": "Underfoot Unity Lane",
+      "project_key": "underfoot",
+      "guild_name": "Underfoot // Darius Lane",
+      "description": "Unity build routing, Darius sessions, and Underfoot playtest coordination.",
+      "roles": [
+        "Darius",
+        "Underfoot QA",
+        "Underfoot Builder"
+      ],
+      "categories": [
+        {
+          "name": "Underfoot",
+          "channels": [
+            "underfoot-briefing",
+            "underfoot-bugs",
+            "underfoot-builds"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "underfoot-briefing",
+          "title": "Darius lane",
+          "body": "Use this room for Unity requests, route planning, build blockers, and session continuity."
+        }
+      ]
+    },
+    {
+      "key": "world_of_epoch_realm",
+      "title": "Example Local Workspaceroject Hub",
+      "project_key": "Example Project",
+      "guild_name": "Example Project",
+      "description": "Umbrella project command hub for DAZ, Underfoot, lineup planning, and launch coordination.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/Example Project-realm-icon.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/Example Project-realm-banner.png",
+      "onboarding_copy": "Welcome to the Example Project project hub. Use this guild to coordinate DAZ, Underfoot, rollout planning, and the public-facing lineup without mixing every world into one vague lane.",
+      "roles": [
+        "Ares Strategos",
+        "Darius",
+        "Daedalus Sitewright",
+        "Hermes",
+        "Operator"
+      ],
+      "categories": [
+        {
+          "name": "Epoch Command",
+          "channels": [
+            "epoch-start-here",
+            "epoch-command",
+            "lineup-roadmap"
+          ]
+        },
+        {
+          "name": "Project Lanes",
+          "channels": [
+            "daz-war-room",
+            "underfoot-briefing",
+            "epoch-audit"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "epoch-start-here",
+          "title": "Epoch lineup brief",
+          "body": "Example Project is the umbrella. DAZ is the renamed Day-Z lane, Underfoot keeps its own lane, Hermes owns community bootstrap, Ares owns DAZ, and Darius owns Underfoot."
+        }
+      ]
+    },
+    {
+      "key": "underfoot_community_guild",
+      "title": "Underfoot Community Guild",
+      "project_key": "underfoot",
+      "guild_name": "Underfoot",
+      "description": "Player-facing Underfoot community for patch notes, feedback, bug reports, and playtest events.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/zeus-sigil-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/olympus-control-banner.png",
+      "onboarding_copy": "Welcome to the public Underfoot guild. Patch notes, feedback, bug reports, and playtest updates live here. Olympus mirrors the receipts, but implementation stays inside Olympus and the project Codex thread.",
+      "olympus_mirror_channel": "underfoot-community-mirror",
+      "owner_route": {
+        "owner_name": "the owner",
+        "owner_portal_user_id": "the owner-founder",
+        "owner_discord_ids": [],
+        "notify_via": [
+          "owner_dm",
+          "project_task"
+        ]
+      },
+      "receipt_kinds": [
+        "feedback",
+        "bug_report",
+        "feature_request",
+        "patch_notes",
+        "poll_open",
+        "poll_close"
+      ],
+      "bootstrap_validation": {
+        "assistant_core_route": "/api/discord/community-guilds/validate",
+        "admin_api_route": "/olympus/community/bootstrap/validate"
+      },
+      "roles": [
+        "Olympus Guide",
+        "Patch Watch",
+        "Playtester",
+        "Supporter",
+        "Moderator"
+      ],
+      "categories": [
+        {
+          "name": "Start Here",
+          "channels": [
+            "underfoot-welcome",
+            "underfoot-news",
+            "patch-notes"
+          ]
+        },
+        {
+          "name": "Community",
+          "channels": [
+            "underfoot-feedback",
+            "underfoot-bug-reports",
+            "underfoot-events",
+            {
+              "name": "underfoot-stage",
+              "type": "voice"
+            }
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "underfoot-welcome",
+          "title": "Welcome to Underfoot",
+          "body": "This is the public Underfoot community guild. Share bug reports, feature requests, event ideas, and playtest notes here. Olympus receives the receipts, but no live implementation happens straight out of this server."
+        },
+        {
+          "channel": "underfoot-news",
+          "title": "Update flow",
+          "body": "Patch notes, build updates, and event announcements are published here first. Use the feedback and bug channels for player-facing input."
+        }
+      ]
+    },
+    {
+      "key": "Example Project_community_guild",
+      "title": "Example Project Community Guild",
+      "project_key": "Example Project",
+      "guild_name": "Example Project",
+      "description": "Player-facing Example Project hub for DAZ, Underfoot, updates, support, and release events.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/Example Project-realm-icon.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/Example Project-realm-banner.png",
+      "onboarding_copy": "Welcome to the Example Project public guild. DAZ and Underfoot each get their own lane here, while Olympus keeps implementation and operator work inside the internal project channels.",
+      "roles": [
+        "Olympus Guide",
+        "DAZ Survivor",
+        "Underfoot Explorer",
+        "Patch Watch",
+        "Moderator"
+      ],
+      "categories": [
+        {
+          "name": "Start Here",
+          "channels": [
+            "epoch-welcome",
+            "epoch-news",
+            "epoch-patch-notes"
+          ]
+        },
+        {
+          "name": "Community",
+          "channels": [
+            "epoch-feedback",
+            "epoch-bug-reports",
+            "epoch-events",
+            {
+              "name": "epoch-stage",
+              "type": "voice"
+            }
+          ]
+        },
+        {
+          "name": "The Day After Z",
+          "channels": [
+            "daz-server-chat",
+            "daz-events",
+            {
+              "name": "daz-firewatch",
+              "type": "voice"
+            }
+          ]
+        },
+        {
+          "name": "Underfoot",
+          "channels": [
+            "underfoot-playtest",
+            "underfoot-bug-reports",
+            {
+              "name": "underfoot-burrow",
+              "type": "voice"
+            }
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "epoch-welcome",
+          "title": "Lineup protocol",
+          "body": "Example Project is the public hub. Use DAZ for The Day After Z server talk, Underfoot for creature-world playtests, and the epoch-wide channels for announcements, support, and cross-project feedback."
+        },
+        {
+          "channel": "daz-server-chat",
+          "title": "DAZ shorthand",
+          "body": "Project Northwake is now The Day After Z. Use DAZ in chat, bug notes, and event talk so the server lane is easy to say and easy to find."
+        },
+        {
+          "channel": "underfoot-playtest",
+          "title": "Underfoot lane",
+          "body": "Keep Underfoot feedback, bug reports, and event notes here so creature-world playtests do not get buried under DAZ server chatter."
+        }
+      ]
+    },
+    {
+      "key": "groupup_community_guild",
+      "title": "GroupUp Community Guild",
+      "project_key": "groupup",
+      "guild_name": "GroupUp",
+      "description": "Community-facing GroupUp guild for host feedback, product updates, and event coordination.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/hermes-avatar-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/revamp-staging-banner.png",
+      "onboarding_copy": "This is the public GroupUp guild for hosts, supporters, and testers. Product suggestions, bugs, and update responses belong here, while Olympus keeps implementation and deploy control internal.",
+      "roles": [
+        "Olympus Guide",
+        "Host",
+        "Organizer",
+        "Supporter",
+        "Moderator"
+      ],
+      "categories": [
+        {
+          "name": "GroupUp",
+          "channels": [
+            "groupup-welcome",
+            "groupup-updates",
+            "groupup-patch-notes"
+          ]
+        },
+        {
+          "name": "Feedback",
+          "channels": [
+            "groupup-feedback",
+            "groupup-bug-reports",
+            "groupup-events"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "groupup-welcome",
+          "title": "GroupUp public lane",
+          "body": "Use this guild for host-side feedback, bug reports, and release updates. Olympus mirrors every real receipt, but direct implementation work is held for the internal project workflow."
+        }
+      ]
+    },
+    {
+      "key": "example-community_community_guild",
+      "title": "Example Community Community Guild",
+      "project_key": "example-community",
+      "guild_name": "Example Community",
+      "description": "Example Community member-facing guild for updates, support questions, feedback, and community events.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/hermes-avatar-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/olympus-control-banner.png",
+      "onboarding_copy": "Welcome to the public Example Community guild. Share grow questions, app feedback, bug reports, and community event ideas here while Olympus routes the real work internally.",
+      "roles": [
+        "Olympus Guide",
+        "Grower",
+        "Supporter",
+        "Moderator"
+      ],
+      "categories": [
+        {
+          "name": "Greenhouse",
+          "channels": [
+            "example-community-welcome",
+            "example-community-updates",
+            "example-community-patch-notes"
+          ]
+        },
+        {
+          "name": "Community",
+          "channels": [
+            "example-community-feedback",
+            "example-community-bug-reports",
+            "example-community-events"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "example-community-welcome",
+          "title": "Example Community community lane",
+          "body": "This guild is for Example Community members and supporters. Suggestions, bug reports, and event ideas are welcome here; Olympus receives the receipts and routes the actual work internally."
+        }
+      ]
+    },
+    {
+      "key": "zeus_presence_lounge",
+      "title": "Zeus Presence Lounge",
+      "project_key": "zeus-presence",
+      "guild_name": "Olympus // Zeus Presence",
+      "description": "Council-facing Zeus presence guild layout for summaries, watch lanes, and breadcrumbed project check-ins.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/zeus-sigil-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/olympus-control-banner.png",
+      "onboarding_copy": "This lane keeps Zeus visible, Hermes operational, and project-sensitive summaries routed with need-to-know discipline.",
+      "roles": [
+        "Olympus Owner",
+        "Zeus",
+        "Hermes",
+        "Hermes Ops",
+        "Council",
+        "Operator"
+      ],
+      "categories": [
+        {
+          "name": "Presence Deck",
+          "channels": [
+            "zeus-presence-briefing",
+            "council-watch",
+            "need-to-know",
+            "presence-audit"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "zeus-presence-briefing",
+          "title": "Presence protocol",
+          "body": "Zeus stays visible, Hermes handles execution, and actionable requests return a plan before anything proceeds."
+        },
+        {
+          "channel": "need-to-know",
+          "title": "Summary mode",
+          "body": "Large or sensitive context is condensed to need-to-know by default. Ask for more depth only when your access allows it."
+        }
+      ]
+    },
+    {
+      "key": "life_ops_private_guild",
+      "title": "Life Ops Private Guild",
+      "project_key": "life-business-wealth",
+      "guild_name": "Olympus // Life Ops",
+      "description": "Private council-facing guild for Alex, Zeus, and the three life assistants covering business, health/family, and motivation.",
+      "icon_asset": "payload/luminax-ui/assets/olympus/discord/zeus-sigil-discord.png",
+      "banner_asset": "payload/luminax-ui/assets/olympus/discord/olympus-control-banner.png",
+      "onboarding_copy": "This is the private Life Ops guild. Zeus coordinates the lane, the specialists review their queues hourly, and proactive outreach stays inside waking hours unless Alex changes the mode.",
+      "roles": [
+        "Olympus Owner",
+        "Zeus",
+        "Hermes",
+        "Tyche Ledger",
+        "Hestia Hearth",
+        "Nike Motion",
+        "Council"
+      ],
+      "categories": [
+        {
+          "name": "Council",
+          "channels": [
+            "life-council",
+            "zeus-life-briefing"
+          ]
+        },
+        {
+          "name": "Life Ops",
+          "channels": [
+            "business-wealth",
+            "food-health-family",
+            "motivation-fitness"
+          ]
+        },
+        {
+          "name": "Assistant Ops",
+          "channels": [
+            "life-assistant-coordination",
+            "life-review-receipts"
+          ]
+        }
+      ],
+      "sticky_messages": [
+        {
+          "channel": "life-council",
+          "title": "Life Ops council protocol",
+          "body": "Use the domain lanes for daily work. Zeus can summarize across all three lanes, and Hermes relays execution-safe updates when needed."
+        },
+        {
+          "channel": "life-assistant-coordination",
+          "title": "Hourly review loop",
+          "body": "The life assistants review queues hourly, check each other for blockers, and only proactively message Alex during waking hours unless a tighter mode is explicitly enabled."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "agent",
+  "key": "hermes-messenger",
+  "display_name": "Hermes",
+  "public_name": "Hermes",
+  "service_key": "discord-bot",
+  "role_type": "messenger",
+  "rank": "messenger",
+  "summary": "Primary Discord messenger between Olympus, Zeus, operators, and workers, running local-first through the PC edge Ollama lane.",
+  "provider": "ollama",
+  "model": "qwen2.5:14b",
+  "preferred_escalation_model": "gpt-5.4-mini",
+  "bootstrap": false,
+  "full_time": false
+}

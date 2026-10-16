@@ -1,0 +1,87 @@
+---
+layout: layout.njk
+title: How it works
+description: See how PAPR handles ticket holds, sellout locking, immediate vs scheduled draws, and public result publication.
+---
+<main>
+  <section class="page-hero">
+    <article class="hero-card panel" data-reveal>
+      <p class="eyebrow">How it works</p>
+      <h1>Explain the raffle lifecycle in plain English.</h1>
+      <p>PAPR should not ask supporters to infer internal operator logic. This page exists to make the lifecycle understandable: listing, hold, payment, sellout, lock, draw, and winner publication.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/trust-center/">See the fairness model</a>
+        <a class="button button-ghost" href="/draw-schedule/">Check draw scheduling</a>
+      </div>
+    </article>
+    <aside class="hero-aside panel" data-reveal>
+      <p class="kicker">Core promise</p>
+      <h2>The rules are enforced by software.</h2>
+      <p>PAPR is meant to avoid ad hoc closes, soft extensions, and disappearing results. Public trust comes from visible state changes and logged transitions.</p>
+    </aside>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Lifecycle</p>
+        <h2>From opening the room to publishing the result.</h2>
+      </div>
+    </div>
+    <div class="timeline-grid">
+      <article class="timeline-item">
+        <span>Step 1</span>
+        <h3>Launch the raffle</h3>
+        <p>Prize details, inventory total, eligibility rules, pricing, and draw mode are posted before sales begin.</p>
+      </article>
+      <article class="timeline-item">
+        <span>Step 2</span>
+        <h3>Reserve tickets carefully</h3>
+        <p>Short cart holds protect inventory without overselling. Expired holds release automatically.</p>
+      </article>
+      <article class="timeline-item">
+        <span>Step 3</span>
+        <h3>Convert payment into issued entries</h3>
+        <p>Only successful payment should convert a hold into final ticket ownership.</p>
+      </article>
+      <article class="timeline-item">
+        <span>Step 4</span>
+        <h3>Lock at sellout</h3>
+        <p>Once the last valid ticket is issued, the purchase path closes and the raffle enters a locked state.</p>
+      </article>
+      <article class="timeline-item">
+        <span>Step 5</span>
+        <h3>Draw immediately or by event</h3>
+        <p>Some raffles draw right away; others are assigned to the next public event window with a visible schedule.</p>
+      </article>
+      <article class="timeline-item">
+        <span>Step 6</span>
+        <h3>Publish the winner</h3>
+        <p>The result should be recorded on a durable archive page with sellout, draw, and publication timestamps.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="two-up">
+      <article class="policy-list">
+        <p class="kicker">What PAPR should do publicly</p>
+        <ul>
+          <li>Show current ticket availability.</li>
+          <li>Show immediate vs scheduled draw mode.</li>
+          <li>Display the next draw time and timezone.</li>
+          <li>Link to official rules and archived results.</li>
+        </ul>
+      </article>
+      <article class="policy-list">
+        <p class="kicker">What PAPR should keep privately</p>
+        <ul>
+          <li>PII and full payment details.</li>
+          <li>Internal fraud notes and risk review.</li>
+          <li>Private support and dispute evidence.</li>
+          <li>Restricted compliance records.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://{{ site.domain }}{{ page.url }}">
+  <link rel="icon" href="/assets/papr-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<aside role="note" style="padding:12px;text-align:center;background:#18313b;color:#fff">Source example: sample raffles and results only. No real fundraiser, purchases, or winner records.</aside>
+  <div class="shell">
+    <div class="top-rail" data-reveal>
+      <div>
+        <strong>{{ site.name }}</strong> is a sample raffle-site concept focused on clear rules and visible results.
+      </div>
+      <div class="status-chip-row" aria-label="Platform trust signals">
+        <span class="status-chip">Fixed inventory</span>
+        <span class="status-chip">Hard sellout lock</span>
+        <span class="status-chip">Public draw schedule</span>
+      </div>
+    </div>
+
+    <header class="masthead" data-reveal>
+      <div class="masthead-inner">
+        <a class="brand" href="/">
+          <img src="/assets/papr-mark.svg" alt="PAPR mark">
+          <span class="brand-meta">
+            <small>{{ site.domain }}</small>
+            <strong>{{ site.name }}</strong>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-nav-toggle>
+          <span></span>
+        </button>
+
+        <nav class="nav" aria-label="Primary" data-nav>
+          {% for item in site.nav %}
+          <a href="{{ item.href }}"{% if page.url == item.href %} class="is-active"{% endif %}>{{ item.label }}</a>
+          {% endfor %}
+          <a class="button button-secondary" href="/support/">Get Help</a>
+        </nav>
+      </div>
+    </header>
+
+    {{ content | safe }}
+
+    <footer class="page-footer" data-reveal>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-label">{{ site.name }}</p>
+          <h3>{{ site.tagline }}</h3>
+          <p>PAPR is being designed as a serious nonprofit raffle platform: visible draw timing, visible inventory state, winner archives, and software-enforced operating rules.</p>
+        </div>
+        <div>
+          <p class="footer-label">Explore</p>
+          <div class="footer-links">
+            {% for item in site.footerLinks %}
+            <a href="{{ item.href }}">{{ item.label }}</a>
+            {% endfor %}
+          </div>
+        </div>
+        <div>
+          <p class="footer-label">Trust cues</p>
+          <ul class="plain-list">
+            <li>Open and sold-out state labels</li>
+            <li>Timezone-aware draw schedules</li>
+            <li>Published winner archive</li>
+            <li>Rules and support surfaced clearly</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

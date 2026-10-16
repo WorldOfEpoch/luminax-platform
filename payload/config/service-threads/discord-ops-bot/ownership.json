@@ -1,0 +1,12 @@
+{
+  "service_key": "discord-ops-bot",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/discord-bot",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/discord-bot",
+    "payload/config/olympus/services/discord-ops-bot.json",
+    "payload/config/service-threads/discord-ops-bot",
+    "payload/config/discord-ops-blueprints.json"
+  ]
+}

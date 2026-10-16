@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" role="img" aria-label="Discord pairing ritual gate">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06101a"/>
+      <stop offset="100%" stop-color="#112639"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#fff0c1"/>
+      <stop offset="28%" stop-color="#f6c66e"/>
+      <stop offset="58%" stop-color="#7ce8ff"/>
+      <stop offset="100%" stop-color="#0a1320"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="880" fill="url(#bg)"/>
+  <g opacity="0.5" stroke="#7ce8ff" fill="none">
+    <path d="M140 184h920" stroke-width="2"/>
+    <path d="M120 240h960" stroke-width="1.2"/>
+    <path d="M186 726h836" stroke-width="2"/>
+  </g>
+  <g transform="translate(0,24)">
+    <circle cx="600" cy="408" r="206" fill="url(#orb)"/>
+    <circle cx="600" cy="408" r="258" fill="none" stroke="#7ce8ff" stroke-width="12" stroke-opacity="0.35"/>
+    <circle cx="600" cy="408" r="302" fill="none" stroke="#f6c66e" stroke-width="7" stroke-opacity="0.28"/>
+    <path d="M370 706c106-86 192-126 230-126s124 40 230 126" fill="none" stroke="#7ce8ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M494 246h212v56H494z" fill="#07101a" fill-opacity="0.48" stroke="#7ce8ff" stroke-opacity="0.25"/>
+    <g fill="#f7cb78" font-family="monospace" font-size="40" text-anchor="middle">
+      <text x="424" y="430">PAIR</text>
+      <text x="600" y="340">6 DIGIT</text>
+      <text x="776" y="430">LINK</text>
+    </g>
+    <g stroke="#7ce8ff" fill="none" stroke-width="8" stroke-linecap="round">
+      <path d="M302 412h132"/>
+      <path d="M768 412h132"/>
+      <path d="M600 126v130"/>
+    </g>
+  </g>
+</svg>

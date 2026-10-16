@@ -1,0 +1,56 @@
+{
+  "kind": "service",
+  "key": "community-discord",
+  "display_name": "Olympus Guide Relay",
+  "public_name": "Olympus Guide",
+  "persona_key": "community",
+  "rank": "community",
+  "startup": "manual",
+  "role": "Shared public-facing community bot for project guild announcements, feedback intake, polls, and support-safe routing.",
+  "capabilities": [
+    "community_bootstrap",
+    "announcement_publish",
+    "patch_notes_publish",
+    "feedback_receipts",
+    "poll_receipts",
+    "olympus_mirror",
+    "owner_route"
+  ],
+  "validation_routes": {
+    "assistant_core": "/api/discord/community-guilds/validate",
+    "admin_api": "/olympus/community/bootstrap/validate"
+  },
+  "community_bootstrap_contract": {
+    "required_receipt_kinds": [
+      "feedback",
+      "bug_report",
+      "feature_request",
+      "patch_notes",
+      "poll_open",
+      "poll_close"
+    ],
+    "required_bindings": [
+      "community_guild_blueprint_key",
+      "olympus_mirror_channel",
+      "announcement_channel",
+      "patch_notes_channel",
+      "feedback_channel",
+      "bugs_channel",
+      "events_channel",
+      "owner_route"
+    ]
+  },
+  "project_overrides": {
+    "underfoot": {
+      "community_guild_blueprint_key": "underfoot_community_guild",
+      "olympus_mirror_channel": "underfoot-community-mirror",
+      "owner_portal_user_id": "the owner-founder",
+      "owner_discord_ids": []
+    }
+  },
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json",
+    "config/discord-ops-blueprints.json"
+  ]
+}

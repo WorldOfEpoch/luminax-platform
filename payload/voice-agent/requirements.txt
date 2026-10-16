@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+edge-tts
+TTS
+soundfile
+faster-whisper
+httpx

@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "discord-ops-bot",
+  "display_name": "Hermes Ops Relay",
+  "public_name": "Hermes Ops",
+  "persona_key": "hermes_ops",
+  "rank": "messenger-admin",
+  "startup": "manual",
+  "role": "Discord setup, permissions, onboarding, and governance-safe operations under Hermes.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/discord-ops-blueprints.json"
+  ]
+}

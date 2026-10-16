@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "underfoot-world",
+  "display_name": "Darius Underfoot Lane",
+  "public_name": "Darius",
+  "persona_key": "darius",
+  "rank": "lane-owner",
+  "startup": "manual",
+  "role": "Unity and Underfoot execution lane.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json"
+  ]
+}

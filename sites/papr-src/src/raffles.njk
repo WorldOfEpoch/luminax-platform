@@ -1,0 +1,72 @@
+---
+layout: layout.njk
+title: Active raffles
+description: Browse active and recently sold-out PAPR raffles with visible pricing, ticket inventory, mission impact, and draw timing.
+---
+<main>
+  <section class="page-hero">
+    <article class="hero-card panel" data-reveal>
+      <p class="eyebrow">Active raffles</p>
+      <h1>Every raffle should explain itself before checkout.</h1>
+      <p>This page is meant to be the main browse surface: status badges, remaining inventory, draw mode, and mission context all belong on the card, not buried after click-through.</p>
+      <div class="chip-row">
+        <span class="chip">Visible counts</span>
+        <span class="chip">Timezone-aware draw timing</span>
+        <span class="chip">Mission summary on every card</span>
+      </div>
+    </article>
+    <aside class="hero-aside panel" data-reveal>
+      <p class="kicker">What a supporter needs</p>
+      <h2>Clarity before urgency.</h2>
+      <p>A raffle card should help someone answer four questions immediately: what this supports, how much inventory remains, what the draw timing is, and whether the room is still open.</p>
+      <a class="button button-secondary" href="/official-rules/">Review official rules</a>
+    </aside>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Browse by state</p>
+        <h2>Open, low inventory, and sold-out rooms should look different.</h2>
+      </div>
+      <p>Filtering should help the public understand current availability instead of creating artificial pressure.</p>
+    </div>
+    <div class="filter-row" data-filter-group data-filter-target=".raffle-card">
+      <button class="filter-button is-active" type="button" data-filter="all">All</button>
+      <button class="filter-button" type="button" data-filter="open">Open</button>
+      <button class="filter-button" type="button" data-filter="low">Low Inventory</button>
+      <button class="filter-button" type="button" data-filter="scheduled">Scheduled / Sold Out</button>
+    </div>
+    <div class="three-up">
+      {% for raffle in raffles %}
+      <article class="card raffle-card" data-status="{{ raffle.status }}">
+        <span class="chip">{{ raffle.statusLabel }}</span>
+        <h3>{{ raffle.title }}</h3>
+        <p>{{ raffle.impact }}</p>
+        <div class="meta-grid">
+          <div class="meta-box">
+            <small>Entry</small>
+            <strong>{{ raffle.price }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Inventory</small>
+            <strong>{{ raffle.inventory }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Draw mode</small>
+            <strong>{{ raffle.drawMode }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Timing</small>
+            <strong>{{ raffle.drawTime }}</strong>
+          </div>
+        </div>
+        <div class="button-row" style="margin-top:16px;">
+          <a class="button button-primary" href="{{ raffle.slug }}">View details</a>
+          <a class="button button-ghost" href="/trust-center/">Why this is safe</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

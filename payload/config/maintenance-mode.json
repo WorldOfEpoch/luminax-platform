@@ -1,0 +1,17 @@
+{
+  "mode": "diagnose",
+  "reason": "Public setup",
+  "note": "",
+  "random_health_checks": false,
+  "set_by": "template",
+  "started_at": 0,
+  "updated_at": 0,
+  "policy": {
+    "mode": "diagnose",
+    "write_allowed": false,
+    "service_actions_allowed": false,
+    "self_apply_allowed": false,
+    "autopilot_actions_allowed": false,
+    "description": "Inspect configuration; explicitly enable runtime features after setup."
+  }
+}

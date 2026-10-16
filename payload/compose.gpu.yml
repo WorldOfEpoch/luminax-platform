@@ -1,0 +1,4 @@
+# Optional overlay; combine with docker-compose.yml after configuring GPU support.
+services:
+  image-agent:
+    gpus: all

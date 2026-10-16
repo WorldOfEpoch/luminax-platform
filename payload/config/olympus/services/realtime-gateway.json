@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "realtime-gateway",
+  "display_name": "Janus Realtime Gate",
+  "public_name": "Janus Gate",
+  "persona_key": "janus_gate",
+  "rank": "gateway",
+  "startup": "manual",
+  "role": "Realtime session, stream, and connection mediation.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

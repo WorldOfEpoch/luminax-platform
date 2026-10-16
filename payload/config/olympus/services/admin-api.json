@@ -1,0 +1,15 @@
+{
+  "kind": "service",
+  "key": "admin-api",
+  "display_name": "Zeus Command Spine",
+  "public_name": "Zeus Command Spine",
+  "persona_key": "zeus",
+  "rank": "god-core",
+  "startup": "manual",
+  "role": "Administrative control plane for telemetry, review-cycle state, and guarded service actions.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json",
+    "config/review-cycle-policy.json"
+  ]
+}

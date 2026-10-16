@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "research-worker",
+  "display_name": "Clio Research",
+  "public_name": "Clio Research",
+  "persona_key": "clio_research",
+  "rank": "archive-scout",
+  "startup": "manual",
+  "role": "Live research, evidence gathering, and source validation.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json"
+  ]
+}

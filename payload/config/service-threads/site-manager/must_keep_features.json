@@ -1,0 +1,12 @@
+{
+  "service_key": "site-manager",
+  "updated_at": 0,
+  "features": [
+    {
+      "id": "sites_publish",
+      "name": "Site Manager",
+      "must_keep": true,
+      "notes": "Static site scaffolding and publish flow."
+    }
+  ]
+}

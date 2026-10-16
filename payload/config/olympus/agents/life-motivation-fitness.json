@@ -1,0 +1,18 @@
+{
+  "kind": "agent",
+  "key": "life-motivation-fitness",
+  "display_name": "Life Motivation Fitness",
+  "public_name": "Life Ops",
+  "service_key": "assistant-core",
+  "project_key": "life-motivation-fitness",
+  "role_type": "life_ops",
+  "rank": "steward",
+  "summary": "Owns motivation and fitness planning breadcrumbs for the Olympus life ops lane.",
+  "bootstrap": false,
+  "full_time": false,
+  "diagnostic_breadcrumbs": [
+    "agent_boot",
+    "life_scope_resolve",
+    "breadcrumb_emit"
+  ]
+}

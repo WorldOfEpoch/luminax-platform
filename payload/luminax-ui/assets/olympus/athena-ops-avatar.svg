@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Athena Ops avatar</title>
+  <desc id="desc">Governance crest with owl eye motif and structured shield.</desc>
+  <rect width="512" height="512" rx="64" fill="#09111e"/>
+  <circle cx="256" cy="256" r="178" fill="none" stroke="#8ef0ff" stroke-width="16"/>
+  <path d="M256 122 L356 166 L340 308 L256 384 L172 308 L156 166 Z" fill="#132741" stroke="#ffd78b" stroke-width="10"/>
+  <circle cx="220" cy="228" r="20" fill="#fff3cf"/>
+  <circle cx="292" cy="228" r="20" fill="#fff3cf"/>
+  <circle cx="220" cy="228" r="8" fill="#081120"/>
+  <circle cx="292" cy="228" r="8" fill="#081120"/>
+  <path d="M226 282 H286" stroke="#8ef0ff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M206 320 H306" stroke="#8f75ff" stroke-width="12" stroke-linecap="round"/>
+</svg>

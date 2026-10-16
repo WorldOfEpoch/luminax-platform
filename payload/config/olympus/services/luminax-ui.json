@@ -1,0 +1,15 @@
+{
+  "kind": "service",
+  "key": "luminax-ui",
+  "display_name": "Mount Olympus Command Deck",
+  "public_name": "Mount Olympus",
+  "persona_key": "zeus",
+  "rank": "command-surface",
+  "startup": "manual",
+  "role": "Protected sci-fi operator UI for Zeus and the Olympian stack.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json",
+    "config/review-cycle-policy.json"
+  ]
+}

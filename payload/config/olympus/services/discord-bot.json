@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "discord-bot",
+  "display_name": "Hermes Relay",
+  "public_name": "Hermes",
+  "persona_key": "hermes",
+  "rank": "messenger",
+  "startup": "manual",
+  "role": "Discord communication bridge between Olympus, Zeus, operators, and workers.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json"
+  ]
+}

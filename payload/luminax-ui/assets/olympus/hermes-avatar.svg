@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Hermes avatar</title>
+  <desc id="desc">Messenger crest with winged helm and relay ring.</desc>
+  <rect width="512" height="512" rx="64" fill="#0b1321"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#7ef3ff" stroke-width="16"/>
+  <circle cx="256" cy="256" r="116" fill="#132741" stroke="#ffdd8d" stroke-width="10"/>
+  <path d="M166 214 C134 168 126 142 152 124 C184 118 204 146 214 188" fill="none" stroke="#7ef3ff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M346 214 C378 168 386 142 360 124 C328 118 308 146 298 188" fill="none" stroke="#7ef3ff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M196 276 C214 240 242 218 256 218 C270 218 298 240 316 276" fill="none" stroke="#ffdd8d" stroke-width="16" stroke-linecap="round"/>
+  <path d="M224 324 H288" stroke="#7ef3ff" stroke-width="18" stroke-linecap="round"/>
+</svg>

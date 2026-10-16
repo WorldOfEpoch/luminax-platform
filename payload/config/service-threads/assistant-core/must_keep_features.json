@@ -1,0 +1,54 @@
+{
+  "service_key": "assistant-core",
+  "updated_at": 0,
+  "features": [
+    {
+      "id": "codex_bridge",
+      "name": "Codex Bridge",
+      "must_keep": true,
+      "notes": "Structured Codex runs, sessions, and project bootstrap flow."
+    },
+    {
+      "id": "file_checkout",
+      "name": "File Checkout Guardrails",
+      "must_keep": true,
+      "notes": "Prevents simultaneous edits from trampling shared files."
+    },
+    {
+      "id": "ops_control_plane",
+      "name": "Ops Control Plane",
+      "must_keep": true,
+      "notes": "Telemetry, maintenance, and operator recovery surfaces."
+    },
+    {
+      "id": "media_music_studio",
+      "name": "Media and Music Studio",
+      "must_keep": true,
+      "notes": "Image, voice, and Suno-backed music generation with playback surfaces."
+    },
+    {
+      "id": "broadcast_studio",
+      "name": "Broadcast Studio",
+      "must_keep": true,
+      "notes": "Creator ops panel for accounts, overlays, sessions, and commentary."
+    },
+    {
+      "id": "sites_publish",
+      "name": "Site Manager",
+      "must_keep": true,
+      "notes": "Static site scaffolding and publish flow."
+    },
+    {
+      "id": "hive_agents",
+      "name": "Oracle Chamber and Agents",
+      "must_keep": true,
+      "notes": "Oracle debate loop and Olympian agent registry."
+    },
+    {
+      "id": "olympus_control_loop",
+      "name": "Olympus Identity and Review Cycle",
+      "must_keep": true,
+      "notes": "Single source of truth for Mount Olympus naming, review-cycle state, workspace registry, and the Zeus/Hermes/Darius/oracle control lanes."
+    }
+  ]
+}

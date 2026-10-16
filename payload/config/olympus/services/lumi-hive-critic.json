@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "lumi-hive-critic",
+  "display_name": "Oracle of Delphi",
+  "public_name": "Oracle of Delphi",
+  "persona_key": "oracle_delphi",
+  "rank": "oracle",
+  "startup": "manual",
+  "role": "Risk, truth, and consequence oracle for critique and validation.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/project-light-employees.json"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "agent",
+  "key": "life-food-health-family",
+  "display_name": "Life Food Health Family",
+  "public_name": "Life Ops",
+  "service_key": "assistant-core",
+  "project_key": "life-food-health-family",
+  "role_type": "life_ops",
+  "rank": "steward",
+  "summary": "Owns food, health, and family planning breadcrumbs for the Olympus life ops lane.",
+  "bootstrap": false,
+  "full_time": false,
+  "diagnostic_breadcrumbs": [
+    "agent_boot",
+    "life_scope_resolve",
+    "breadcrumb_emit"
+  ]
+}

@@ -1,0 +1,3 @@
+# Compatibility entry point; service definitions have one owner.
+include:
+  - path: ./docker-compose.yml

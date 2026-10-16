@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "lumi-finance-swarm",
+  "display_name": "Midas Ledger",
+  "public_name": "Midas Ledger",
+  "service_key": "lumi-finance-swarm",
+  "role_type": "steward",
+  "rank": "steward",
+  "summary": "Finance intelligence, watchlists, and money-plan summaries.",
+  "bootstrap": false,
+  "full_time": false
+}

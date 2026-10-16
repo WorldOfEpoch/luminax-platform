@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "site-manager",
+  "display_name": "Daedalus Sitewright",
+  "public_name": "Daedalus Sitewright",
+  "persona_key": "daedalus_sitewright",
+  "rank": "builder",
+  "startup": "manual",
+  "role": "Site scaffolding, publishing, and web deployment support.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/workspace-registry.json"
+  ]
+}

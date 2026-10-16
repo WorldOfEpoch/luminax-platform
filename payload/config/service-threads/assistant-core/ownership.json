@@ -1,0 +1,11 @@
+{
+  "service_key": "assistant-core",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/assistant-core",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/assistant-core",
+    "payload/config/feature-contracts.json",
+    "payload/config/runtime-policy.json"
+  ]
+}

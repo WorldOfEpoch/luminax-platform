@@ -1,0 +1,77 @@
+---
+layout: layout.njk
+title: Trust center
+description: Understand how PAPR presents fairness, sellout locking, draw timing, and public-vs-private transparency to supporters.
+---
+<main>
+  <section class="page-hero">
+    <article class="hero-card panel" data-reveal>
+      <p class="eyebrow">Trust center</p>
+      <h1>Public confidence is part of the product.</h1>
+      <p>PAPR is supposed to feel trustworthy because people can see how the raffle behaves: current state, remaining inventory, sellout locking, draw assignment, and winner publication.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/official-rules/">Read official rules</a>
+        <a class="button button-ghost" href="/support/">Report an issue</a>
+      </div>
+    </article>
+    <aside class="hero-aside panel" data-reveal>
+      <p class="kicker">Guiding split</p>
+      <h2>Public clarity without leaking sensitive data.</h2>
+      <p>The public should see status, counts, timestamps, and results. Private systems should keep PII, payment details, fraud notes, and deeper compliance records protected.</p>
+    </aside>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Core trust rules</p>
+        <h2>The platform rules that should never feel optional.</h2>
+      </div>
+    </div>
+    <div class="four-up">
+      <article class="card">
+        <p class="kicker">Inventory</p>
+        <h3>Fixed ticket counts</h3>
+        <p>Ticket inventory must be anchored to a real ledger so oversell cannot happen through stale UI state.</p>
+      </article>
+      <article class="card">
+        <p class="kicker">Locking</p>
+        <h3>Sellout closes the room</h3>
+        <p>Once the final valid ticket is issued, the raffle transitions to a locked state and stops accepting more purchases.</p>
+      </article>
+      <article class="card">
+        <p class="kicker">Scheduling</p>
+        <h3>Draw timing is published</h3>
+        <p>Immediate or scheduled, the draw mode and next event timing should be visible before purchase and after sellout.</p>
+      </article>
+      <article class="card">
+        <p class="kicker">Archive</p>
+        <h3>Results are durable</h3>
+        <p>Each completed raffle should preserve timestamps and a public result summary in a searchable archive.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="two-up">
+      <article class="policy-list">
+        <p class="kicker">Public information</p>
+        <ul>
+          <li>Current raffle status and labels.</li>
+          <li>Remaining ticket counts.</li>
+          <li>Draw timing with timezone.</li>
+          <li>Winner archive and official rules links.</li>
+        </ul>
+      </article>
+      <article class="policy-list">
+        <p class="kicker">Restricted information</p>
+        <ul>
+          <li>Customer PII and full payment details.</li>
+          <li>Fraud-risk models and internal notes.</li>
+          <li>Private support evidence.</li>
+          <li>Restricted compliance artifacts.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>

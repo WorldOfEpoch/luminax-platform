@@ -1,0 +1,40 @@
+{
+  "version": "2026-10-16",
+  "workspace_name": "Local Workspace",
+  "projects": [
+    {
+      "project_key": "luminax",
+      "display_name": "Mount Olympus",
+      "purpose": "Local source release; live integrations not verified.",
+      "audience": "local operator",
+      "status_summary": "unconfigured",
+      "role_owner": "local-owner",
+      "priority": 1,
+      "stack": "Compose",
+      "runtime_shape": "explicit local profiles",
+      "root_path": "/workspace/luminax",
+      "default_workdir": "/workspace/luminax",
+      "domains": [],
+      "mutable_paths": [],
+      "excluded_paths": [
+        ".env",
+        "runtime",
+        "certs",
+        "memory",
+        "models"
+      ],
+      "review_commands": [],
+      "test_commands": [],
+      "local_test_commands": [],
+      "remote_test_commands": [],
+      "health_urls": [],
+      "connections_ref": [
+        "local-ui"
+      ],
+      "deploy_target": {},
+      "sync_targets": [],
+      "codex_thread_required": false,
+      "codex_thread": {}
+    }
+  ]
+}

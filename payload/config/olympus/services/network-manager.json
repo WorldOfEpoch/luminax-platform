@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "network-manager",
+  "display_name": "Aeolus Network",
+  "public_name": "Aeolus Network",
+  "persona_key": "aeolus_network",
+  "rank": "pathfinder",
+  "startup": "manual",
+  "role": "Network awareness, path visibility, and connectivity support.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

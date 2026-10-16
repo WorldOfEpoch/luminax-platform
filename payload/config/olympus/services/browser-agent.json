@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "browser-agent",
+  "display_name": "Argus Browser",
+  "public_name": "Argus Browser",
+  "persona_key": "argus_browser",
+  "rank": "scout",
+  "startup": "manual",
+  "role": "Web navigation and page automation specialist.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

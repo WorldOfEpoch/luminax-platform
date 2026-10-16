@@ -1,0 +1,32 @@
+{
+  "version": "2026-10-16",
+  "generated_at": 0,
+  "workspace_name": "Local Workspace",
+  "workspace_root": "/workspace/luminax",
+  "nodes": [],
+  "connections": [
+    {
+      "key": "local-ui",
+      "kind": "local-ui",
+      "owner": "local-owner",
+      "host_ref": "",
+      "public_url": "http://localhost:6969",
+      "www_url": "",
+      "service_target": "luminax-ui",
+      "health_urls": []
+    }
+  ],
+  "projects": [],
+  "counts": {
+    "projects": 0,
+    "connection_refs": 1
+  },
+  "audit": {
+    "ok_count": 0,
+    "warn_count": 0,
+    "rows": [],
+    "unregistered_roots": []
+  },
+  "paths": {},
+  "notes": "Synthetic starting state. No workstation scan or deployed state is included."
+}

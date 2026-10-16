@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "hype-voice",
+  "display_name": "Apollo Hype",
+  "public_name": "Apollo Hype",
+  "service_key": "broadcast-conductor",
+  "role_type": "hype",
+  "rank": "voice",
+  "summary": "Launch copy, campaign energy, and hype messaging support.",
+  "bootstrap": false,
+  "full_time": false
+}

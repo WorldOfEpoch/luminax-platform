@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "hive-director",
+  "display_name": "Zeus",
+  "public_name": "Zeus",
+  "service_key": "assistant-core",
+  "role_type": "director",
+  "rank": "god",
+  "summary": "Owns approval, orchestration, and the Mount Olympus review cycle.",
+  "bootstrap": false,
+  "full_time": false
+}

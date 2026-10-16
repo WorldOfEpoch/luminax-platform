@@ -1,0 +1,15 @@
+{
+  "kind": "agent",
+  "key": "hermes-admin-relay",
+  "display_name": "Hermes Ops",
+  "public_name": "Hermes Ops",
+  "service_key": "discord-ops-bot",
+  "role_type": "operations",
+  "rank": "messenger-admin",
+  "summary": "Hermes sublane for Discord governance, setup, roles, and safety-bound admin tasks, running local-first through the PC edge Ollama lane.",
+  "provider": "ollama",
+  "model": "qwen2.5-coder:32b-instruct",
+  "preferred_escalation_model": "gpt-5.4-mini",
+  "bootstrap": false,
+  "full_time": false
+}

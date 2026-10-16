@@ -1,0 +1,9 @@
+{
+  "service_key": "admin-api",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/admin-api",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/admin-api"
+  ]
+}

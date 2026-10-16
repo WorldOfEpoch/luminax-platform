@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underfoot | Swarm</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <p class="eyebrow">Underfoot project view</p>
+        <h1>Swarm + Ownership</h1>
+      </div>
+      <div class="subnav">
+        <a href="index.html">Project home</a>
+        <a href="project.html">Project board</a>
+        <a href="plan.html">Plan</a>
+      </div>
+    </header>
+
+    <section class="panel">
+      <p class="eyebrow">Who owns what</p>
+      <h2>The same swarm still exists, but the engine lane is now Unity-first.</h2>
+      <p class="lead">This page keeps the operator lanes visible so the Unity migration stays understandable: what belongs to the server authority layer, what belongs to frontend scenes, what belongs to Meshy-driven asset creation, what belongs to voice/audio, and what remains part of the public Underfoot site.</p>
+    </section>
+
+    <section>
+      <div class="section-head"><p class="eyebrow">Execution owners</p><h3>Active lanes</h3></div>
+      <div class="feature-grid">
+        <article class="feature"><span class="tag">Director</span><h4>Luminax</h4><p>Owns orchestration, publish flow, site/media testing, and project continuity.</p></article>
+        <article class="feature"><span class="tag">Code</span><h4>Codex bridge</h4><p>Owns the Unity migration, C# script structure, web updates, asset hookup passes, and validation passes.</p></article>
+        <article class="feature"><span class="tag">Authority</span><h4>Server engineer</h4><p>Owns lobby rules, role slots, weighted carry authority, hole travel, rewards, and respawn routing.</p></article>
+        <article class="feature"><span class="tag">Frontend</span><h4>Unity gameplay architect</h4><p>Owns startup/title/character-select/game-list/world-map/minigame scene flow and player feel.</p></article>
+        <article class="feature"><span class="tag">Assets</span><h4>Meshy asset lane</h4><p>Owns Warble/Biggun/prop generations, UI image jobs, import staging, and prefab-ready handoff into the Unity project.</p></article>
+        <article class="feature"><span class="tag">Audio</span><h4>Voice routing lane</h4><p>Owns always-on proximity voice, Arc Raiders-style muffling, Warble warbling, and Biggun bass treatment.</p></article>
+        <article class="feature"><span class="tag">Site</span><h4>Underfoot web lane</h4><p>Owns Warble-first presentation, project pages, and Luminax-generated site art testing.</p></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Locations</p>
+      <h2>Where the current work lives</h2>
+      <div class="runtime-kv">
+        <span>Unity scripts</span><span>unity/Underfoot/Assets/Scripts</span>
+        <span>Frontend runtime</span><span>unity/Underfoot/Assets/Underfoot3D/Runtime</span>
+        <span>Frontend manifest</span><span>unity/Underfoot/Assets/Data/FrontendManifest.json</span>
+        <span>Voice policy</span><span>unity/Underfoot/Assets/Data/VoicePolicy.json</span>
+        <span>Meshy imports</span><span>unity/Underfoot/Assets/Models/MeshyIncoming</span>
+        <span>Public site</span><span>client/web</span>
+        <span>World service</span><span>world-service</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

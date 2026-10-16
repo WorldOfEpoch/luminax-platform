@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Zeus sigil</title>
+  <desc id="desc">Circular sigil with a crown and lightning bolt.</desc>
+  <rect width="512" height="512" rx="64" fill="#081120"/>
+  <circle cx="256" cy="256" r="182" fill="none" stroke="#78efff" stroke-width="18"/>
+  <circle cx="256" cy="256" r="136" fill="none" stroke="#ffd67d" stroke-width="10" opacity="0.85"/>
+  <path d="M180 166 L226 132 L256 168 L286 132 L332 166 L316 226 L196 226 Z" fill="#fff2ce"/>
+  <path d="M278 190 L230 282 H270 L236 380 L324 260 H282 L310 190 Z" fill="#78efff"/>
+</svg>

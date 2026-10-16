@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "test-runner",
+  "display_name": "Trial Runner",
+  "public_name": "Trial Runner",
+  "service_key": "admin-api",
+  "role_type": "tester",
+  "rank": "runner",
+  "summary": "Runs validations, summarizes breakpoints, and reports test state.",
+  "bootstrap": false,
+  "full_time": false
+}

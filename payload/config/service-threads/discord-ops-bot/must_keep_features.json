@@ -1,0 +1,12 @@
+{
+  "service_key": "discord-ops-bot",
+  "updated_at": 0,
+  "features": [
+    {
+      "id": "olympus_control_loop",
+      "name": "Olympus Identity and Review Cycle",
+      "must_keep": true,
+      "notes": "Single source of truth for Mount Olympus naming, review-cycle state, workspace registry, and the Zeus/Hermes/Darius/oracle control lanes."
+    }
+  ]
+}

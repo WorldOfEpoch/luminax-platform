@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroupUp Room</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="room">
+  <div class="groupup-shell room-shell">
+    <header class="top-strip">
+      <div>
+        <div class="badge-row"><a class="badge linkish" href="index.html">GroupUp</a><span class="badge">Participant Room</span></div>
+        <h1 id="roomTitle">Room</h1>
+        <p id="roomSubtitle">Joining live roster...</p>
+      </div>
+      <div class="hero-actions"><a class="secondary-btn" id="openOverlayLink" href="overlay.html">Overlay</a><a class="secondary-btn" id="openHostLink" href="host.html">Host</a></div>
+    </header>
+
+    <main class="landing-grid">
+      <section class="panel">
+        <div class="panel-kicker">You</div>
+        <h2>Participant profile</h2>
+        <div class="field-grid">
+          <label><span>Name</span><input id="participantName" /></label>
+          <label><span>Color</span><input id="participantColor" placeholder="#6ae4ff" /></label>
+          <label><span>Status</span><select id="participantStatus"><option value="online">online</option><option value="ready">ready</option><option value="live">live</option><option value="away">away</option></select></label>
+          <label><span>Note</span><input id="participantNote" placeholder="Camera 2 / Guest / Speedrun" /></label>
+        </div>
+        <div class="button-row">
+          <button class="primary-btn" id="saveParticipantBtn">Save Profile</button>
+          <button class="secondary-btn" id="leaveRoomBtn">Leave Room</button>
+        </div>
+        <label class="upload-card"><span>Upload avatar / tile image</span><input id="participantAvatarUpload" type="file" accept="image/*" /></label>
+        <button class="secondary-btn" id="uploadAvatarBtn">Upload Avatar</button>
+        <pre class="status-box" id="roomStatusBox">Room loading...</pre>
+      </section>
+
+      <section class="panel span-2">
+        <div class="panel-kicker">Roster</div>
+        <h2>Who's in the room</h2>
+        <div id="roomRoster" class="tile-grid"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

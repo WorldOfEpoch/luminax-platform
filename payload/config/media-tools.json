@@ -1,0 +1,106 @@
+{
+  "updated_at": 0,
+  "tools": [
+    {
+      "tool_key": "image_gen_local_3090",
+      "display_name": "Helios Forge 3090",
+      "type": "image",
+      "provider": "edge_local",
+      "model": "stabilityai/sdxl-turbo",
+      "status": "unconfigured",
+      "supports": [
+        "text2image",
+        "discord_upload",
+        "site_assets",
+        "website_hero",
+        "fantasy_key_art",
+        "landing_page_backgrounds"
+      ],
+      "notes": "Primary local 3090 image generation path for fantasy website art and Discord asset delivery."
+    },
+    {
+      "tool_key": "image_gen_cloud_premium",
+      "display_name": "OpenAI Image Premium",
+      "type": "image",
+      "provider": "openai",
+      "model": "gpt-image-1",
+      "status": "unconfigured",
+      "supports": [
+        "text2image",
+        "img2img",
+        "discord_upload",
+        "site_assets",
+        "premium_fallback"
+      ],
+      "notes": "Premium cloud image fallback and high-end render lane for Zeus and Hermes."
+    },
+    {
+      "tool_key": "image_logo_fast",
+      "display_name": "Logo / Wordmark Generator",
+      "type": "image",
+      "provider": "openai",
+      "model": "gpt-image-1",
+      "status": "unconfigured",
+      "supports": [
+        "transparent_background",
+        "wordmarks",
+        "brand_marks",
+        "site_logo_targets"
+      ],
+      "notes": "Use for logo marks, clean website branding assets, and transparent wordmarks."
+    },
+    {
+      "tool_key": "video_gen_primary",
+      "display_name": "Video Generator (planned)",
+      "type": "video",
+      "provider": "placeholder",
+      "model": "planned",
+      "status": "planned",
+      "supports": [
+        "text2video",
+        "storyboard"
+      ]
+    },
+    {
+      "tool_key": "audio_gen_primary",
+      "display_name": "Audio Generator (planned)",
+      "type": "audio",
+      "provider": "placeholder",
+      "model": "planned",
+      "status": "planned",
+      "supports": [
+        "sfx",
+        "voice_mix"
+      ]
+    },
+    {
+      "tool_key": "music_suno_primary",
+      "display_name": "Suno Music Studio",
+      "type": "music",
+      "provider": "sunoapi.org",
+      "model": "V4_5ALL",
+      "status": "planned",
+      "supports": [
+        "lyrics",
+        "song_generation",
+        "music_extension",
+        "wav_conversion",
+        "stem_separation",
+        "studio_timeline_bundle"
+      ],
+      "notes": "Third-party Suno-compatible adapter for full song generation, lyrics, WAV export, stem separation, and DAW timeline packaging. Requires SUNO_API_KEY."
+    },
+    {
+      "tool_key": "upscale_primary",
+      "display_name": "Upscaler (planned)",
+      "type": "upscale",
+      "provider": "placeholder",
+      "model": "planned",
+      "status": "planned",
+      "supports": [
+        "image_upscale",
+        "video_upscale"
+      ]
+    }
+  ]
+}

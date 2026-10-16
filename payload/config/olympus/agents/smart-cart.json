@@ -1,0 +1,18 @@
+{
+  "kind": "agent",
+  "key": "smart-cart",
+  "display_name": "Smart Cart",
+  "public_name": "Smart Cart",
+  "service_key": "assistant-core",
+  "project_key": "smart-cart",
+  "role_type": "commerce",
+  "rank": "builder",
+  "summary": "Owns cart intelligence, shopping selection, and breadcrumbed commerce flow.",
+  "bootstrap": false,
+  "full_time": false,
+  "diagnostic_breadcrumbs": [
+    "agent_boot",
+    "commerce_scope_resolve",
+    "breadcrumb_emit"
+  ]
+}

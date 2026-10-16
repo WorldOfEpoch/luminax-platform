@@ -1,0 +1,63 @@
+{
+  "version": "2026-03-13",
+  "styles": [
+    {
+      "style_key": "olympus_zeus_arcade_fantasy",
+      "display_name": "Olympus Zeus Arcade Fantasy",
+      "summary": "Mythic Zeus key art with arcade-poster energy, electric blue lightning, radiant gold trim, and premium fantasy game-website polish.",
+      "source_ref": "public-style-description",
+      "notes": [
+        "Stored as a style reference based on the user-provided Zeus image in chat.",
+        "Use for Olympus hero art, Discord banners, promo posters, and mythic sci-fi fantasy website scenes.",
+        "Inspiration only: do not recreate logos or text from the source image verbatim."
+      ],
+      "prompt_prefix": "epic fantasy game key art, sovereign Zeus at the Gate of Olympus, cinematic marketing illustration",
+      "prompt_suffix": "electric blue lightning, glowing storm clouds, radiant white beard, gold-trimmed royal robes, polished fantasy MMO website hero art, premium poster composition, dramatic rim light, readable silhouette, high detail, no text, no watermark",
+      "negative_prompt": "blurry, muddy colors, low contrast, cropped face, duplicate limbs, extra fingers, distorted anatomy, flat background, text, watermark, logo overlay, UI frame",
+      "palette": [
+        "electric blue",
+        "storm white",
+        "sun gold",
+        "midnight navy"
+      ],
+      "recommended_settings": {
+        "size": "1280x768",
+        "steps": 4,
+        "guidance_scale": 0.0,
+        "output_format": "png"
+      },
+      "intended_use": [
+        "website_hero",
+        "discord_branding",
+        "promo_posters",
+        "landing_page_backgrounds"
+      ]
+    },
+    {
+      "style_key": "olympus_gate_parallax",
+      "display_name": "Gate of Olympus Parallax",
+      "summary": "Layered website-hero look for the Olympus gateway with moving sky, distant temple architecture, and tree silhouettes.",
+      "source_ref": "derived:olympus_landing_direction",
+      "prompt_prefix": "mythic sci-fi fantasy landscape, gates of Olympus overlooking a luminous valley",
+      "prompt_suffix": "layered parallax composition, glowing sun path across the sky, dark tree silhouettes in the foreground, citadel in the distance, premium browser game landing page art, atmospheric depth, elegant composition, no text, no watermark",
+      "negative_prompt": "flat composition, crowded foreground, muddy colors, text, watermark, overexposed sun, malformed architecture",
+      "palette": [
+        "sun gold",
+        "deep navy",
+        "teal haze",
+        "moon silver"
+      ],
+      "recommended_settings": {
+        "size": "1536x864",
+        "steps": 4,
+        "guidance_scale": 0.0,
+        "output_format": "png"
+      },
+      "intended_use": [
+        "landing_page_hero",
+        "parallax_background",
+        "control_deck_backdrop"
+      ]
+    }
+  ]
+}

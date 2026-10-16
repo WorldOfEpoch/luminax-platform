@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroupUp</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="landing">
+  <div class="groupup-shell">
+    <header class="hero-card">
+      <div class="badge-row">
+        <span class="badge glow">GroupUp</span>
+        <span class="badge">Tonight Test Build</span>
+        <a class="badge linkish" href="project.html">Project Page</a>
+      </div>
+      <h1>GroupUp live room login + OBS overlay staging</h1>
+      <p>Create a room, invite people in, and use the live overlay page as an OBS browser source. For tonight, this is an overlay compositor with participant tiles, avatars, room branding, and dynamic layouts.</p>
+      <div class="hero-actions">
+        <a class="primary-btn" href="#create">Create Room</a>
+        <a class="secondary-btn" href="#join">Join Room</a>
+        <a class="secondary-btn" id="openOverlayFromLanding" href="overlay.html">Open Overlay</a>
+      </div>
+    </header>
+
+    <main class="landing-grid">
+      <section class="panel" id="create">
+        <div class="panel-kicker">Host</div>
+        <h2>Create tonight's room</h2>
+        <div class="field-grid">
+          <label><span>Room Key</span><input id="createRoomKey" placeholder="groupup-tonight" /></label>
+          <label><span>Room Title</span><input id="createRoomTitle" placeholder="GroupUp Tonight Test" /></label>
+          <label><span>Your Name</span><input id="createHostName" placeholder="Your name" /></label>
+          <label><span>Theme</span><select id="createTheme"><option value="confetti_arcade">Confetti Arcade</option><option value="candy_cosmos">Candy Cosmos</option><option value="forest_party">Forest Party</option></select></label>
+        </div>
+        <label><span>Headline</span><input id="createHeadline" placeholder="Live with the crew" /></label>
+        <label><span>Subheadline</span><input id="createSubheadline" placeholder="OBS-ready Brady-bunch style panel" /></label>
+        <button class="primary-btn" id="createRoomBtn">Create GroupUp Room</button>
+        <pre class="status-box" id="landingCreateStatus">Ready to create a room.</pre>
+      </section>
+
+      <section class="panel" id="join">
+        <div class="panel-kicker">Guests</div>
+        <h2>Join a live room</h2>
+        <div class="field-grid">
+          <label><span>Room Key</span><input id="joinRoomKey" placeholder="groupup-tonight" /></label>
+          <label><span>Your Name</span><input id="joinName" placeholder="Display name" /></label>
+          <label><span>Tile Color</span><input id="joinColor" placeholder="#ff8a4d" /></label>
+          <label><span>Tile Note</span><input id="joinNote" placeholder="Speedrun cam / Host / Guest 2" /></label>
+        </div>
+        <button class="primary-btn" id="joinRoomBtn">Join Room</button>
+        <pre class="status-box" id="landingJoinStatus">Join with just a name for tonight's test.</pre>
+      </section>
+
+      <section class="panel span-2">
+        <div class="panel-kicker">Live Rooms</div>
+        <h2>Current GroupUp rooms</h2>
+        <div id="liveRoomsList" class="card-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

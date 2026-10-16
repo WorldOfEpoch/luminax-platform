@@ -1,0 +1,236 @@
+{
+  "version": "2026-03-07",
+  "skills": [
+    {
+      "key": "chat",
+      "description": "Conversational responses with memory context",
+      "status": "unconfigured"
+    },
+    {
+      "key": "memory_explorer",
+      "description": "Searches and stores short/long memory across Redis/Qdrant/MySQL",
+      "status": "unconfigured"
+    },
+    {
+      "key": "browser_automation",
+      "description": "Navigate, screenshot, and action chaining via browser-agent",
+      "status": "unconfigured"
+    },
+    {
+      "key": "vision_analysis",
+      "description": "Image and screenshot analysis via vision-agent",
+      "status": "unconfigured"
+    },
+    {
+      "key": "voice_conversation",
+      "description": "STT/TTS/clone and continuous mic interactions",
+      "status": "unconfigured"
+    },
+    {
+      "key": "discord_management",
+      "description": "Ambient chat, channel planning, governance, voice receive/reply",
+      "status": "unconfigured"
+    },
+    {
+      "key": "discord_admin_ops",
+      "description": "Polls, raffles, trivia, and guided server operations with task linkage",
+      "status": "unconfigured"
+    },
+    {
+      "key": "discord_feedback_pipeline",
+      "description": "Feedback/bug/application intake, review, and project-task conversion",
+      "status": "unconfigured"
+    },
+    {
+      "key": "discord_interview_onboarding",
+      "description": "Candidate interviews, onboarding workflows, and recruitment posting automation",
+      "status": "unconfigured"
+    },
+    {
+      "key": "discord_tester_account_manager",
+      "description": "Manage authorized tester account metadata, lifecycle state, and secure token assignment",
+      "status": "unconfigured"
+    },
+    {
+      "key": "discord_unknown_command_autoplan",
+      "description": "When a command is missing, queue capability-scan planning tasks to implement it",
+      "status": "unconfigured"
+    },
+    {
+      "key": "admin_control",
+      "description": "Telemetry, logs, backup management, and service control",
+      "status": "unconfigured"
+    },
+    {
+      "key": "network_awareness",
+      "description": "Device scan, rooms/groups, floorplan preview hooks",
+      "status": "unconfigured"
+    },
+    {
+      "key": "model_prefab_control",
+      "description": "Runtime model prefab selection, blank template saves, and active model mapping controls",
+      "status": "unconfigured"
+    },
+    {
+      "key": "workflow_studio_planning",
+      "description": "Model-hub + workflow graph implementation track",
+      "status": "unconfigured"
+    },
+    {
+      "key": "workflow_studio_runtime",
+      "description": "Persist, execute, and inspect workflow graph runs",
+      "status": "unconfigured"
+    },
+    {
+      "key": "workflow_graph_designer",
+      "description": "Validate, diagram, and template workflow node graphs for saved runs",
+      "status": "unconfigured"
+    },
+    {
+      "key": "delegation_manager",
+      "description": "Route goals to specialist agents with deterministic delegation plans",
+      "status": "unconfigured"
+    },
+    {
+      "key": "cloud_model_registry",
+      "description": "Live cloud model catalog route for enabled providers",
+      "status": "unconfigured"
+    },
+    {
+      "key": "model_hub_install_manager",
+      "description": "Catalog, preflight, install-plan, and install-job management for model runtimes",
+      "status": "unconfigured"
+    },
+    {
+      "key": "hive_chamber_dreamer",
+      "description": "Always-on dreamer brain for initiative generation and project ideation",
+      "status": "unconfigured"
+    },
+    {
+      "key": "hive_chamber_engineer",
+      "description": "Always-on engineer brain for execution-ready decomposition",
+      "status": "unconfigured"
+    },
+    {
+      "key": "hive_chamber_critic",
+      "description": "Always-on critic brain enforcing safety and quality gates",
+      "status": "unconfigured"
+    },
+    {
+      "key": "hive_consensus_director",
+      "description": "2/3 consensus project spawn logic with replayable debate transcripts",
+      "status": "unconfigured"
+    },
+    {
+      "key": "hive_pubsub_channel",
+      "description": "Redis hive-channel pub/sub backbone for inter-brain debate replay and observability",
+      "status": "unconfigured"
+    },
+    {
+      "key": "hive_debate_replay",
+      "description": "Persists and replays full debate transcripts for UI and audit surfaces",
+      "status": "unconfigured"
+    },
+    {
+      "key": "three_d_game_factory",
+      "description": "3D asset, UE5 project, dedicated server, and deploy workflow scaffolds",
+      "status": "unconfigured"
+    },
+    {
+      "key": "ue5_project_factory",
+      "description": "Scaffolds Unreal Engine 5 projects, server layouts, and build/deploy plans",
+      "status": "unconfigured"
+    },
+    {
+      "key": "game_server_orchestration",
+      "description": "Creates dedicated server deployment plans and launch artifacts for game projects",
+      "status": "unconfigured"
+    },
+    {
+      "key": "finance_intelligence_swarm",
+      "description": "Finance briefing/planning swarm with consent and spending-cap gates",
+      "status": "unconfigured"
+    },
+    {
+      "key": "finance_consent_governor",
+      "description": "Enforces money-mode, daily caps, consent tokens, and audit-first finance execution rules",
+      "status": "unconfigured"
+    },
+    {
+      "key": "creative_empire_builder",
+      "description": "Converts casual creative intent into living projects with songs, videos, web, socials, and task automation",
+      "status": "unconfigured"
+    },
+    {
+      "key": "empire_dashboard",
+      "description": "Aggregated Finance, Games, Smart Home, and Hive state for operator overview",
+      "status": "unconfigured"
+    },
+    {
+      "key": "planned_skill_registry",
+      "description": "Persist and surface planned capabilities that are not yet active",
+      "status": "unconfigured"
+    },
+    {
+      "key": "self_repair_planning",
+      "description": "Generate diagnostics-driven repair plans from runtime errors/log tails",
+      "status": "unconfigured"
+    },
+    {
+      "key": "self_evolution_codex_upgrade",
+      "description": "Uses external Codex/OpenAI analysis to turn live error excerpts into guarded patch proposals, validation runs, and observable self-healing history",
+      "status": "unconfigured"
+    },
+    {
+      "key": "upgrade_timeline_observability",
+      "description": "Publishes self-upgrade history, latest proposal, diff preview, and upgrade-agent logs into the command center",
+      "status": "unconfigured"
+    },
+    {
+      "key": "self_maintenance_cli_bridge",
+      "description": "Guarded CLI bridge for read-only diagnostics and controlled maintenance commands",
+      "status": "unconfigured"
+    },
+    {
+      "key": "tool_scaffold_builder",
+      "description": "Create new tool stubs plus plan records for follow-up implementation",
+      "status": "unconfigured"
+    },
+    {
+      "key": "codex_app_bridge_windows",
+      "description": "Planned Windows/Codex bridge for assisted local tooling orchestration",
+      "status": "planned"
+    },
+    {
+      "key": "codex_cli_bridge",
+      "description": "Guarded Codex CLI bridge for project-scoped execution, self-maintenance runs, and operator-reviewed automation sessions",
+      "status": "unconfigured"
+    },
+    {
+      "key": "autonomous_tool_builder",
+      "description": "Planned capability for safer self-generated tool scaffolding + adoption workflows",
+      "status": "planned"
+    },
+    {
+      "key": "project_light_device_orchestration",
+      "description": "Planned Project Light cross-device orchestration layer",
+      "status": "planned"
+    },
+    {
+      "key": "polygon_live_execution",
+      "description": "Planned live market execution adapters under consent-gated finance policies",
+      "status": "planned"
+    },
+    {
+      "key": "plaid_live_billpay",
+      "description": "Planned bank/billpay execution adapters with consent tokens and rollback trails",
+      "status": "planned"
+    },
+    {
+      "key": "windows_desktop_takeover_bridge",
+      "description": "Planned Windows desktop attach/control layer for operator-assist workflows",
+      "status": "planned"
+    }
+  ],
+  "notes": "Assistant-core auto-loads this registry so new skills become self-known without prompt surgery."
+}

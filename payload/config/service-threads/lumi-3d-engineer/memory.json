@@ -1,0 +1,69 @@
+{
+  "version": "2026-03-14",
+  "service_key": "lumi-3d-engineer",
+  "display_name": "Hephaestus Forge",
+  "thread_id": "",
+  "executor": "darius",
+  "recent_summaries": [],
+  "blockers": [],
+  "decisions": [
+    {
+      "ts": 1776248802,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776248849,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776248893,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776248953,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776277873,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776327370,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776413708,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    },
+    {
+      "ts": 1776500162,
+      "decision": "daily_memory_maintenance",
+      "reason": "daily_memory_maintenance",
+      "summary": "Service thread memory compacted and normalized.",
+      "source": "assistant-core"
+    }
+  ],
+  "updated_at": 0,
+  "last_compacted_at": 0
+}

@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "allow_service_actions": false,
+  "talk_to_user": false,
+  "ui_failure_threshold": 3,
+  "ui_restart_cooldown_sec": 180,
+  "action_policy": "manual",
+  "notes": "Public setup starts no autonomous action or outreach."
+}

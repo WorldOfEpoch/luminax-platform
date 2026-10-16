@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underfoot | Warbles and Bigguns</title>
+  <meta name="description" content="Underfoot is a Unity multiplayer chaos prototype where Warbles survive together underground, dodge Bigguns topside, and sprint back into action through a world of holes, hazards, and slapstick physics.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <p class="eyebrow">Underfoot // Unity multiplayer prototype</p>
+        <h1>Underfoot</h1>
+      </div>
+      <nav>
+        <a href="#play">Game List</a>
+        <a href="#scenes">Scenes</a>
+        <a href="#maps">World Map</a>
+        <a href="#sitekit">Site Kit</a>
+        <a href="project.html">Project Board</a>
+        <a href="plan.html">Plan</a>
+        <a href="swarm.html">Swarm</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="panel hero-copy">
+        <p class="eyebrow">Warbles below. Bigguns above. Chaos everywhere.</p>
+        <h2>Tiny hands, giant trouble, and burrow routes built for instant re-entry.</h2>
+        <p class="lead">Underfoot is now being framed as a Unity game built around cute fuzzy Warbles and towering Bigguns. Luminax tracks the same active stack the project is actually using: Unity 6 + C#, Netcode-minded session flow, Meshy-generated creatures/props/UI art, and the world-service/MySQL bridge that keeps the web and prototype runtime aligned. Warbles sprint through tunnels, pop out of holes, grab objects with either hand, team-lift heavy junk, and scramble back underground. Bigguns stomp the topside, throw props, crush routes, and turn every village into a short, funny disaster.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#play">Open the game list</a>
+          <a class="secondary" href="#scenes">See the scene flow</a>
+          <a class="secondary" href="project.html">Open the project board</a>
+        </div>
+        <div class="chip-row" style="margin-top:16px">
+          <span class="badge">Always-on voice</span>
+          <span class="badge">No text chat</span>
+          <span class="badge">Warbles + Bigguns</span>
+          <span class="badge">Unity + C#</span>
+          <span class="badge">Meshy asset pipeline</span>
+        </div>
+      </div>
+      <aside class="hero-stage">
+        <div>
+          <p class="eyebrow">Current test runtime</p>
+          <div class="runtime-kv">
+            <span>Engine</span><span id="configLine">Loading Underfoot config...</span>
+            <span>Voice</span><span>Open mic, muffled by walls, no team-only channels</span>
+            <span>Interaction</span><span>Left hand, right hand, push, pull, leverage, team lift</span>
+            <span>Primary loop</span><span>World map -> game list -> match -> respawn hole -> back in</span>
+          </div>
+        </div>
+        <div class="art-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+          <img src="assets/critters/ember.svg" alt="Ember the Warble">
+          <img src="assets/critters/moss.svg" alt="Moss the Warble">
+          <img src="assets/critters/violet.svg" alt="Violet the Warble">
+          <img src="assets/critters/thorn.svg" alt="Thorn the Warble">
+        </div>
+      </aside>
+    </section>
+
+    <section class="status-strip">
+      <div><span class="tag">Build direction</span><br><strong>Unity gameplay scaffold active</strong></div>
+      <div><span class="tag">Luminax stack</span><br>Unity 6, C#, Netcode-minded sessions, Meshy models/UI, world-service + MySQL.</div>
+      <div><span class="tag">Voice rules</span><br>Warbles hear Warbles clearly. Bigguns hear Warbles only as cute squeaks.</div>
+      <div><span class="tag">Travel loop</span><br>Startup -> title -> character select -> game list -> world map zone -> minigame maps</div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Warble lineup</p>
+        <h3>The Warbles are fuzzy, colorful, and deeply teamwork-shaped.</h3>
+      </div>
+      <div class="warble-grid">
+        <article class="warble-card"><img src="assets/critters/ember.svg" alt="Ember Warble"><span class="tag">Warble</span><h4>Ember</h4><p>Fast, scrappy, bright, and ready to cling onto anything smaller than a chair and most things larger than a chair too.</p></article>
+        <article class="warble-card"><img src="assets/critters/sol.svg" alt="Sol Warble"><span class="tag">Warble</span><h4>Sol</h4><p>Built for fast objective grabs, risky surface dashes, and quick leaps back down into the safety of the tunnel mouth.</p></article>
+        <article class="warble-card"><img src="assets/critters/thorn.svg" alt="Thorn Warble"><span class="tag">Warble</span><h4>Thorn</h4><p>The prototype attitude read: brave enough to grab the heavy crate, sensible enough to yell for two more Warbles first.</p></article>
+        <article class="warble-card"><img src="assets/critters/moss.svg" alt="Moss Warble"><span class="tag">Warble</span><h4>Moss</h4><p>Reads soft and social at a distance, which is perfect right up until a Biggun notices the whole rescue team hiding by the same bucket.</p></article>
+        <article class="warble-card"><img src="assets/critters/violet.svg" alt="Violet Warble"><span class="tag">Warble</span><h4>Violet</h4><p>Colorful silhouette target for tints, team accents, scarf swaps, and future hat or goggles cosmetics.</p></article>
+        <article class="warble-card"><img src="assets/critters/pip.svg" alt="Pip Warble"><span class="tag">Warble</span><h4>Pip</h4><p>Perfect size reference for the whole game: tiny enough to be snack-sized, readable enough to survive chaos at a glance.</p></article>
+      </div>
+    </section>
+
+    <section id="scenes">
+      <div class="section-head">
+        <p class="eyebrow">Frontend flow</p>
+        <h3>The scene path is explicit now, not implied.</h3>
+      </div>
+      <div id="sceneGrid" class="scene-grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <p class="eyebrow">Audio rules</p>
+        <h3>Voice is always on, readable for Warbles, and warped for Bigguns.</h3>
+      </div>
+      <div id="voiceGrid" class="feature-grid"></div>
+    </section>
+
+    <section id="maps">
+      <div class="section-head">
+        <p class="eyebrow">World map zone</p>
+        <h3>Three first minigame map routes branch out from the burrow network.</h3>
+      </div>
+      <div id="mapGrid" class="map-grid"></div>
+      <div class="section-head" style="margin-top:22px">
+        <p class="eyebrow">Minigame portals</p>
+        <h3>Loadable slices that hang off the world map zone</h3>
+      </div>
+      <div id="minigameGrid" class="scene-grid"></div>
+    </section>
+
+    <section id="play">
+      <div class="section-head">
+        <p class="eyebrow">Prototype game list</p>
+        <h3>Guest entry is still live for Underfoot web-side testing</h3>
+      </div>
+      <div class="play-panel">
+        <div class="panel">
+          <form id="joinForm">
+            <label>Player name<input id="playerName" maxlength="20" placeholder="Pip, Moss, Ember..." required></label>
+            <label>Map<select id="mapSelect"></select></label>
+            <label>Spawn preference<select id="spawnSelect"></select></label>
+            <div class="row">
+              <button class="primary" type="submit">Join the prototype world</button>
+              <button class="secondary" id="refreshMapsBtn" type="button">Refresh maps</button>
+            </div>
+            <p id="joinStatus" class="notice">Loading game list...</p>
+          </form>
+          <div class="action-console">
+            <p class="eyebrow" style="margin-bottom:10px">Current interaction pass</p>
+            <div class="chip-row">
+              <span class="badge">LMB left-hand attach</span>
+              <span class="badge">RMB right-hand attach</span>
+              <span class="badge">Q / E leverage</span>
+              <span class="badge">Mouse wheel push / pull</span>
+            </div>
+            <div class="chip-row" style="margin-top:12px">
+              <button class="secondary action-btn" type="button" data-action="forage" data-value="1">Forage</button>
+              <button class="secondary action-btn" type="button" data-action="rescue">Rescue</button>
+              <button class="secondary action-btn" type="button" data-action="respawn">Respawn</button>
+              <button class="secondary action-btn" type="button" data-action="quest_turn_in">Turn In Quest</button>
+            </div>
+            <p class="notice" id="actionStatus">Join first, then use the prototype actions to test the world loop.</p>
+          </div>
+        </div>
+        <div class="log-card">
+          <span class="tag">Session feed</span>
+          <pre id="sessionSummary">No active guest session.</pre>
+          <pre id="sessionOut">No session yet. Enter a name and select a map to create a guest session.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="sitekit">
+      <div class="section-head">
+        <p class="eyebrow">Underfoot site kit test</p>
+        <h3>Luminax now tracks both the game stack and the menu/site art lane</h3>
+      </div>
+      <div class="art-grid">
+        <article class="art-card"><span class="tag">Banner</span><h4>Hero banner</h4><img src="assets/generated/underfoot-hero-banner.svg" alt="Generated Underfoot hero banner"><p>Tracked as part of the same Unity presentation lane that now feeds title screens, menu cards, and site-facing promo art.</p></article>
+        <article class="art-card"><span class="tag">Buttons</span><h4>Button plate</h4><img src="assets/generated/underfoot-button-plate.svg" alt="Generated Underfoot button art"><p>Warm burrow colors and soft fantasy framing sized for buttons, chips, CTA plates, and future Unity menu call-to-action styling.</p></article>
+        <article class="art-card"><span class="tag">Border</span><h4>Border tile</h4><img src="assets/generated/underfoot-border-tile.svg" alt="Generated Underfoot border tile"><p>Part of Luminax’s active Underfoot art lane: generated support art for site polish while Meshy and imported in-project UI images cover the game-facing surfaces.</p></article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Underfoot now presents Unity scene flow, Warble/Biggun voice rules, and the current site-art test path in one place.</p>
+      <p><a class="link-btn" href="project.html">Project board</a> <a class="link-btn" href="plan.html">Execution plan</a> <a class="link-btn" href="swarm.html">Swarm</a></p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

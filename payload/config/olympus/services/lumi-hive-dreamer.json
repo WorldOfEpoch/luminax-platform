@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "lumi-hive-dreamer",
+  "display_name": "Oracle of Dodona",
+  "public_name": "Oracle of Dodona",
+  "persona_key": "oracle_dodona",
+  "rank": "oracle",
+  "startup": "manual",
+  "role": "Signal-seeking ideation and concept expansion oracle.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/project-light-employees.json"
+  ]
+}

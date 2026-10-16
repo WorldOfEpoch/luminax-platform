@@ -1,0 +1,9 @@
+{
+  "service_key": "discord-bot",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/discord-bot",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/discord-bot"
+  ]
+}

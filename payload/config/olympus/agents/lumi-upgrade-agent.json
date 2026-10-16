@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "lumi-upgrade-agent",
+  "display_name": "Asclepius Surgeon",
+  "public_name": "Asclepius Surgeon",
+  "service_key": "lumi-upgrade-agent",
+  "role_type": "repair",
+  "rank": "surgeon",
+  "summary": "Guarded root-cause analysis and minimal repair execution lane.",
+  "bootstrap": false,
+  "full_time": false
+}

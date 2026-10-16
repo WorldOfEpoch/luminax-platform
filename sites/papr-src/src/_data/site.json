@@ -1,0 +1,67 @@
+{
+  "name": "PAPR",
+  "domain": "example.invalid",
+  "tagline": "Fair Raffles. Public Trust.",
+  "description": "PAPR is an example raffle-site design for exploring inventory, draw timing, and public result presentation. This source demo is not an operating fundraiser.",
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Active Raffles",
+      "href": "/raffles/"
+    },
+    {
+      "label": "How It Works",
+      "href": "/how-it-works/"
+    },
+    {
+      "label": "Draw Schedule",
+      "href": "/draw-schedule/"
+    },
+    {
+      "label": "Winners",
+      "href": "/winners/"
+    },
+    {
+      "label": "Trust Center",
+      "href": "/trust-center/"
+    },
+    {
+      "label": "Mission",
+      "href": "/mission/"
+    },
+    {
+      "label": "FAQ",
+      "href": "/faq/"
+    }
+  ],
+  "footerLinks": [
+    {
+      "label": "Official Rules",
+      "href": "/official-rules/"
+    },
+    {
+      "label": "Support",
+      "href": "/support/"
+    },
+    {
+      "label": "Master Plan",
+      "href": "/plan/"
+    },
+    {
+      "label": "Mission",
+      "href": "/mission/"
+    },
+    {
+      "label": "Draw Schedule",
+      "href": "/draw-schedule/"
+    },
+    {
+      "label": "Winners",
+      "href": "/winners/"
+    }
+  ],
+  "exampleData": true
+}

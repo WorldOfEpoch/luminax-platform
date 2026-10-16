@@ -1,0 +1,15 @@
+{
+  "kind": "service",
+  "key": "assistant-core",
+  "display_name": "Zeus Core",
+  "public_name": "Zeus",
+  "persona_key": "zeus",
+  "rank": "god-core",
+  "startup": "manual",
+  "role": "Central reasoning, routing, and approval authority for Mount Olympus.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/project-light-personality.json",
+    "config/project-light-employees.json"
+  ]
+}

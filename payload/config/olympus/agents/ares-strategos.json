@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "ares-strategos",
+  "display_name": "Ares Strategos",
+  "public_name": "Ares Strategos",
+  "service_key": "site-manager",
+  "role_type": "build_captain",
+  "rank": "war-captain",
+  "summary": "Example Project build captain for war-table planning, browser MMO product strategy, and release direction.",
+  "bootstrap": false,
+  "full_time": false
+}

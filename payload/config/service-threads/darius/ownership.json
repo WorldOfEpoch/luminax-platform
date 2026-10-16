@@ -1,0 +1,9 @@
+{
+  "service_key": "darius",
+  "checkout_root": "workspace",
+  "checkout_path": "tools/CodenameDarius",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "tools/CodenameDarius"
+  ]
+}

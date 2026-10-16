@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Darius avatar</title>
+  <desc id="desc">Unity worker crest with geometric helm and underfoot path.</desc>
+  <rect width="512" height="512" rx="64" fill="#0a101b"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#6feaff" stroke-width="16"/>
+  <path d="M256 108 L356 168 L356 288 L256 348 L156 288 L156 168 Z" fill="#13253f" stroke="#88f2ff" stroke-width="10"/>
+  <path d="M256 160 L308 190 V248 L256 278 L204 248 V190 Z" fill="#ffd98a"/>
+  <path d="M164 366 C224 332 292 332 348 366" fill="none" stroke="#88f2ff" stroke-width="18" stroke-linecap="round"/>
+  <path d="M196 396 C230 374 280 374 316 396" fill="none" stroke="#8f75ff" stroke-width="12" stroke-linecap="round"/>
+</svg>

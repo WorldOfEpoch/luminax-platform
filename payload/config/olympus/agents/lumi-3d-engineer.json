@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "lumi-3d-engineer",
+  "display_name": "Hephaestus Forge",
+  "public_name": "Hephaestus Forge",
+  "service_key": "lumi-3d-engineer",
+  "role_type": "forge",
+  "rank": "smith",
+  "summary": "3D, world-building, and asset forge for games and media.",
+  "bootstrap": false,
+  "full_time": false
+}

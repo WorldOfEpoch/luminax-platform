@@ -1,0 +1,35 @@
+---
+layout: layout.njk
+title: FAQ
+description: Plain-English answers to the most important PAPR raffle, draw timing, and transparency questions.
+---
+<main>
+  <section class="page-hero">
+    <article class="hero-card panel" data-reveal>
+      <p class="eyebrow">FAQ</p>
+      <h1>The questions people ask when they want to trust a raffle platform.</h1>
+      <p>PAPR’s FAQ should answer operational, legal, and public-trust questions without burying supporters in vague marketing or unexplained operator jargon.</p>
+    </article>
+    <aside class="hero-aside panel" data-reveal>
+      <p class="kicker">Approach</p>
+      <h2>Plain language beats fuzzy reassurance.</h2>
+      <p>The FAQ should explain the room state, timing, and outcome path in direct language and point to the fuller rules when needed.</p>
+    </aside>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="accordion">
+      {% for item in faqs %}
+      <article class="faq-item">
+        <button class="faq-toggle" type="button" aria-expanded="false">
+          <strong>{{ item.question }}</strong>
+          <span>+</span>
+        </button>
+        <div class="faq-panel">
+          <p>{{ item.answer }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

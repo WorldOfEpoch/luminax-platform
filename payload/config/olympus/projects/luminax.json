@@ -1,0 +1,52 @@
+{
+  "kind": "project",
+  "key": "luminax",
+  "display_name": "Mount Olympus",
+  "public_name": "Mount Olympus",
+  "root_path": "/workspace/luminax",
+  "owner": "local-owner",
+  "category": "platform",
+  "summary": "Local source release; live integrations not verified.",
+  "visibility": "local",
+  "aliases": [
+    "luminax-platform"
+  ],
+  "routes": [
+    "/"
+  ],
+  "capability_bundles": [
+    "local-control",
+    "operator-review"
+  ],
+  "deploy_policy": {
+    "allowed": false,
+    "mode": "manual",
+    "restart_services": []
+  },
+  "arrangement": {
+    "source_of_truth": "payload",
+    "mirrors": [],
+    "runtime_ownership": {},
+    "control_surfaces": []
+  },
+  "verification_profile": {
+    "local_test_commands": [
+      "python payload/tools/check_public_config.py"
+    ],
+    "remote_test_commands": [],
+    "health_urls": [],
+    "smoke_prompts": [],
+    "rollback_notes": []
+  },
+  "connections_refs": [
+    "local-ui"
+  ],
+  "required_context_files": [],
+  "related_assets": [],
+  "discord_branding": {},
+  "profile_path": "config/olympus/projects/luminax.json",
+  "codex_thread_required": false,
+  "active_thread_status": "unconfigured",
+  "review_state_summary": "Public example, no live deployment evidence.",
+  "codex_thread": {}
+}

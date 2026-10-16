@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "ops-manager",
+  "display_name": "Atlas Ops",
+  "public_name": "Atlas Ops",
+  "service_key": "lumi-daemon",
+  "role_type": "operations",
+  "rank": "warden",
+  "summary": "Carries operational load for stack health, readiness, and deployment safety.",
+  "bootstrap": false,
+  "full_time": false
+}

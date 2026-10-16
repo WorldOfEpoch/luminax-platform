@@ -1,0 +1,11 @@
+{
+  "service_key": "lumi-3d-engineer",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/lumi-3d-engineer",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/lumi-3d-engineer",
+    "payload/config/olympus/services/lumi-3d-engineer.json",
+    "payload/config/service-threads/lumi-3d-engineer"
+  ]
+}

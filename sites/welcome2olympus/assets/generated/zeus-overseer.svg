@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1120" role="img" aria-label="Zeus overseer chamber">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050c14"/>
+      <stop offset="100%" stop-color="#102438"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe0a4"/>
+      <stop offset="100%" stop-color="#f0b85c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="22%" r="44%">
+      <stop offset="0%" stop-color="#7ce8ff" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#7ce8ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1120" fill="url(#bg)"/>
+  <ellipse cx="450" cy="260" rx="280" ry="190" fill="url(#glow)"/>
+  <g opacity="0.42" stroke="#7ce8ff" fill="none">
+    <path d="M116 252h668"/>
+    <path d="M172 198h556"/>
+    <path d="M232 146h436"/>
+  </g>
+  <path d="M224 900L450 210 676 900" fill="#0a1724" stroke="#7ce8ff" stroke-opacity="0.26" stroke-width="6"/>
+  <path d="M332 880L450 420L568 880Z" fill="#12283a"/>
+  <path d="M404 868L450 520L496 868Z" fill="url(#gold)" fill-opacity="0.92"/>
+  <g fill="url(#gold)">
+    <rect x="430" y="274" width="40" height="160" rx="10"/>
+    <rect x="334" y="410" width="52" height="248" rx="12"/>
+    <rect x="514" y="410" width="52" height="248" rx="12"/>
+    <rect x="282" y="646" width="98" height="46" rx="14"/>
+    <rect x="520" y="646" width="98" height="46" rx="14"/>
+  </g>
+  <circle cx="450" cy="186" r="32" fill="#f7cb78"/>
+  <path d="M410 90h80l-28 92h56l-86 170 24-108h-76z" fill="#7ce8ff"/>
+  <g opacity="0.75" stroke="#7ce8ff" fill="none">
+    <path d="M198 952c102-74 192-108 252-108s150 34 252 108"/>
+    <path d="M252 1004c88-58 154-80 198-80s110 22 198 80"/>
+  </g>
+</svg>

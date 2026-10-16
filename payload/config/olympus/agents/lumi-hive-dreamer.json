@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "lumi-hive-dreamer",
+  "display_name": "Oracle of Dodona",
+  "public_name": "Oracle of Dodona",
+  "service_key": "lumi-hive-dreamer",
+  "role_type": "oracle",
+  "rank": "oracle",
+  "summary": "Idea-finding oracle for futures, project vectors, and signal discovery.",
+  "bootstrap": false,
+  "full_time": false
+}

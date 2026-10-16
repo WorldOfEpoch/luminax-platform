@@ -1,0 +1,21 @@
+{
+  "kind": "service",
+  "key": "zeus-discord",
+  "display_name": "Zeus Discord Presence",
+  "public_name": "Zeus",
+  "persona_key": "zeus",
+  "rank": "god-relay",
+  "startup": "manual",
+  "role": "Discord presence, omnipresence routing, and Zeus-side Olympus status relay.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/olympus-job-templates.json",
+    "config/review-cycle-policy.json"
+  ],
+  "diagnostic_breadcrumbs": [
+    "service_boot",
+    "presence_route_resolve",
+    "discord_presence_emit",
+    "review_receipt_emit"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "qa-lead",
+  "display_name": "Themis QA",
+  "public_name": "Themis QA",
+  "service_key": "admin-api",
+  "role_type": "qa",
+  "rank": "judge",
+  "summary": "Fair and evidence-led quality gate for regressions and verification.",
+  "bootstrap": false,
+  "full_time": false
+}

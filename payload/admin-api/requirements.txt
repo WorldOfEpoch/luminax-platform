@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+psutil
+pydantic
+mysql-connector-python
+redis
+httpx
+python-multipart

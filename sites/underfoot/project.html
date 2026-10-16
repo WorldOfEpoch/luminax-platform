@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underfoot | Project Board</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <p class="eyebrow">Underfoot operator board</p>
+        <h1>Project Board</h1>
+      </div>
+      <div class="subnav">
+        <a href="index.html">Project home</a>
+        <a href="plan.html">Plan</a>
+        <a href="swarm.html">Swarm</a>
+      </div>
+    </header>
+
+    <section class="panel">
+      <p class="eyebrow">Current framing</p>
+      <h2>Underfoot is now being carried forward as a Unity game with Warbles, Bigguns, world-map routing, and role-shaped voice logic.</h2>
+      <p class="lead">This board is the operator summary for what the game is, what changed in the engine plan, where the active files live, and which systems Luminax now tracks directly across Unity scenes, Meshy asset generation, and the world-service bridge.</p>
+    </section>
+
+    <section>
+      <div class="section-head"><p class="eyebrow">Current state</p><h3>Live status</h3></div>
+      <div class="feature-grid">
+        <article class="feature"><span class="tag">Engine</span><h4>Unity is now the active target</h4><p>The old Unreal scaffold remains archived for reference, but the active implementation surface has moved to Unity and C#.</p></article>
+        <article class="feature"><span class="tag">Website</span><h4>Warble-first public site</h4><p>The Underfoot site now explains the Unity scene flow, Warble/Biggun voice behavior, Meshy-backed menu art, and the active generated site-art lane.</p></article>
+        <article class="feature"><span class="tag">Server</span><h4>Authority still matters</h4><p>The dedicated server plan still owns match rules, role slots, weighted carry, hole travel, rewards, and anti-cheat validation.</p></article>
+        <article class="feature"><span class="tag">Assets</span><h4>Meshy is part of the stack</h4><p>Luminax now tracks Meshy-generated Warble/Biggun/prop work, UI image generation, import staging, and Unity-facing asset hookup as first-class project surfaces.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><p class="eyebrow">Verified surfaces</p><h3>What exists right now</h3></div>
+      <div class="story-grid">
+        <article class="story-card"><h4>World service</h4><p><code>world-service</code> still serves the public site, maps, guest sessions, and MySQL-backed prototype persistence.</p></article>
+        <article class="story-card"><h4>Unity scaffold</h4><p><code>unity/Underfoot/Assets/Scripts</code> now contains the active C# server, client, frontend, gameplay, and audio logic skeleton.</p></article>
+        <article class="story-card"><h4>Scene flow</h4><p>The startup scene, title scene, character select, game list, world map zone, and minigame routes are now explicit in the Unity frontend manifest.</p></article>
+        <article class="story-card"><h4>Voice rules</h4><p>Open mic only, no team voice, no text chat, Warble-to-Biggun speech replaced by unintelligible squeaky warbling.</p></article>
+        <article class="story-card"><h4>Asset workflow</h4><p>Meshy model generations, UI image outputs, import staging, and prefab hookup are now part of the tracked project workflow instead of side notes.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><p class="eyebrow">Project locations</p><h3>Where the active work lives</h3></div>
+      <div class="story-grid">
+        <article class="story-card"><h4>Project root</h4><p><code>./your-project</code></p></article>
+        <article class="story-card"><h4>Unity scripts</h4><p><code>unity/Underfoot/Assets/Scripts</code></p></article>
+        <article class="story-card"><h4>Unity runtime</h4><p><code>unity/Underfoot/Assets/Underfoot3D/Runtime</code></p></article>
+        <article class="story-card"><h4>Meshy import staging</h4><p><code>unity/Underfoot/Assets/Models/MeshyIncoming</code></p></article>
+        <article class="story-card"><h4>Shared contracts</h4><p><code>shared/world_contract.json</code></p></article>
+        <article class="story-card"><h4>Public site</h4><p><code>client/web</code></p></article>
+        <article class="story-card"><h4>World service</h4><p><code>world-service</code></p></article>
+        <article class="story-card"><h4>Legacy archive</h4><p><code>unreal</code> remains for reference only.</p></article>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

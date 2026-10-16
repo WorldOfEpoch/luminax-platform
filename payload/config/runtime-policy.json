@@ -1,0 +1,78 @@
+{
+  "version": "2026-10-16",
+  "workers_paused": true,
+  "worker_pause_reason": "Public setup: workers remain paused until configured.",
+  "cloud_model_floor": "gpt-5.4-mini",
+  "openai_models": {
+    "fast": "gpt-5.4-mini",
+    "reasoning": "gpt-5.4-mini",
+    "coder": "gpt-5.5",
+    "self_repair": "gpt-5.4",
+    "research_fast": "gpt-5.4-mini",
+    "research_reasoning": "gpt-5.4",
+    "decision": "gpt-5.4-mini"
+  },
+  "codex_models": {
+    "readonly": "gpt-5.4-mini",
+    "implement": "gpt-5.5",
+    "review": "gpt-5.5",
+    "repair": "gpt-5.5",
+    "judgment": "gpt-5.4-mini"
+  },
+  "rate_limits": {
+    "codex_runs_per_hour": 12,
+    "codex_runs_per_10_min": 3,
+    "research_jobs_per_hour": 8,
+    "research_jobs_per_10_min": 2
+  },
+  "execution_profile": "pro_only",
+  "orchestration": {
+    "zeus_heavy_sweep_sec": 7200,
+    "life_ops_internal_review_sec": 3600,
+    "life_ops_user_outreach_mode": "disabled",
+    "life_ops_waking_hours": {
+      "timezone": "UTC",
+      "start_hour": 9,
+      "end_hour": 21
+    },
+    "codex_thread_template_version": "2026-03-20",
+    "review_first_required": true,
+    "documentation_hygiene_required": true,
+    "cloud_budget": {
+      "max_heavy_sweeps_per_day": 12,
+      "max_decision_escalations_per_hour": 12,
+      "max_gpt54_repairs_per_day": 6
+    },
+    "preferred_models": {
+      "always_on_local": "ollama",
+      "decision_mini": "gpt-5.4-mini",
+      "high_risk_review": "gpt-5.4"
+    },
+    "brain": {
+      "enabled": false,
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "interval_sec": 180,
+      "persist_memory": true,
+      "persist_state": true,
+      "hermes_local_enabled": false
+    },
+    "memory_maintenance": {
+      "enabled": false,
+      "timezone": "UTC",
+      "run_hour_local": 4,
+      "run_minute_local": 15,
+      "compact_service_threads": true,
+      "bootstrap_service_threads": true,
+      "rebuild_workspace_atlas": true,
+      "save_memory_note": true,
+      "reset_brain_session": true
+    }
+  },
+  "darius_queue": {
+    "max_parallel_write_assignments_per_service": 1,
+    "max_parallel_cloud_runs": 1,
+    "base_cooldown_sec": 600,
+    "max_backoff_sec": 7200
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "version": "2026-10-16",
+  "technical_platform_name": "MountOlympus",
+  "platform_display_name": "Mount Olympus",
+  "public_brand": "Mount Olympus",
+  "public_domain": "localhost",
+  "community_brand": "Local Community",
+  "website_name": "Mount Olympus",
+  "portal_name": "Mount Olympus Web Gateway",
+  "control_surface_name": "Mount Olympus",
+  "ui_name": "Mount Olympus",
+  "ui_subtitle": "Zeus coordinates Hermes, Hermes Ops, Darius, the Oracle trio, and the wider worker pantheon.",
+  "operator_name": "Owner",
+  "operator_prompt_name": "Zeus",
+  "operator_prompt_placeholder": "Ask Zeus to act, route, repair, build, review, or command the stack...",
+  "discord_brand": "Olympus",
+  "discord_bot_name": "Hermes",
+  "unity_bot_name": "Darius",
+  "landing_title": "welcome2olympus",
+  "welcome_title": "Operator acknowledgement + Mount Olympus cycle status",
+  "welcome_body": "welcome2olympus is the public gateway. Mount Olympus is the protected command center where Zeus directs Hermes, Hermes Ops, Darius, the Oracle trio, and the service pantheon.",
+  "tagline": "A sovereign sci-fi command mount for routing work, keeping truth visible, and turning intent into action.",
+  "domains": {
+    "gateway": "localhost",
+    "game": "localhost",
+    "community": "localhost"
+  },
+  "routing": {
+    "gateway_base": "http://localhost:6969",
+    "worldofepoch_base": "http://localhost:6969",
+    "default_signed_in_route": "/",
+    "default_pending_route": "/",
+    "worldofepoch_app_route": "/"
+  },
+  "voice_profiles": {
+    "zeus": {
+      "default_voice": "en-US-JennyNeural",
+      "style": "smooth_conversational"
+    },
+    "hermes": {
+      "default_voice": "en-US-GuyNeural",
+      "style": "steady_conversational"
+    }
+  },
+  "private_operator_profile": "config/olympus/operators/local-owner.json",
+  "job_templates_path": "config/olympus-job-templates.json",
+  "profile_roots": {
+    "services": "config/olympus/services",
+    "agents": "config/olympus/agents",
+    "projects": "config/olympus/projects",
+    "operators": "config/olympus/operators"
+  },
+  "service_labels": {
+    "assistant-core": {
+      "display_name": "Zeus Core",
+      "public_name": "Zeus",
+      "role": "Central orchestrator, approval authority, and reasoning core for Mount Olympus."
+    },
+    "admin-api": {
+      "display_name": "Zeus Command Spine",
+      "public_name": "Zeus Command Spine",
+      "role": "Administrative control plane for service health, review-cycle state, and guarded operations."
+    },
+    "discord-bot": {
+      "display_name": "Hermes Relay",
+      "public_name": "Hermes",
+      "role": "Discord communication bridge between Olympus, Zeus, operators, and workers."
+    },
+    "community-discord": {
+      "display_name": "Olympus Guide Relay",
+      "public_name": "Olympus Guide",
+      "role": "Shared public-facing community bot for project guild announcements, feedback intake, polls, and support-safe routing."
+    },
+    "discord-ops-bot": {
+      "display_name": "Hermes Ops Relay",
+      "public_name": "Hermes Ops",
+      "role": "Hermes sublane for Discord setup, roles, provisioning, and governance-safe operations."
+    },
+    "zeus-discord": {
+      "display_name": "Zeus Discord Presence",
+      "public_name": "Zeus",
+      "role": "Discord presence, omnipresence routing, and breadcrumbed Olympus status relay."
+    },
+    "underfoot-world": {
+      "display_name": "Darius Underfoot Lane",
+      "public_name": "Darius",
+      "role": "Unity and Underfoot execution lane."
+    },
+    "luminax-ui": {
+      "display_name": "Mount Olympus Command Deck",
+      "public_name": "Mount Olympus",
+      "role": "Protected command surface for Zeus and the Olympian stack."
+    },
+    "browser-agent": {
+      "display_name": "Argus Browser",
+      "public_name": "Argus Browser",
+      "role": "Web automation and page traversal specialist."
+    },
+    "vision-agent": {
+      "display_name": "Argus Vision",
+      "public_name": "Argus Vision",
+      "role": "Screen, image, and perception analysis lane."
+    },
+    "voice-agent": {
+      "display_name": "Calliope Voice",
+      "public_name": "Calliope Voice",
+      "role": "Speech synthesis, voice cloning, and sonic rendering lane."
+    },
+    "realtime-gateway": {
+      "display_name": "Janus Realtime Gate",
+      "public_name": "Janus Gate",
+      "role": "Realtime session, streaming, and connection mediation."
+    },
+    "research-worker": {
+      "display_name": "Clio Research",
+      "public_name": "Clio Research",
+      "role": "Live research, evidence gathering, and source validation."
+    },
+    "site-manager": {
+      "display_name": "Daedalus Sitewright",
+      "public_name": "Daedalus Sitewright",
+      "role": "Site scaffolding, publishing, and web deployment support."
+    },
+    "account-worker": {
+      "display_name": "Harmonia Accounts",
+      "public_name": "Harmonia Accounts",
+      "role": "Managed account, identity, and credential-adjacent operations lane."
+    },
+    "network-manager": {
+      "display_name": "Aeolus Network",
+      "public_name": "Aeolus Network",
+      "role": "Network awareness, path visibility, and connectivity support."
+    },
+    "broadcast-conductor": {
+      "display_name": "Apollo Signal",
+      "public_name": "Apollo Signal",
+      "role": "Broadcast overlays, commentary, and show-flow coordination."
+    },
+    "lumi-daemon": {
+      "display_name": "Hestia Watch",
+      "public_name": "Hestia Watch",
+      "role": "Resident watcher for runtime safety, maintenance flow, and stack healing triggers."
+    },
+    "lumi-upgrade-agent": {
+      "display_name": "Asclepius Surgeon",
+      "public_name": "Asclepius Surgeon",
+      "role": "Guarded repair and self-upgrade analysis lane."
+    },
+    "lumi-hive-dreamer": {
+      "display_name": "Oracle of Dodona",
+      "public_name": "Oracle of Dodona",
+      "role": "Signal-seeking ideation and concept expansion oracle."
+    },
+    "lumi-hive-engineer": {
+      "display_name": "Oracle of Siwa",
+      "public_name": "Oracle of Siwa",
+      "role": "Execution-planning oracle for delivery paths, structure, and implementation order."
+    },
+    "lumi-hive-critic": {
+      "display_name": "Oracle of Delphi",
+      "public_name": "Oracle of Delphi",
+      "role": "Risk, truth, and consequence oracle for critique and validation."
+    },
+    "lumi-3d-engineer": {
+      "display_name": "Hephaestus Forge",
+      "public_name": "Hephaestus Forge",
+      "role": "3D, game, and asset generation forge."
+    },
+    "lumi-finance-swarm": {
+      "display_name": "Midas Ledger",
+      "public_name": "Midas Ledger",
+      "role": "Finance intelligence, watchlists, and risk briefings."
+    }
+  },
+  "project_labels": {
+    "zeus-presence": {
+      "display_name": "Zeus Presence",
+      "public_name": "Zeus Presence",
+      "service_key": "zeus-discord",
+      "summary": "Olympus omnipresence lane for Discord presence, broadcast breadcrumbs, and route-aware status updates.",
+      "breadcrumb_tags": [
+        "presence_route_resolve",
+        "discord_presence_emit",
+        "review_receipt_emit"
+      ]
+    },
+    "life-business-wealth": {
+      "display_name": "Life Business Wealth",
+      "public_name": "Life Business Wealth",
+      "service_key": "assistant-core",
+      "summary": "Life Ops portfolio lane for business and wealth-oriented work.",
+      "breadcrumb_tags": [
+        "campaign_scope_resolved",
+        "review_receipt_emit"
+      ]
+    },
+    "life-food-health-family": {
+      "display_name": "Life Food Health Family",
+      "public_name": "Life Food Health Family",
+      "service_key": "assistant-core",
+      "summary": "Life Ops portfolio lane for food, health, and family-oriented work.",
+      "breadcrumb_tags": [
+        "campaign_scope_resolved",
+        "review_receipt_emit"
+      ]
+    },
+    "life-motivation-fitness": {
+      "display_name": "Life Motivation Fitness",
+      "public_name": "Life Motivation Fitness",
+      "service_key": "assistant-core",
+      "summary": "Life Ops portfolio lane for motivation and fitness-oriented work.",
+      "breadcrumb_tags": [
+        "campaign_scope_resolved",
+        "review_receipt_emit"
+      ]
+    },
+    "smart-cart": {
+      "display_name": "Smart Cart",
+      "public_name": "Smart Cart",
+      "service_key": "assistant-core",
+      "summary": "Commerce lane for smart-cart catalog, storefront copy, and breadcrumbed verification.",
+      "breadcrumb_tags": [
+        "catalog_scope_resolved",
+        "asset_sync_confirmed"
+      ]
+    }
+  },
+  "roles": {
+    "zeus": {
+      "display_name": "Zeus",
+      "service_key": "assistant-core",
+      "agent_key": "hive-director",
+      "summary": "Warm, sovereign, coordinated, and honest. Zeus owns approval, orchestration, and the Mount Olympus review cycle."
+    },
+    "hermes": {
+      "display_name": "Hermes",
+      "service_key": "discord-bot",
+      "agent_key": "hermes-messenger",
+      "summary": "Messenger between Olympus, Zeus, operators, and workers. Hermes handles conversation, status relays, dispatch, and Discord presence."
+    },
+    "olympus_guide": {
+      "display_name": "Olympus Guide",
+      "service_key": "community-discord",
+      "agent_key": "hermes-admin-relay",
+      "summary": "Shared project-community guide for public guild onboarding, patch notes, polls, feedback intake, and Olympus mirror-safe community routing."
+    },
+    "hermes_ops": {
+      "display_name": "Hermes Ops",
+      "service_key": "discord-ops-bot",
+      "agent_key": "hermes-admin-relay",
+      "summary": "Administrative sublane of Hermes for setup, roles, moderation-safe actions, and server governance."
+    },
+    "zeus_presence": {
+      "display_name": "Zeus Presence",
+      "service_key": "zeus-discord",
+      "agent_key": "zeus-presence",
+      "summary": "Discord omnipresence lane for Zeus, with breadcrumbed presence relay and status handoffs."
+    },
+    "darius": {
+      "display_name": "Darius",
+      "service_key": "underfoot-world",
+      "agent_key": "darius-unity-bot",
+      "summary": "Unity-focused worker and Underfoot lane owner. Darius handles routing, sessions, and execution around the Unity and Underfoot stacks."
+    },
+    "oracle_dodona": {
+      "display_name": "Oracle of Dodona",
+      "service_key": "lumi-hive-dreamer",
+      "agent_key": "lumi-hive-dreamer",
+      "summary": "Idea-finding oracle for possible futures, project vectors, and pattern discovery."
+    },
+    "oracle_siwa": {
+      "display_name": "Oracle of Siwa",
+      "service_key": "lumi-hive-engineer",
+      "agent_key": "lumi-hive-engineer",
+      "summary": "Strategic execution oracle for implementation plans, task sequencing, and technical structure."
+    },
+    "oracle_delphi": {
+      "display_name": "Oracle of Delphi",
+      "service_key": "lumi-hive-critic",
+      "agent_key": "lumi-hive-critic",
+      "summary": "Truth-checking oracle for consequence, risk, and guardrail review."
+    },
+    "life_business_wealth": {
+      "display_name": "Life Business Wealth",
+      "service_key": "assistant-core",
+      "agent_key": "life-business-wealth",
+      "summary": "Life Ops lane for business and wealth-oriented planning and execution."
+    },
+    "life_food_health_family": {
+      "display_name": "Life Food Health Family",
+      "service_key": "assistant-core",
+      "agent_key": "life-food-health-family",
+      "summary": "Life Ops lane for food, health, and family-oriented planning and execution."
+    },
+    "life_motivation_fitness": {
+      "display_name": "Life Motivation Fitness",
+      "service_key": "assistant-core",
+      "agent_key": "life-motivation-fitness",
+      "summary": "Life Ops lane for motivation and fitness-oriented planning and execution."
+    },
+    "smart_cart": {
+      "display_name": "Smart Cart",
+      "service_key": "assistant-core",
+      "agent_key": "smart-cart",
+      "summary": "Commerce lane for smart-cart catalog, storefront copy, and verification."
+    },
+    "ares_strategos": {
+      "display_name": "Ares Strategos",
+      "service_key": "site-manager",
+      "agent_key": "ares-strategos",
+      "summary": "Example Project build captain for war-table planning, product strategy, and release direction."
+    }
+  },
+  "oracles": {
+    "dreamer": "Oracle of Dodona",
+    "engineer": "Oracle of Siwa",
+    "critic": "Oracle of Delphi"
+  },
+  "assets": {
+    "hero": "assets/olympus/welcome2olympus-hero.svg",
+    "background": "assets/olympus/olympus-background.svg",
+    "zeus": "assets/olympus/zeus-sigil.svg",
+    "hermes": "assets/olympus/hermes-avatar.svg",
+    "hermes_ops": "assets/olympus/hermes-avatar.svg",
+    "darius": "assets/olympus/darius-avatar.svg",
+    "oracle_dodona": "assets/olympus/hermes-avatar.svg",
+    "oracle_siwa": "assets/olympus/zeus-sigil.svg",
+    "oracle_delphi": "assets/olympus/athena-ops-avatar.svg",
+    "worldofepoch": "assets/olympus/olympus-background.svg"
+  },
+  "discord_branding": {
+    "default_guild": "Olympus",
+    "staging_guild": "Revamp",
+    "operator_channel_prefix": "olympus",
+    "project_channel_prefix": "realm",
+    "sticky_signature": "Maintained by Hermes Ops under Zeus review."
+  },
+  "naming_guards": {
+    "must_appear": [
+      "welcome2olympus",
+      "Mount Olympus",
+      "Zeus",
+      "Hermes",
+      "Hermes Ops",
+      "Zeus Discord Presence",
+      "Zeus Presence",
+      "Darius",
+      "Example Project",
+      "Oracle of Dodona",
+      "Oracle of Siwa",
+      "Oracle of Delphi",
+      "Life Business Wealth",
+      "Life Food Health Family",
+      "Life Motivation Fitness",
+      "Smart Cart"
+    ],
+    "legacy_internal_names": [
+      "Luminax",
+      "Epoch Portal",
+      "Athena Ops",
+      "Example Project Version",
+      "Luminax Core Council",
+      "Lumi-1 Dreamer",
+      "Lumi-2 Engineer",
+      "Lumi-3 Critic"
+    ],
+    "notes": "Legacy technical ids may still exist during transition, but operator-facing naming and future registry-driven cutover must resolve from the MountOlympus canon and the file-backed Olympus profiles."
+  }
+}

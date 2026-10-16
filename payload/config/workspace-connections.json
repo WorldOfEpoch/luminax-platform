@@ -1,0 +1,29 @@
+{
+  "version": "2026-10-16",
+  "workspace_name": "Local Workspace",
+  "secrets_policy": {
+    "mode": "private_local",
+    "summary": "Values never belong in tracked configuration.",
+    "private_registry_path": "config/private-secret-refs.json",
+    "template_path": "config/private-secret-refs.template.json"
+  },
+  "nodes": [],
+  "connections": [
+    {
+      "key": "local-ui",
+      "kind": "local-ui",
+      "owner": "local-owner",
+      "host_ref": "",
+      "public_url": "http://localhost:6969",
+      "www_url": "",
+      "service_target": "luminax-ui",
+      "health_urls": []
+    }
+  ],
+  "delivery_defaults": {
+    "author_here_first": true,
+    "local_test_before_server": true,
+    "server_verify_after_apply": true,
+    "mark_ok_only_after_remote_verify": true
+  }
+}

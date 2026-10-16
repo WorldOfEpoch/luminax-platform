@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "lumi-upgrade-agent",
+  "display_name": "Asclepius Surgeon",
+  "public_name": "Asclepius Surgeon",
+  "persona_key": "asclepius_surgeon",
+  "rank": "repair-specialist",
+  "startup": "manual",
+  "role": "Guarded repair and self-upgrade analysis lane.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/review-cycle-policy.json"
+  ]
+}

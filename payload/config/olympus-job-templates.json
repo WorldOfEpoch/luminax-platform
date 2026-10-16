@@ -1,0 +1,531 @@
+{
+  "version": "2026-03-20",
+  "templates": [
+    {
+      "key": "website_admin",
+      "display_name": "Website Admin",
+      "summary": "Owns project websites, landing pages, motion, copy, assets, and launch polish.",
+      "legacy_aliases": [
+        "contributor"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "codex_developer_work"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "website_edit",
+        "asset_sync",
+        "content_publish"
+      ],
+      "approval_sensitivity": "medium",
+      "discord_scope": "project_admin_channel",
+      "deploy_rights": {
+        "allowed": true,
+        "mode": "project_auto_if_green"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "audience_scope",
+        "urgency",
+        "visibility"
+      ],
+      "hidden_fields": [
+        "repo_root",
+        "website_root",
+        "sync_targets",
+        "output_paths",
+        "restart_command"
+      ]
+    },
+    {
+      "key": "deployer",
+      "display_name": "Deployer",
+      "summary": "Can restart, deploy, and verify project services inside assigned scope.",
+      "legacy_aliases": [
+        "project_admin"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "deployment_request",
+        "drive_backup_review",
+        "codex_developer_work"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_task",
+        "deploy_request",
+        "deploy_execute",
+        "health_check"
+      ],
+      "approval_sensitivity": "high",
+      "discord_scope": "project_admin_channel",
+      "deploy_rights": {
+        "allowed": true,
+        "mode": "project_auto_if_green"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "urgency",
+        "visibility"
+      ],
+      "hidden_fields": [
+        "service_bundle",
+        "restart_command",
+        "deploy_bundle",
+        "sync_targets"
+      ]
+    },
+    {
+      "key": "builder",
+      "display_name": "Builder",
+      "summary": "Runs implementation, task execution, and patch work in an approved project lane.",
+      "legacy_aliases": [
+        "project_admin"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "codex_developer_work",
+        "deployment_request"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "codex_task",
+        "website_edit",
+        "asset_sync"
+      ],
+      "approval_sensitivity": "medium",
+      "discord_scope": "project_admin_channel",
+      "deploy_rights": {
+        "allowed": false,
+        "mode": "request_only"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "audience_scope",
+        "urgency"
+      ],
+      "hidden_fields": [
+        "repo_root",
+        "default_workdir",
+        "sync_targets"
+      ]
+    },
+    {
+      "key": "life_ops",
+      "display_name": "Life Ops",
+      "summary": "Runs business, wealth, food, health, family, and fitness content lanes with breadcrumbed review.",
+      "legacy_aliases": [
+        "lifestyle_ops",
+        "life_portfolio"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "translate_for_channel"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "campaign_copy",
+        "content_publish",
+        "branding_sync"
+      ],
+      "approval_sensitivity": "medium",
+      "discord_scope": "announcement_channels",
+      "deploy_rights": {
+        "allowed": false,
+        "mode": "none"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "audience_scope",
+        "urgency",
+        "visibility",
+        "content_channel"
+      ],
+      "hidden_fields": [
+        "source_documents",
+        "publish_endpoints",
+        "asset_targets"
+      ],
+      "diagnostic_breadcrumbs": [
+        "template_loaded",
+        "campaign_scope_resolved",
+        "review_receipt_emit"
+      ]
+    },
+    {
+      "key": "discord_moderator",
+      "display_name": "Discord Moderator",
+      "summary": "Handles moderation-safe review, channel hygiene, and community support inside approved Discord scope.",
+      "legacy_aliases": [
+        "discord_moderator"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "translate_for_channel",
+        "moderation_summary",
+        "review_member_history",
+        "unban_member"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "discord_admin",
+        "sticky_sync",
+        "channel_template_sync"
+      ],
+      "approval_sensitivity": "high",
+      "discord_scope": "community_ops",
+      "deploy_rights": {
+        "allowed": false,
+        "mode": "none"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "visibility"
+      ],
+      "hidden_fields": [
+        "guild_id",
+        "channel_ids",
+        "role_ids"
+      ]
+    },
+    {
+      "key": "presence_ops",
+      "display_name": "Presence Ops",
+      "summary": "Maintains Zeus Discord presence lanes, breadcrumbed status copy, and route-aware handoffs.",
+      "legacy_aliases": [
+        "discord_presence",
+        "omnipresence_ops"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "translate_for_channel"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "discord_admin",
+        "content_publish",
+        "branding_sync"
+      ],
+      "approval_sensitivity": "medium",
+      "discord_scope": "operator_only",
+      "deploy_rights": {
+        "allowed": false,
+        "mode": "none"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "audience_scope",
+        "urgency",
+        "visibility"
+      ],
+      "hidden_fields": [
+        "presence_targets",
+        "discord_tokens",
+        "sync_targets"
+      ],
+      "diagnostic_breadcrumbs": [
+        "template_loaded",
+        "presence_route_resolve",
+        "discord_presence_emit"
+      ]
+    },
+    {
+      "key": "social_media_rep",
+      "display_name": "Social Media Rep",
+      "summary": "Drafts campaign copy, announcements, and publish-ready social posts.",
+      "legacy_aliases": [
+        "translator"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "translate_for_channel"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "campaign_copy",
+        "content_publish"
+      ],
+      "approval_sensitivity": "medium",
+      "discord_scope": "announcement_channels",
+      "deploy_rights": {
+        "allowed": false,
+        "mode": "none"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "audience_scope",
+        "visibility"
+      ],
+      "hidden_fields": [
+        "publish_endpoints",
+        "asset_targets"
+      ]
+    },
+    {
+      "key": "smart_cart_ops",
+      "display_name": "Smart Cart Ops",
+      "summary": "Owns smart-cart catalog, commerce copy, asset sync, and breadcrumbed verification.",
+      "legacy_aliases": [
+        "commerce_ops",
+        "cart_ops"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "codex_developer_work",
+        "deployment_request"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "codex_task",
+        "asset_sync",
+        "content_publish"
+      ],
+      "approval_sensitivity": "high",
+      "discord_scope": "project_admin_channel",
+      "deploy_rights": {
+        "allowed": false,
+        "mode": "none"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "audience_scope",
+        "urgency",
+        "visibility",
+        "sku_scope"
+      ],
+      "hidden_fields": [
+        "catalog_paths",
+        "sync_targets",
+        "checkout_endpoints"
+      ],
+      "diagnostic_breadcrumbs": [
+        "template_loaded",
+        "catalog_scope_resolved",
+        "asset_sync_confirmed"
+      ]
+    },
+    {
+      "key": "project_admin",
+      "display_name": "Project Admin",
+      "summary": "Approves project-scoped assignments, access, branding sync, and guarded execution.",
+      "legacy_aliases": [
+        "project_admin"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "discord_channel_management",
+        "deployment_request",
+        "drive_backup_review",
+        "codex_developer_work",
+        "access_grants"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "codex_task",
+        "discord_admin",
+        "grant_access",
+        "deploy_request",
+        "branding_sync"
+      ],
+      "approval_sensitivity": "high",
+      "discord_scope": "project_admin_channel",
+      "deploy_rights": {
+        "allowed": true,
+        "mode": "project_auto_if_green"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "job_template",
+        "urgency",
+        "visibility",
+        "approval_sensitivity"
+      ],
+      "hidden_fields": [
+        "repo_root",
+        "service_bundle",
+        "restart_command",
+        "sync_targets"
+      ]
+    },
+    {
+      "key": "platform_admin",
+      "display_name": "Platform Admin",
+      "summary": "Owns cross-project visibility, Olympus governance, and the full Zeus deck.",
+      "legacy_aliases": [
+        "platform_admin"
+      ],
+      "allowed_actions": [
+        "knowledge_lookup",
+        "content_support",
+        "translate_for_channel",
+        "moderation_summary",
+        "review_member_history",
+        "unban_member",
+        "automated_translation",
+        "discord_channel_management",
+        "deployment_request",
+        "drive_backup_review",
+        "codex_developer_work",
+        "cross_project_routing",
+        "access_grants"
+      ],
+      "default_capabilities": [
+        "project_view",
+        "project_lookup",
+        "project_task",
+        "codex_task",
+        "discord_admin",
+        "grant_access",
+        "deploy_execute",
+        "stack_control",
+        "branding_sync",
+        "oracle_override"
+      ],
+      "approval_sensitivity": "critical",
+      "discord_scope": "operator_only",
+      "deploy_rights": {
+        "allowed": true,
+        "mode": "platform_guarded"
+      },
+      "explicit_fields": [
+        "project",
+        "goal",
+        "job_template",
+        "urgency",
+        "visibility",
+        "approval_sensitivity"
+      ],
+      "hidden_fields": [
+        "repo_root",
+        "service_bundle",
+        "default_workdir",
+        "restart_command",
+        "sync_targets",
+        "output_paths"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "key": "project_view",
+      "label": "Project visibility",
+      "summary": "See assigned project cards, workspace details, and approved operational context."
+    },
+    {
+      "key": "project_lookup",
+      "label": "Project lookup",
+      "summary": "Ask factual questions, review current state, and gather evidence."
+    },
+    {
+      "key": "project_task",
+      "label": "Project task",
+      "summary": "Request real scoped work instead of read-only answers."
+    },
+    {
+      "key": "codex_task",
+      "label": "Codex implementation",
+      "summary": "Dispatch project-threaded implementation and patch work."
+    },
+    {
+      "key": "website_edit",
+      "label": "Website edit",
+      "summary": "Change copy, layout, motion, assets, and site-facing components."
+    },
+    {
+      "key": "asset_sync",
+      "label": "Asset sync",
+      "summary": "Refresh linked graphics, site assets, and mirrored output files."
+    },
+    {
+      "key": "content_publish",
+      "label": "Content publish",
+      "summary": "Publish approved content or send it to a guarded release lane."
+    },
+    {
+      "key": "deploy_request",
+      "label": "Deploy request",
+      "summary": "Prepare deploy or restart actions for approval."
+    },
+    {
+      "key": "deploy_execute",
+      "label": "Deploy execute",
+      "summary": "Run approved restart and deployment actions in scope."
+    },
+    {
+      "key": "health_check",
+      "label": "Health check",
+      "summary": "Run service readiness and verification checks after changes."
+    },
+    {
+      "key": "discord_admin",
+      "label": "Discord admin",
+      "summary": "Sync channels, roles, stickies, branding, and guild settings."
+    },
+    {
+      "key": "sticky_sync",
+      "label": "Sticky sync",
+      "summary": "Create or refresh pinned onboarding and admin guide posts."
+    },
+    {
+      "key": "channel_template_sync",
+      "label": "Channel template sync",
+      "summary": "Apply approved channel and category templates to a guild."
+    },
+    {
+      "key": "campaign_copy",
+      "label": "Campaign copy",
+      "summary": "Prepare pitch, announcement, and social-ready copy."
+    },
+    {
+      "key": "grant_access",
+      "label": "Grant access",
+      "summary": "Assign job templates, approvals, and project membership."
+    },
+    {
+      "key": "branding_sync",
+      "label": "Branding sync",
+      "summary": "Apply Olympus or project branding to web and Discord surfaces."
+    },
+    {
+      "key": "stack_control",
+      "label": "Stack control",
+      "summary": "Operate full service health, restart, and deployment flows."
+    },
+    {
+      "key": "oracle_override",
+      "label": "Oracle override",
+      "summary": "View or escalate blocked actions that need sovereign review."
+    }
+  ]
+}

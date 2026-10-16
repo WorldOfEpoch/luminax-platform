@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PAPR mark">
+  <defs>
+    <linearGradient id="paprGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0c56c" />
+      <stop offset="100%" stop-color="#7bc0a3" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#102234" />
+  <path d="M15 46V18h17c7.7 0 13 4.9 13 12.1S39.7 42 32 42H23v4H15Zm8-11h8.2c3.7 0 5.9-1.7 5.9-4.9 0-3.3-2.2-5.1-5.9-5.1H23v10Z" fill="url(#paprGlow)" />
+  <circle cx="47" cy="18" r="5" fill="#f0c56c" opacity="0.8" />
+</svg>

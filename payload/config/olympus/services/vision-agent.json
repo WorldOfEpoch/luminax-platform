@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "vision-agent",
+  "display_name": "Argus Vision",
+  "public_name": "Argus Vision",
+  "persona_key": "argus_vision",
+  "rank": "scout",
+  "startup": "manual",
+  "role": "Screen, image, and perception analysis lane.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "voice-agent",
+  "display_name": "Calliope Voice",
+  "public_name": "Calliope Voice",
+  "persona_key": "calliope_voice",
+  "rank": "voice-forge",
+  "startup": "manual",
+  "role": "Speech synthesis, cloning, and vocal rendering lane.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/project-light-personality.json"
+  ]
+}

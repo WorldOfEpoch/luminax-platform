@@ -1,0 +1,229 @@
+{
+  "version": "2026-03-14",
+  "updated_at": 0,
+  "execution_profile": "local_only",
+  "threads": [
+    {
+      "service_key": "assistant-core",
+      "display_name": "Zeus Core",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/assistant-core/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/assistant-core/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/assistant-core/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/assistant-core/must_keep_features.json",
+      "owned_paths": [
+        "payload/assistant-core",
+        "payload/config/feature-contracts.json",
+        "payload/config/runtime-policy.json"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/assistant-core",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "admin-api",
+      "display_name": "Zeus Command Spine",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/admin-api/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/admin-api/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/admin-api/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/admin-api/must_keep_features.json",
+      "owned_paths": [
+        "payload/admin-api"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/admin-api",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "lumi-upgrade-agent",
+      "display_name": "Hephaestus Upgrade Forge",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/lumi-upgrade-agent/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/lumi-upgrade-agent/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/lumi-upgrade-agent/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/lumi-upgrade-agent/must_keep_features.json",
+      "owned_paths": [
+        "payload/lumi-upgrade-agent"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/lumi-upgrade-agent",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "research-worker",
+      "display_name": "Clio Research",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/research-worker/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/research-worker/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/research-worker/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/research-worker/must_keep_features.json",
+      "owned_paths": [
+        "payload/research-worker",
+        "payload/config/olympus/services/research-worker.json",
+        "payload/config/service-threads/research-worker"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/research-worker",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "site-manager",
+      "display_name": "Daedalus Sitewright",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/site-manager/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/site-manager/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/site-manager/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/site-manager/must_keep_features.json",
+      "owned_paths": [
+        "payload/site-manager",
+        "payload/config/olympus/services/site-manager.json",
+        "payload/config/service-threads/site-manager"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/site-manager",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "lumi-3d-engineer",
+      "display_name": "Hephaestus Forge",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/lumi-3d-engineer/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/lumi-3d-engineer/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/lumi-3d-engineer/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/lumi-3d-engineer/must_keep_features.json",
+      "owned_paths": [
+        "payload/lumi-3d-engineer",
+        "payload/config/olympus/services/lumi-3d-engineer.json",
+        "payload/config/service-threads/lumi-3d-engineer"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/lumi-3d-engineer",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "discord-bot",
+      "display_name": "Luminax Discord Liaison",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/discord-bot/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/discord-bot/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/discord-bot/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/discord-bot/must_keep_features.json",
+      "owned_paths": [
+        "payload/discord-bot"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/discord-bot",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "discord-ops-bot",
+      "display_name": "Hermes Ops Relay",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/discord-ops-bot/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/discord-ops-bot/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/discord-ops-bot/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/discord-ops-bot/must_keep_features.json",
+      "owned_paths": [
+        "payload/discord-bot",
+        "payload/config/olympus/services/discord-ops-bot.json",
+        "payload/config/service-threads/discord-ops-bot",
+        "payload/config/discord-ops-blueprints.json"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/discord-bot",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "mount-olympus-ui",
+      "display_name": "Mount Olympus Command Deck",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/mount-olympus-ui/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/mount-olympus-ui/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/mount-olympus-ui/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/mount-olympus-ui/must_keep_features.json",
+      "owned_paths": [
+        "payload/luminax-ui",
+        "sites/welcome2olympus"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "payload/luminax-ui",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    },
+    {
+      "service_key": "darius",
+      "display_name": "Darius Unity Connector",
+      "executor": "darius",
+      "thread_id": "",
+      "rules_path": "/workspace/luminax/config/service-threads/darius/rules.md",
+      "memory_path": "/workspace/luminax/config/service-threads/darius/memory.json",
+      "tests_path": "/workspace/luminax/config/service-threads/darius/tests.md",
+      "must_keep_features_path": "/workspace/luminax/config/service-threads/darius/must_keep_features.json",
+      "owned_paths": [
+        "tools/CodenameDarius"
+      ],
+      "checkout_root": "workspace",
+      "checkout_path": "tools/CodenameDarius",
+      "checkout_scope_kind": "tree",
+      "active_assignment_id": "",
+      "cooldown_until": 0,
+      "failure_streak": 0,
+      "last_compacted_at": 0,
+      "updated_at": 0
+    }
+  ]
+}

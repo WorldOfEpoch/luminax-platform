@@ -1,0 +1,48 @@
+---
+layout: layout.njk
+title: Draw schedule
+description: Review the public draw calendar, cutoff rules, and raffles assigned to each scheduled PAPR event.
+---
+<main>
+  <section class="page-hero">
+    <article class="hero-card panel" data-reveal>
+      <p class="eyebrow">Draw schedule</p>
+      <h1>Public timing should be visible before the room closes.</h1>
+      <p>PAPR should make it obvious whether a sold-out raffle resolves immediately or appears in the next scheduled draw event. The event page is part of the trust model, not an afterthought.</p>
+    </article>
+    <aside class="hero-aside panel" data-reveal>
+      <p class="kicker">Scheduling rule</p>
+      <h2>No hidden reassignment.</h2>
+      <p>If a raffle misses a cutoff and moves to the next eligible event, that change should be visible and logged.</p>
+    </aside>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Upcoming events</p>
+        <h2>Each public draw gets its own event surface.</h2>
+      </div>
+      <a class="button button-secondary" href="/winners/">See completed results</a>
+    </div>
+    <div class="two-up">
+      {% for draw in draws %}
+      <article class="card draw-card">
+        <p class="kicker">{{ draw.event }}</p>
+        <h3>{{ draw.date }} at {{ draw.time }}</h3>
+        <p>{{ draw.cutoff }}</p>
+        <div class="meta-grid">
+          <div class="meta-box">
+            <small>Included raffles</small>
+            <strong>{{ draw.raffles }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Public output</small>
+            <strong>{{ draw.stream }}</strong>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

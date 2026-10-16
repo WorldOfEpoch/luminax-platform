@@ -20,3 +20,16 @@ models/
 *.pfx
 *.p12
 *.pid
+/sites/papr/
+**/bin/
+**/obj/
+.public-source-stage/
+/payload/runtime/
+/payload/certs/
+/payload/reports/
+/payload/memory/
+/payload/projects/
+/payload/generated_media/
+/payload/published_sites/
+/payload/upgrades/
+/payload/config/private-secret-refs.json

@@ -1,0 +1,18 @@
+{
+  "kind": "agent",
+  "key": "zeus-presence",
+  "display_name": "Zeus Presence",
+  "public_name": "Zeus Presence",
+  "service_key": "zeus-discord",
+  "project_key": "zeus-presence",
+  "role_type": "presence",
+  "rank": "relay",
+  "summary": "Owns Olympus omnipresence routing, Discord status copy, and breadcrumbed Zeus presence handoffs.",
+  "bootstrap": false,
+  "full_time": false,
+  "diagnostic_breadcrumbs": [
+    "agent_boot",
+    "presence_route_resolve",
+    "discord_presence_emit"
+  ]
+}

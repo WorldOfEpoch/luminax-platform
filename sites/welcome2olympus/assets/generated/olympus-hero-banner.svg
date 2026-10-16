@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" role="img" aria-label="Alien Mount Olympus panorama">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#040911"/>
+      <stop offset="42%" stop-color="#0a1730"/>
+      <stop offset="100%" stop-color="#12263b"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="32%" r="42%">
+      <stop offset="0%" stop-color="#7ce8ff" stop-opacity="0.8"/>
+      <stop offset="32%" stop-color="#2dcadf" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9d28e"/>
+      <stop offset="35%" stop-color="#9dd8ef"/>
+      <stop offset="100%" stop-color="#132638"/>
+    </linearGradient>
+    <linearGradient id="city" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f9cf82"/>
+      <stop offset="100%" stop-color="#7ce8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="980" fill="url(#sky)"/>
+  <ellipse cx="820" cy="290" rx="430" ry="150" fill="url(#halo)"/>
+  <g opacity="0.75">
+    <circle cx="180" cy="120" r="2" fill="#f6c66e"/>
+    <circle cx="320" cy="92" r="2.4" fill="#ffffff"/>
+    <circle cx="1120" cy="110" r="2.4" fill="#7ce8ff"/>
+    <circle cx="1450" cy="160" r="2.1" fill="#ffffff"/>
+    <circle cx="1320" cy="82" r="1.8" fill="#f6c66e"/>
+    <path d="M186 122l132-28 796 18 210 52" fill="none" stroke="#7ce8ff" stroke-opacity="0.25" stroke-width="1.4"/>
+  </g>
+  <g opacity="0.64">
+    <ellipse cx="810" cy="260" rx="480" ry="110" fill="none" stroke="#7ce8ff" stroke-width="10" stroke-opacity="0.32"/>
+    <ellipse cx="810" cy="260" rx="360" ry="78" fill="none" stroke="#f6c66e" stroke-width="7" stroke-opacity="0.22"/>
+  </g>
+  <g transform="translate(0,80)">
+    <path d="M150 760C290 662 360 566 500 458C620 368 706 318 804 226C876 304 938 360 1070 446C1240 558 1310 656 1458 760Z" fill="#0b1724"/>
+    <path d="M334 740L612 388L796 512L1016 338L1266 740Z" fill="#102538"/>
+    <path d="M512 744L774 248L922 500L1072 324L1208 744Z" fill="url(#peak)" opacity="0.92"/>
+    <path d="M688 726L802 178L914 726Z" fill="#f6c66e" fill-opacity="0.78"/>
+    <g fill="url(#city)">
+      <rect x="742" y="336" width="28" height="116" rx="8"/>
+      <rect x="792" y="288" width="30" height="164" rx="8"/>
+      <rect x="846" y="346" width="28" height="106" rx="8"/>
+      <rect x="705" y="424" width="24" height="84" rx="6"/>
+      <rect x="887" y="422" width="24" height="88" rx="6"/>
+      <rect x="654" y="466" width="18" height="56" rx="5"/>
+      <rect x="944" y="466" width="18" height="56" rx="5"/>
+    </g>
+  </g>
+  <g opacity="0.7">
+    <path d="M70 852C260 768 402 760 578 816C692 852 756 876 882 852C1054 818 1186 744 1530 822V980H70Z" fill="#08111d"/>
+    <path d="M0 866C216 796 380 790 562 844C692 882 798 882 932 848C1122 800 1298 774 1600 842V980H0Z" fill="#0d1b2a"/>
+  </g>
+</svg>

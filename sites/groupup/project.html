@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroupUp Project Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="project">
+  <div class="groupup-shell">
+    <header class="hero-card project-hero">
+      <div class="badge-row">
+        <a class="badge linkish" href="index.html">GroupUp</a>
+        <span class="badge">Project Page</span>
+        <span class="badge">Luminax Build</span>
+      </div>
+      <h1>GroupUp tonight MVP</h1>
+      <p>A fast test build for room login, participant presence, and a live OBS browser-source overlay that auto-reflows as people join.</p>
+    </header>
+
+    <main class="landing-grid">
+      <section class="panel">
+        <div class="panel-kicker">Done</div>
+        <div class="card-list">
+          <div class="mini-card">Room create and join flow</div>
+          <div class="mini-card">Host control panel</div>
+          <div class="mini-card">Participant presence + heartbeat</div>
+          <div class="mini-card">Avatar and room asset uploads</div>
+          <div class="mini-card">OBS browser-source overlay</div>
+          <div class="mini-card">Dynamic participant layout</div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-kicker">Tonight Scope</div>
+        <div class="card-list">
+          <div class="mini-card">Participants log in with just a room key and name</div>
+          <div class="mini-card">Host uploads logo/background/frame art</div>
+          <div class="mini-card">Overlay reflows as the roster changes</div>
+          <div class="mini-card">Works as a visual compositor layer in OBS</div>
+        </div>
+      </section>
+      <section class="panel span-2">
+        <div class="panel-kicker">Later</div>
+        <div class="card-list">
+          <div class="mini-card">True live media ingest / WebRTC tiles</div>
+          <div class="mini-card">Scene macros and Stream Deck packs</div>
+          <div class="mini-card">Remote camera/audio source routing</div>
+          <div class="mini-card">Per-user overlay templates and saved scenes</div>
+        </div>
+      </section>
+      <section class="panel span-2">
+        <div class="panel-kicker">Live Rooms</div>
+        <div id="projectRoomsList" class="card-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "sales-voice",
+  "display_name": "Mercury Voice",
+  "public_name": "Mercury Voice",
+  "service_key": "assistant-core",
+  "role_type": "sales",
+  "rank": "voice",
+  "summary": "Positioning, value-prop, and monetization copy support.",
+  "bootstrap": false,
+  "full_time": false
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "service",
+  "key": "image-agent",
+  "display_name": "Helios Forge",
+  "public_name": "Helios Forge",
+  "persona_key": "helios_forge",
+  "rank": "artisan",
+  "startup": "manual",
+  "role": "Local 3090-powered image generation lane for Olympus website art, Discord uploads, and fantasy key art.",
+  "reads": [
+    "config/olympus-style-guides.json",
+    "config/media-tools.json",
+    "config/olympus-identity.json"
+  ]
+}

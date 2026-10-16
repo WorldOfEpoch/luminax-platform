@@ -1,0 +1,18 @@
+{
+  "service_key": "mount-olympus-ui",
+  "updated_at": 0,
+  "features": [
+    {
+      "id": "ops_control_plane",
+      "name": "Ops Control Plane",
+      "must_keep": true,
+      "notes": "Telemetry, maintenance, and operator recovery surfaces."
+    },
+    {
+      "id": "olympus_control_loop",
+      "name": "Olympus Identity and Review Cycle",
+      "must_keep": true,
+      "notes": "Single source of truth for Mount Olympus naming, review-cycle state, workspace registry, and the Zeus/Hermes/Darius/oracle control lanes."
+    }
+  ]
+}

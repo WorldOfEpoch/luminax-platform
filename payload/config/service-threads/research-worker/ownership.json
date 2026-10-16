@@ -1,0 +1,11 @@
+{
+  "service_key": "research-worker",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/research-worker",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/research-worker",
+    "payload/config/olympus/services/research-worker.json",
+    "payload/config/service-threads/research-worker"
+  ]
+}

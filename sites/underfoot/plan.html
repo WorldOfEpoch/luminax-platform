@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underfoot | Build Plan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <p class="eyebrow">Underfoot build view</p>
+        <h1>Plan + Execution</h1>
+      </div>
+      <div class="subnav">
+        <a href="index.html">Project home</a>
+        <a href="project.html">Project board</a>
+        <a href="swarm.html">Swarm</a>
+      </div>
+    </header>
+
+    <section class="panel">
+      <p class="eyebrow">What is being built</p>
+      <h2>A Unity multiplayer game with explicit frontend scenes, server-first authority, and no-text-chat voice play.</h2>
+      <p class="lead">Underfoot now targets Unity with C# scripts, and Luminax is tracking the full stack instead of only the old engine assumptions. The flow is clear: startup scene, title scene, character select, game list, world map zone, and minigame maps. The asset plan is equally explicit now: Meshy for creatures, props, and UI images, plus import staging and prefab hookup inside the Unity project.</p>
+    </section>
+
+    <section>
+      <div class="section-head"><p class="eyebrow">Implementation order</p><h3>Recommended sequence</h3></div>
+      <div class="story-grid">
+        <article class="story-card"><h4>01. Shared contract</h4><p>Lock roles, voice rules, interaction verbs, scene IDs, and hole-travel rules in shared JSON and C# contracts first.</p></article>
+        <article class="story-card"><h4>02. Server authority</h4><p>Build the headless Unity match server, role slots, game list, respawn authority, weighted carry validation, and objective state.</p></article>
+        <article class="story-card"><h4>03. Frontend scenes</h4><p>Hook the startup scene, title scene, character select, and game list into the same manifest used by the runtime code.</p></article>
+        <article class="story-card"><h4>04. Asset pipeline</h4><p>Run Meshy model and UI-image generations, stage imports, and wire the resulting models/prefabs into the Unity frontend and gameplay scenes.</p></article>
+        <article class="story-card"><h4>05. World map zone</h4><p>Connect discovered holes, world-map movement, and minigame portal loads before expanding content scope.</p></article>
+        <article class="story-card"><h4>06. Voice DSP</h4><p>Ship readable proximity voice with occlusion, muffling, and the role-based Warble/Biggun receive rules.</p></article>
+        <article class="story-card"><h4>07. Content pass</h4><p>Bring in the real Warble and Biggun meshes, props, prefabs, hazards, and AI when the structure is stable.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><p class="eyebrow">Current deliverables</p><h3>Already in place</h3></div>
+      <div class="feature-grid">
+        <article class="feature"><h4>Unity C# scaffold</h4><p>The project now includes shared contracts, server-side classes, client flow controllers, audio routing classes, and a validation project.</p></article>
+        <article class="feature"><h4>Website refresh</h4><p>The Underfoot site now reflects the Unity plan and puts the Warbles front and center instead of describing an Unreal build.</p></article>
+        <article class="feature"><h4>World-service bridge</h4><p>The web/runtime service now exposes the Unity frontend manifest and voice policy so site and engine stay aligned.</p></article>
+        <article class="feature"><h4>Asset + UI lane</h4><p>Luminax now tracks Meshy creature generations, title-foot props, UI image outputs, and the Unity import/prefab lane as part of the build plan.</p></article>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

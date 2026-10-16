@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroupUp Host</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="host">
+  <div class="groupup-shell room-shell">
+    <header class="top-strip">
+      <div>
+        <div class="badge-row"><a class="badge linkish" href="index.html">GroupUp</a><span class="badge">Host Console</span><a class="badge linkish" id="openRoomFromHost" href="room.html">Open Room</a></div>
+        <h1 id="hostRoomTitle">Host Room</h1>
+        <p id="hostRoomSubtitle">Managing overlay and layout...</p>
+      </div>
+      <div class="hero-actions"><a class="primary-btn" id="copyOverlayUrlBtn" href="#">Copy Overlay URL</a><a class="secondary-btn" id="overlayPreviewBtn" href="overlay.html" target="_blank" rel="noreferrer">Preview Overlay</a></div>
+    </header>
+
+    <main class="landing-grid">
+      <section class="panel">
+        <div class="panel-kicker">Overlay</div>
+        <h2>Layout + branding</h2>
+        <div class="field-grid">
+          <label><span>Preset</span><select id="layoutPreset"><option value="auto">auto</option><option value="duo">duo</option><option value="quad">quad</option><option value="grid">grid</option><option value="focus">focus</option></select></label>
+          <label><span>Focus Participant</span><select id="focusParticipant"></select></label>
+          <label><span>Accent Primary</span><input id="layoutPrimary" placeholder="#6ae4ff" /></label>
+          <label><span>Accent Secondary</span><input id="layoutSecondary" placeholder="#ff8a4d" /></label>
+        </div>
+        <label><span>Headline</span><input id="layoutHeadline" /></label>
+        <label><span>Subheadline</span><input id="layoutSubheadline" /></label>
+        <label><span>Ticker</span><input id="layoutTicker" /></label>
+        <label class="checkbox-row"><input id="layoutShowNames" type="checkbox" checked /> Show participant names</label>
+        <div class="button-row">
+          <button class="primary-btn" id="saveLayoutBtn">Save Layout</button>
+          <button class="secondary-btn" id="refreshHostBtn">Refresh Room</button>
+        </div>
+        <pre class="status-box" id="hostStatusBox">Host console ready.</pre>
+      </section>
+
+      <section class="panel">
+        <div class="panel-kicker">Assets</div>
+        <h2>Upload room visuals</h2>
+        <label class="upload-card"><span>Logo</span><input id="roomLogoUpload" type="file" accept="image/*" /></label>
+        <button class="secondary-btn" id="uploadLogoBtn">Upload Logo</button>
+        <label class="upload-card"><span>Background</span><input id="roomBackgroundUpload" type="file" accept="image/*" /></label>
+        <button class="secondary-btn" id="uploadBackgroundBtn">Upload Background</button>
+        <label class="upload-card"><span>Frame</span><input id="roomFrameUpload" type="file" accept="image/*" /></label>
+        <button class="secondary-btn" id="uploadFrameBtn">Upload Frame</button>
+        <div id="roomAssetPreview" class="card-list compact"></div>
+      </section>
+
+      <section class="panel span-2">
+        <div class="panel-kicker">Participants</div>
+        <h2>Live room roster</h2>
+        <div id="hostRoster" class="tile-grid"></div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

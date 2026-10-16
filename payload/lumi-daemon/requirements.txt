@@ -1,0 +1,4 @@
+httpx
+psutil
+mysql-connector-python
+redis

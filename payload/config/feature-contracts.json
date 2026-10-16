@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "updated_at": 0,
+  "features": [
+    {
+      "id": "codex_bridge",
+      "name": "Codex Bridge",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core"
+      ],
+      "assistant_routes": [
+        "/api/codex/bridge/run",
+        "/api/codex/bridge/dashboard",
+        "/api/codex/bridge/session/create",
+        "/api/codex/bridge/session/message",
+        "/api/codex/bridge/project/bootstrap"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "id=\"codexView\""
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "loadCodexDashboard()"
+        }
+      ],
+      "notes": "Structured Codex runs, sessions, and project bootstrap flow."
+    },
+    {
+      "id": "file_checkout",
+      "name": "File Checkout Guardrails",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core"
+      ],
+      "assistant_routes": [
+        "/api/files/checkouts",
+        "/api/files/checkout",
+        "/api/files/release",
+        "/api/files/nudge",
+        "/api/workspace/write",
+        "/api/project/write"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "id=\"filesView\""
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "refreshFileCheckout()"
+        }
+      ],
+      "notes": "Prevents simultaneous edits from trampling shared files."
+    },
+    {
+      "id": "ops_control_plane",
+      "name": "Ops Control Plane",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core",
+        "admin-api",
+        "lumi-daemon",
+        "luminax-ui"
+      ],
+      "assistant_routes": [
+        "/api/self/repair_plan",
+        "/api/self/update",
+        "/api/contracts/verify",
+        "/api/incidents",
+        "/api/maintenance/mode"
+      ],
+      "admin_routes": [
+        "/telemetry/latest",
+        "/services/status",
+        "/autopilot/status",
+        "/maintenance/mode"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "id=\"opsView\""
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "Autopilot + Failsafe"
+        }
+      ],
+      "notes": "Telemetry, maintenance, and operator recovery surfaces."
+    },
+    {
+      "id": "media_music_studio",
+      "name": "Media and Music Studio",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core"
+      ],
+      "assistant_routes": [
+        "/api/media/tools",
+        "/api/media/jobs",
+        "/api/media/jobs/create"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "id=\"mediaView\""
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "mediaMusicActionInput"
+        }
+      ],
+      "notes": "Image, voice, and Suno-backed music generation with playback surfaces."
+    },
+    {
+      "id": "broadcast_studio",
+      "name": "Broadcast Studio",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core",
+        "broadcast-conductor"
+      ],
+      "assistant_routes": [
+        "/api/broadcast/overview",
+        "/api/broadcast/accounts",
+        "/api/broadcast/overlays",
+        "/api/broadcast/sessions",
+        "/api/broadcast/commentary"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "id=\"broadcastView\""
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "Broadcast Studio"
+        }
+      ],
+      "notes": "Creator ops panel for accounts, overlays, sessions, and commentary."
+    },
+    {
+      "id": "sites_publish",
+      "name": "Site Manager",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core",
+        "site-manager"
+      ],
+      "assistant_routes": [
+        "/api/sites/create_scaffold",
+        "/api/sites/publish",
+        "/api/sites/published",
+        "/api/sites/default"
+      ],
+      "notes": "Static site scaffolding and publish flow."
+    },
+    {
+      "id": "hive_agents",
+      "name": "Oracle Chamber and Agents",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core",
+        "lumi-hive-dreamer",
+        "lumi-hive-engineer",
+        "lumi-hive-critic"
+      ],
+      "assistant_routes": [
+        "/api/hive/status",
+        "/api/hive/debate/latest",
+        "/api/hive/director/tick",
+        "/api/agents/registry"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "id=\"agentsView\""
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "Oracle Chamber Live Board"
+        }
+      ],
+      "notes": "Oracle debate loop and Olympian agent registry."
+    },
+    {
+      "id": "olympus_control_loop",
+      "name": "Olympus Identity and Review Cycle",
+      "must_keep": true,
+      "compose_services": [
+        "assistant-core",
+        "admin-api",
+        "discord-bot",
+        "discord-ops-bot",
+        "luminax-ui"
+      ],
+      "assistant_routes": [
+        "/api/agents/registry",
+        "/api/darius/projects/{project_key}/route",
+        "/api/health/light"
+      ],
+      "admin_routes": [
+        "/olympus/identity",
+        "/workspace/registry",
+        "/review/cycle/status",
+        "/review/cycle/candidates",
+        "/review/cycle/ledger"
+      ],
+      "ui_markers": [
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "MountOlympus Identity + Review Cycle"
+        },
+        {
+          "path": "luminax-ui/index.html",
+          "pattern": "loadOlympusIdentity()"
+        }
+      ],
+      "notes": "Single source of truth for Mount Olympus naming, review-cycle state, workspace registry, and the Zeus/Hermes/Darius/oracle control lanes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroupUp Overlay</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="overlay" class="overlay-page">
+  <div id="overlayRoot" class="overlay-root">
+    <div class="overlay-background" id="overlayBackground"></div>
+    <div class="overlay-topbar">
+      <div>
+        <div class="overlay-kicker">GroupUp Live</div>
+        <h1 id="overlayHeadline">GroupUp</h1>
+        <p id="overlaySubheadline">Waiting for room data...</p>
+      </div>
+      <div class="overlay-branding">
+        <img id="overlayLogo" alt="GroupUp logo" />
+      </div>
+    </div>
+    <div id="overlayGrid" class="overlay-grid"></div>
+    <div class="overlay-footer">
+      <div class="overlay-kicker">Live Roster</div>
+      <div id="overlayTicker">Join the room and your tile appears automatically.</div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

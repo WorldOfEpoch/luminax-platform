@@ -1,0 +1,17 @@
+{
+  "kind": "operator",
+  "key": "local-owner",
+  "display_name": "Owner",
+  "public_role": "Local operator",
+  "private_title": "",
+  "summary": "Synthetic example; configure your own identity privately.",
+  "privacy": "private",
+  "domains": [],
+  "contacts": {
+    "gmail": "",
+    "discord_user_ids": [],
+    "discord_names": []
+  },
+  "reads": [],
+  "notes": "Contains no account association."
+}

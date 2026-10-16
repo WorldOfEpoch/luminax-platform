@@ -1,0 +1,54 @@
+---
+layout: layout.njk
+title: Winners archive
+description: Review recent PAPR winners and the public timestamps that show when each raffle sold out, drew, and published its result.
+---
+<main>
+  <section class="page-hero">
+    <article class="hero-card panel" data-reveal>
+      <p class="eyebrow">Winners archive</p>
+      <h1>Trust builds when results stay easy to find.</h1>
+      <p>A completed raffle should not vanish into chat logs. PAPR’s winners area should preserve timing, archive entries, and result summaries so credibility compounds over time.</p>
+    </article>
+    <aside class="hero-aside panel" data-reveal>
+      <p class="kicker">Archive rule</p>
+      <h2>The result should outlive the hype cycle.</h2>
+      <p>Close time, draw time, and publication time should all remain visible on the public archive entry.</p>
+    </aside>
+  </section>
+
+  <section class="section panel" data-reveal>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Recent results</p>
+        <h2>Archived entries should read like receipts, not marketing blurbs.</h2>
+      </div>
+    </div>
+    <div class="three-up">
+      {% for winner in winners %}
+      <article class="card winner-card">
+        <p class="kicker">{{ winner.winner }}</p>
+        <h3>{{ winner.title }}</h3>
+        <div class="meta-grid">
+          <div class="meta-box">
+            <small>Sellout</small>
+            <strong>{{ winner.sellout }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Draw</small>
+            <strong>{{ winner.draw }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Published</small>
+            <strong>{{ winner.publish }}</strong>
+          </div>
+          <div class="meta-box">
+            <small>Proof summary</small>
+            <strong>{{ winner.proof }}</strong>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

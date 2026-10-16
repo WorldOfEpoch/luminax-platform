@@ -1365,7 +1365,7 @@ def rebuild_workspace_atlas(project_key: str = "") -> dict[str, Any]:
     if not WORKSPACE_ATLAS_BUILDER_PATH.exists():
         raise FileNotFoundError(f"Atlas builder not found: {WORKSPACE_ATLAS_BUILDER_PATH}")
     python_bin = shutil.which("python3") or shutil.which("python") or "python3"
-    cmd = [python_bin, str(WORKSPACE_ATLAS_BUILDER_PATH)]
+    cmd = [python_bin, str(WORKSPACE_ATLAS_BUILDER_PATH), "--apply"]
     wanted = normalize_project_key(project_key)
     if wanted:
         cmd.extend(["--project-key", wanted])

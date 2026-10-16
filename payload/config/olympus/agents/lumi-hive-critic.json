@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "lumi-hive-critic",
+  "display_name": "Oracle of Delphi",
+  "public_name": "Oracle of Delphi",
+  "service_key": "lumi-hive-critic",
+  "role_type": "oracle",
+  "rank": "oracle",
+  "summary": "Truth and consequence oracle for guardrails, risk, and critique.",
+  "bootstrap": false,
+  "full_time": false
+}

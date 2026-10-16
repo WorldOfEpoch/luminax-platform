@@ -1,0 +1,22 @@
+[
+  {
+    "question": "When does a raffle close?",
+    "answer": "A raffle closes automatically when the final valid ticket is issued, or an authorized admin stops it for a logged and reviewable reason. PAPR is designed to avoid informal early closes."
+  },
+  {
+    "question": "How do I know whether a raffle draws right away or later?",
+    "answer": "Every raffle shows its draw mode clearly: immediate after sellout or scheduled for a public draw event. If scheduled, the next event time and timezone should be visible before purchase."
+  },
+  {
+    "question": "What public information should I expect after the draw?",
+    "answer": "PAPR should publish a public result summary with the raffle ID, sellout timestamp, draw timestamp, winner publication time, and a concise explanation of how the outcome was recorded."
+  },
+  {
+    "question": "What happens to abandoned carts or failed payments?",
+    "answer": "Ticket inventory should be protected with short holds. If payment fails or the hold expires, those reserved tickets return to the public inventory pool automatically."
+  },
+  {
+    "question": "Why is PAPR so focused on fairness and auditability?",
+    "answer": "Because nonprofit raffle trust is cumulative. People should be able to see current status, remaining inventory, draw timing, and past results without relying on vague promises or one-off announcements."
+  }
+]

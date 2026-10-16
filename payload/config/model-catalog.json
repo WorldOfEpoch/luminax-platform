@@ -1,0 +1,635 @@
+{
+  "catalog_version": "2026-04-15",
+  "profiles": {
+    "local_gpu_example": {
+      "display_name": "Optional local model host",
+      "status": "unverified"
+    },
+    "server_example": {
+      "display_name": "Optional server host",
+      "status": "unverified"
+    }
+  },
+  "prefabs": [
+    {
+      "prefab_key": "ollama_general_qwen25_coder",
+      "role": "all",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b-instruct",
+      "status": "unverified",
+      "notes": "New default general thought profile for tool-capable reasoning."
+    },
+    {
+      "prefab_key": "ollama_fast_qwen25_14b",
+      "role": "fast",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "status": "unverified",
+      "notes": "Fast conversational response profile."
+    },
+    {
+      "prefab_key": "openai_fast_52",
+      "role": "fast",
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "status": "unverified",
+      "notes": "Quota-safe fast cloud profile. This is the floor for remote routing."
+    },
+    {
+      "prefab_key": "openai_reasoning_53",
+      "role": "reasoning",
+      "provider": "openai",
+      "model": "gpt-5.3",
+      "status": "unverified",
+      "notes": "Default cloud reasoning profile when local routing is not enough."
+    },
+    {
+      "prefab_key": "openai_coder_53_codex",
+      "role": "coder",
+      "provider": "openai",
+      "model": "gpt-5.3-codex",
+      "status": "unverified",
+      "notes": "Default Codex write lane for project work under quota-aware routing."
+    },
+    {
+      "prefab_key": "hive_brain_fast",
+      "role": "hive",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "status": "unverified",
+      "notes": "Frugal default hive preset using local inference."
+    },
+    {
+      "prefab_key": "hermes_local_qwen25_14b",
+      "role": "hermes",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "status": "unverified",
+      "notes": "Local-first Hermes messenger profile routed to the PC edge Ollama lane."
+    },
+    {
+      "prefab_key": "presence_brain_qwen25_14b",
+      "role": "presence",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "status": "unverified",
+      "notes": "Continuous background brain/profile for daemon cognition and local Hermes readiness."
+    },
+    {
+      "prefab_key": "luminax_pc_companion_primary",
+      "role": "companion",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b-instruct",
+      "status": "unverified",
+      "notes": "Primary local-first PC companion profile for the Luminax brain."
+    },
+    {
+      "prefab_key": "luminax_pc_router_fast",
+      "role": "router",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "status": "unverified",
+      "notes": "Fast local router profile for trust-zone and tool-lane selection."
+    },
+    {
+      "prefab_key": "luminax_turboquant_candidate",
+      "role": "serving_optimization",
+      "provider": "optional_runtime",
+      "model": "turboquant_feature_flag",
+      "status": "unverified",
+      "notes": "Optional serving optimization lane only. Not part of memory or the first bring-up milestone."
+    },
+    {
+      "prefab_key": "finance_strategy_54",
+      "role": "finance",
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "status": "unverified",
+      "notes": "High-power cloud finance preset reserved for verified briefings and exception handling."
+    },
+    {
+      "prefab_key": "ue5_factory_pipeline",
+      "role": "games",
+      "provider": "custom",
+      "model": "ue5_toolchain",
+      "status": "unverified",
+      "notes": "UE5/game-factory preset scaffold for game pipeline workflows."
+    },
+    {
+      "prefab_key": "unity6_factory_pipeline",
+      "role": "games",
+      "provider": "custom",
+      "model": "unity6_toolchain",
+      "status": "unverified",
+      "notes": "Active Unity 6 + C# + scene/bootstrap preset for current game project workflows."
+    },
+    {
+      "prefab_key": "meshy_asset_pipeline",
+      "role": "games",
+      "provider": "cloud",
+      "model": "meshy_asset_stack",
+      "status": "unverified",
+      "notes": "Meshy-backed text-to-image, image-to-3D, and prop/model generation pipeline for Unity asset ingestion."
+    },
+    {
+      "prefab_key": "helios_forge_fantasy_art",
+      "role": "media",
+      "provider": "edge_local",
+      "model": "stabilityai/sdxl-turbo",
+      "status": "unverified",
+      "notes": "Local 3090 fantasy key-art pipeline for Olympus website scenes, Discord assets, and mythic promo art."
+    },
+    {
+      "prefab_key": "blank_template_1",
+      "role": "all",
+      "provider": "custom",
+      "model": "",
+      "status": "unverified",
+      "is_blank": true,
+      "notes": "Blank template for custom model mapping."
+    },
+    {
+      "prefab_key": "blank_template_2",
+      "role": "all",
+      "provider": "custom",
+      "model": "",
+      "status": "unverified",
+      "is_blank": true,
+      "notes": "Second blank template for quick duplication."
+    }
+  ],
+  "models": [
+    {
+      "model_key": "gpt-5.3-codex",
+      "category": "cloud_coder",
+      "provider": "openai",
+      "model": "gpt-5.3-codex",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "gpt-5.3",
+      "category": "cloud_llm",
+      "provider": "openai",
+      "model": "gpt-5.3",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "gpt-5.2",
+      "category": "cloud_llm_fast",
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "gpt-5.4",
+      "category": "cloud_llm_review",
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "qwen2.5-14b",
+      "category": "llm",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "model_tag": "qwen2.5:14b",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "server_pull"
+    },
+    {
+      "model_key": "qwen2.5-coder-32b",
+      "category": "llm_coder",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:32b-instruct",
+      "model_tag": "qwen2.5-coder:32b-instruct",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "server_pull"
+    },
+    {
+      "model_key": "qwen2.5-14b-router",
+      "category": "llm_router",
+      "provider": "ollama",
+      "model": "qwen2.5:14b",
+      "model_tag": "qwen2.5:14b",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "server_pull"
+    },
+    {
+      "model_key": "triposr",
+      "category": "three_d_generation",
+      "provider": "local",
+      "model": "triposr",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "meshy-fallback",
+      "category": "three_d_generation",
+      "provider": "cloud",
+      "model": "meshy",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "meshy-text-to-image",
+      "category": "image_generation",
+      "provider": "cloud",
+      "model": "meshy_text_to_image",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "sdxl-turbo-edge-3090",
+      "category": "image_generation",
+      "provider": "edge_local",
+      "model": "stabilityai/sdxl-turbo",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "edge_container"
+    },
+    {
+      "model_key": "gpt-image-1",
+      "category": "image_generation_cloud",
+      "provider": "openai",
+      "model": "gpt-image-1",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "meshy-image-to-3d",
+      "category": "three_d_generation",
+      "provider": "cloud",
+      "model": "meshy_image_to_3d",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "meshy-rigging-animation",
+      "category": "three_d_postprocess",
+      "provider": "cloud",
+      "model": "meshy_rigging_animation",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "unreal5-project-factory",
+      "category": "game_pipeline",
+      "provider": "local",
+      "model": "ue5_toolchain",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "unreal-dedicated-server-toolchain",
+      "category": "game_pipeline",
+      "provider": "local",
+      "model": "unreal_dedicated_server",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "unity6-project-factory",
+      "category": "game_pipeline",
+      "provider": "local",
+      "model": "unity6_toolchain",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "workspace_scaffold"
+    },
+    {
+      "model_key": "unity-netcode-headless-server",
+      "category": "game_pipeline",
+      "provider": "local",
+      "model": "unity_netcode_headless_server",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "polygon-market-feed",
+      "category": "finance_market_data",
+      "provider": "polygon",
+      "model": "polygon-api",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "alpaca-trading-feed",
+      "category": "finance_market_data",
+      "provider": "alpaca",
+      "model": "alpaca-api",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "plaid-billpay-bridge",
+      "category": "finance_bank_bridge",
+      "provider": "plaid",
+      "model": "plaid-api",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "remote_api"
+    },
+    {
+      "model_key": "sec-edgar-watcher",
+      "category": "finance_compliance",
+      "provider": "sec",
+      "model": "edgar-scrape",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "whisperlive",
+      "category": "streaming_asr",
+      "provider": "github",
+      "license": "mit",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "vosk-server",
+      "category": "streaming_asr",
+      "provider": "github",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "speeches-faster-whisper",
+      "category": "streaming_asr",
+      "provider": "docker",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "chatterbox-turbo",
+      "category": "streaming_tts",
+      "provider": "github",
+      "license": "mit",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "kokoro-82m",
+      "category": "streaming_tts",
+      "provider": "huggingface",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "dia2",
+      "category": "streaming_tts",
+      "provider": "huggingface",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "xtts-v2",
+      "category": "voice_cloning",
+      "provider": "huggingface",
+      "license": "coqui-public-model-license",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "fish-speech-s1-mini",
+      "category": "voice_cloning",
+      "provider": "github",
+      "license": "apache-2.0-code-cc-by-nc-sa-weights",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "pipecat",
+      "category": "voice_orchestration",
+      "provider": "github",
+      "license": "bsd-2-clause",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "rhasspy",
+      "category": "voice_assistant",
+      "provider": "github",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "wan2.1-vace-1.3b",
+      "category": "video",
+      "provider": "huggingface",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "stable-video-diffusion",
+      "category": "video",
+      "provider": "huggingface",
+      "license": "research",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "video2x",
+      "category": "video_upscale",
+      "provider": "github",
+      "license": "agpl-3.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "demucs-v4",
+      "category": "audio_separation",
+      "provider": "github",
+      "license": "mit",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "musicgen-medium",
+      "category": "music",
+      "provider": "huggingface",
+      "license": "cc-by-nc-4.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "coqui-tts",
+      "category": "voice",
+      "provider": "github",
+      "license": "mpl-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "sam-vit-b",
+      "category": "vision_segmentation",
+      "provider": "github",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "yolov8n",
+      "category": "vision_detection",
+      "provider": "github",
+      "license": "agpl-3.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "clip-vit-base-patch32",
+      "category": "embeddings",
+      "provider": "huggingface",
+      "license": "mit",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "gemma-2-9b",
+      "category": "llm",
+      "provider": "huggingface",
+      "license": "apache-2.0",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned"
+    },
+    {
+      "model_key": "claw-code",
+      "category": "agent_orchestrator",
+      "provider": "github",
+      "model": "ultraworkers/claw-code",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "manual_build_from_source",
+      "notes": "Clean-room Claude Code alternative. Build from rust/ with cargo build --workspace and verify with claw doctor after Anthropic auth is configured."
+    },
+    {
+      "model_key": "mempalace",
+      "category": "memory_system",
+      "provider": "github",
+      "model": "MemPalace/mempalace",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "pip_or_mcp",
+      "notes": "Persistent memory lane for local/server MCP integration. Requires chromadb and pyyaml."
+    },
+    {
+      "model_key": "deepseek-v3.2-exp",
+      "category": "llm_reasoning_cluster",
+      "provider": "huggingface",
+      "model": "deepseek-ai/DeepSeek-V3.2-Exp",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "manual_cluster",
+      "notes": "Heavy reasoning lane. Treat as staged/manual because server-class deployment and quantization choices depend on hardware."
+    },
+    {
+      "model_key": "glm-5",
+      "category": "llm_reasoning_cluster",
+      "provider": "huggingface",
+      "model": "zai-org/GLM-5",
+      "status": "unverified",
+      "run_profile": "ubuntu_server",
+      "install_mode": "manual_cluster",
+      "notes": "Large autonomous coding/reasoning lane staged for server deployment."
+    },
+    {
+      "model_key": "llama-4-maverick",
+      "category": "llm_local_worker",
+      "provider": "huggingface",
+      "model": "meta-llama/Llama-4-Maverick-17B-128E",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned",
+      "notes": "Local worker/background model candidate."
+    },
+    {
+      "model_key": "magma-8b",
+      "category": "vision_agent",
+      "provider": "huggingface",
+      "model": "microsoft/Magma-8B",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "adapter_planned",
+      "notes": "UI/vision agent candidate; requires the Microsoft Magma custom transformers stack."
+    },
+    {
+      "model_key": "fish-speech-s2-pro",
+      "category": "voice_cloning",
+      "provider": "github",
+      "model": "fishaudio/fish-speech",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "manual_gpu_linux",
+      "notes": "High-fidelity emotional voice cloning lane intended for Linux/WSL with substantial VRAM."
+    },
+    {
+      "model_key": "vibevoice",
+      "category": "voice_longform",
+      "provider": "github",
+      "model": "microsoft/VibeVoice",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "manual_review",
+      "notes": "Long-form voice research lane. Current public repo needs manual review before operational use."
+    },
+    {
+      "model_key": "trellis-2",
+      "category": "three_d_generation",
+      "provider": "github",
+      "model": "microsoft/TRELLIS.2",
+      "status": "unverified",
+      "run_profile": "local_gpu_example",
+      "install_mode": "manual_gpu_linux",
+      "notes": "High-fidelity 3D generation lane staged for Linux/NVIDIA deployment or a dedicated wrapper workflow."
+    }
+  ],
+  "notes": "Candidate catalog retained for configuration; availability, licensing, and compatibility must be checked for your selected models."
+}

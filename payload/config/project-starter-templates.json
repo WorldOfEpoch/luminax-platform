@@ -1,0 +1,648 @@
+{
+  "version": "2026-03-20",
+  "codex_thread_defaults": {
+    "required": true,
+    "template_version": "2026-03-20",
+    "structure": [
+      "thread.json",
+      "instructions.md",
+      "suggestions/",
+      "receipts/",
+      "artifacts/"
+    ],
+    "worker_mandate": {
+      "no_slop_no_filler": true,
+      "self_correction_required": true,
+      "review_first": true,
+      "documentation_hygiene_required": true
+    }
+  },
+  "templates": [
+    {
+      "key": "family_remote_ops",
+      "display_name": "Family Remote Ops",
+      "summary": "Remote-friendly Olympus project for a family operator using Discord, the web dashboard, and an optional Windows helper node at home.",
+      "aliases": [
+        "family",
+        "remote_family"
+      ],
+      "owner_lane": "zeus",
+      "category": "remote-ops",
+      "stack": "discord_web_remote_windows",
+      "runtime_shape": "server_brain_with_remote_windows_node",
+      "priority": 55,
+      "audience": "family operators and trusted helpers",
+      "purpose_template": "{{title}} gives a family operator guided Olympus access from Discord and the web, with optional help from a trusted remote operator.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "dashboard",
+        "docs",
+        "server",
+        "tools",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [
+        "server/runtime",
+        "server/cache",
+        "server/backups"
+      ],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "remote_operator_project",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Remote-friendly operator workspace with Olympus on the central server and optional workload execution on a household Windows node."
+      },
+      "verification_profile": {
+        "local_test_commands": [],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize what this family operator can do from Discord versus the Olympus webpage.",
+          "Explain how Zeus, Hermes, and the remote Windows node divide work for this project."
+        ],
+        "rollback_notes": [
+          "Disable remote automations and Hermes actions before reverting project files or node bindings."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "codex_task",
+        "grant_access"
+      ],
+      "visibility": "trusted_family",
+      "workspace_directories": [
+        "dashboard",
+        "docs",
+        "server",
+        "server/runtime",
+        "tools",
+        "discord",
+        "assets"
+      ],
+      "runtime_directories": [
+        "docs",
+        "runtime",
+        "tools",
+        "assets"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## Operating model\n- Olympus stays on the main server in Jamestown.\n- The household operator can work from Discord or the Olympus webpage.\n- A remote Windows node can handle local Codex, file operations, or game-specific tooling when needed.\n- Trusted helpers can assist from another Olympus-linked PC without taking the household operator offline.\n"
+        },
+        {
+          "path": "docs/REMOTE_SETUP.md",
+          "content": "# Remote Setup\n\n## Core idea\n- Zeus and Hermes stay reachable from the main Olympus stack.\n- The household machine acts like a linked worker node, not a second control plane.\n- Keep project-specific files and automation scoped so the operator can run independently from home.\n\n## Checklist\n- Pair Hermes to the household Discord server or create a dedicated one.\n- Register the household machine as a Windows helper node.\n- Confirm the Olympus webpage can see the project key `{{project_key}}`.\n- Confirm Codex can route to the remote node before any write task is approved.\n"
+        },
+        {
+          "path": "dashboard/customization-notes.md",
+          "content": "# Dashboard Customization Notes\n\nUse this folder to track the cards, shortcuts, and quick actions the family operator actually needs.\n\nRecommended first cards:\n- Server status\n- Discord commands\n- Remote node health\n- Recent Zeus tasks\n- Project notes\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/OPERATIONS.md",
+          "content": "# Runtime Operations\n\nProject key: {{project_key}}\n\nThis runtime space is for task briefs, Codex artifacts, and remote execution notes.\n\nPrimary goal:\n- {{goal}}\n"
+        }
+      ]
+    },
+    {
+      "key": "dayz_remote_ops",
+      "display_name": "DayZ Remote Ops",
+      "summary": "Remote-managed DayZ server and modding workspace for a household operator controlled through Olympus, Hermes, and Codex.",
+      "aliases": [
+        "dayz",
+        "dayz_family",
+        "dayz_remote"
+      ],
+      "owner_lane": "zeus",
+      "category": "dayz-server",
+      "stack": "dayz_discord_web_remote_windows",
+      "runtime_shape": "remote_windows_dayz_stack",
+      "priority": 80,
+      "audience": "DayZ operator, trusted family admins, and approved helpers",
+      "purpose_template": "{{title}} is a remote-managed DayZ server and modding lane controlled through Olympus, Hermes, and a linked household Windows node.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "dashboard",
+        "docs",
+        "server",
+        "mods",
+        "missions",
+        "tools",
+        "discord",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [
+        "server/runtime",
+        "server/dayz/workshop-cache",
+        "server/dayz/backups",
+        "mods/build-cache"
+      ],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "remote_dayz_control",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Olympus coordinates from the central server while the household Windows node handles DayZ-specific execution, file sync, and local Codex work."
+      },
+      "verification_profile": {
+        "local_test_commands": [],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize DayZ server health, remote node readiness, and pending mod work for this project.",
+          "List the next safe actions for the household operator in Discord versus the Olympus webpage."
+        ],
+        "rollback_notes": [
+          "Take a DayZ config and mod backup before applying live server or mission changes.",
+          "Pause Hermes automation if remote command behavior becomes noisy or unsafe."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "codex_task",
+        "deploy_request",
+        "health_check",
+        "grant_access"
+      ],
+      "visibility": "trusted_family",
+      "workspace_directories": [
+        "dashboard",
+        "docs",
+        "discord",
+        "server",
+        "server/dayz",
+        "server/dayz/config",
+        "server/dayz/profiles",
+        "server/runtime",
+        "mods",
+        "mods/workbench",
+        "missions",
+        "tools",
+        "assets"
+      ],
+      "runtime_directories": [
+        "docs",
+        "dayz/config",
+        "dayz/profiles",
+        "runtime",
+        "mods",
+        "missions",
+        "tools",
+        "assets"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## What this project is for\n- Host and manage a DayZ server remotely.\n- Let the household operator use Hermes in Discord or the Olympus webpage.\n- Route heavier build, patch, or Codex work to the linked Windows PC when needed.\n- Keep helpers able to assist without moving the whole Olympus stack to another house.\n"
+        },
+        {
+          "path": "docs/REMOTE_SETUP.md",
+          "content": "# Remote Setup\n\n## Topology\n- Olympus stack stays on the main server in Jamestown.\n- The household Windows PC acts as the DayZ worker node.\n- Hermes can live in the household Discord server or a dedicated Olympus-managed server.\n\n## First setup checklist\n- Register the household PC as a remote Windows helper node.\n- Confirm Codex can route file work to that PC.\n- Bind Hermes to the household Discord server.\n- Decide which actions stay Discord-only and which require the Olympus webpage.\n- Record backup paths for DayZ config, profiles, missions, and mods.\n"
+        },
+        {
+          "path": "docs/DISCORD_WORKFLOW.md",
+          "content": "# Discord Workflow\n\nUse Hermes for:\n- Server status checks\n- Restart or backup requests\n- Mod task queue updates\n- Asking Zeus to summarize pending work\n\nUse the Olympus webpage for:\n- Project bootstrap\n- Access changes\n- Dashboard customization\n- Reviewing Codex results before larger write actions\n"
+        },
+        {
+          "path": "server/dayz/README.md",
+          "content": "# DayZ Server Lane\n\nSuggested layout:\n- `config/` for server cfg, economy, and gameplay files\n- `profiles/` for runtime profile data\n- `runtime/` for logs and generated status snapshots\n\nUse this folder to document how Olympus reaches the real DayZ install and where backups live.\n"
+        },
+        {
+          "path": "mods/README.md",
+          "content": "# Mods Workbench\n\nTrack each mod change with:\n- purpose\n- affected files\n- test notes\n- rollback note\n\nKeep release-ready mod packages separate from scratch work or workshop cache data.\n"
+        },
+        {
+          "path": "dashboard/customization-notes.md",
+          "content": "# DayZ Dashboard Customization\n\nRecommended cards for the household operator:\n- Server online/offline state\n- Player-count or session summary\n- Last backup\n- Pending mod tasks\n- Remote Windows node health\n- Hermes command shortcuts\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/OPERATIONS.md",
+          "content": "# Runtime Operations\n\nProject key: {{project_key}}\n\nPrimary goal:\n- {{goal}}\n\nSuggested recurring tasks:\n- backup DayZ config and mission files\n- summarize server health\n- queue and review mod changes\n- confirm remote node availability before write-heavy Codex work\n"
+        },
+        {
+          "path": "docs/MOD_PIPELINE.md",
+          "content": "# Mod Pipeline\n\n1. Capture the requested DayZ change.\n2. Route planning to Zeus and Codex.\n3. Execute on the linked Windows node when local tooling is required.\n4. Verify files and keep a rollback note.\n5. Announce the result back through Hermes or the Olympus webpage.\n"
+        }
+      ]
+    },
+    {
+      "key": "zeus_presence_lane",
+      "display_name": "Zeus Presence Lane",
+      "summary": "Presence-first Olympus lane for Zeus Discord visibility, council summaries, and breadcrumbed omnipresence work.",
+      "aliases": [
+        "zeus_presence",
+        "presence_lane"
+      ],
+      "owner_lane": "zeus",
+      "category": "platform",
+      "stack": "discord_presence_ops",
+      "runtime_shape": "policy_and_presence_lane",
+      "priority": 85,
+      "audience": "council members, operators, and Olympus service owners",
+      "purpose_template": "{{title}} gives Zeus a managed omnipresence lane for Discord visibility, project-aware summaries, and policy-safe routing.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "docs",
+        "discord",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "manual_or_local_only",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Presence lane for Zeus-facing Discord ops, summaries, and council-sensitive routing."
+      },
+      "verification_profile": {
+        "local_test_commands": [
+          "powershell -NoProfile -Command \"Get-Content nameplate.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content details.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content portal.json | Out-Null\""
+        ],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize the Zeus Presence lane and confirm breadcrumb metadata is available."
+        ],
+        "rollback_notes": [
+          "Restore the previous Zeus presence lane metadata before changing Discord routing or council-facing copy."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "discord_admin",
+        "content_publish"
+      ],
+      "visibility": "admin_only",
+      "workspace_directories": [
+        "docs",
+        "discord",
+        "Feedback"
+      ],
+      "runtime_directories": [
+        "docs"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## Purpose\n- Give Zeus a visible, governed Discord presence.\n- Keep summaries concise by default.\n- Preserve breadcrumbed routing and council-safe disclosure.\n"
+        },
+        {
+          "path": "docs/OPERATING_MODEL.md",
+          "content": "# Operating Model\n\nProject key: {{project_key}}\n\nZeus is visible, Hermes executes, and all actionable requests return a plan before approval.\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/RUNBOOK.md",
+          "content": "# Runbook\n\nPrimary goal:\n- {{goal}}\n\nUse this lane for presence routing, summary shaping, and council-facing status notes.\n"
+        }
+      ]
+    },
+    {
+      "key": "life_business_wealth_lane",
+      "display_name": "Life Business Wealth Lane",
+      "summary": "Private Olympus lane for business, wealth, budgeting, and breadcrumbed life-ops follow-through.",
+      "aliases": [
+        "life_wealth",
+        "business_wealth"
+      ],
+      "owner_lane": "zeus",
+      "category": "life-ops",
+      "stack": "private_life_ops",
+      "runtime_shape": "personal_operations_lane",
+      "priority": 70,
+      "audience": "Alex, Zeus, and authorized life-ops helpers",
+      "purpose_template": "{{title}} is a private Olympus lane for business, wealth, and budgeting follow-through with concise summaries and protected context.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "docs",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "manual_or_local_only",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Private life-ops planning lane for wealth, business, and money-tracking routines."
+      },
+      "verification_profile": {
+        "local_test_commands": [
+          "powershell -NoProfile -Command \"Get-Content nameplate.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content details.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content portal.json | Out-Null\""
+        ],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize the Life Business Wealth lane and confirm private breadcrumb metadata is present."
+        ],
+        "rollback_notes": [
+          "Restore the prior life-ops metadata before changing finance or business-planning routines."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "content_publish"
+      ],
+      "visibility": "admin_only",
+      "workspace_directories": [
+        "docs",
+        "Feedback"
+      ],
+      "runtime_directories": [
+        "docs"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## Purpose\n- Keep business and money follow-through organized.\n- Summarize need-to-know details by default.\n- Escalate high-impact actions before execution.\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/RUNBOOK.md",
+          "content": "# Runbook\n\nPrimary goal:\n- {{goal}}\n\nUse this lane for business, wealth, and budgeting follow-through with breadcrumbed operator updates.\n"
+        }
+      ]
+    },
+    {
+      "key": "life_food_health_family_lane",
+      "display_name": "Life Food Health Family Lane",
+      "summary": "Private Olympus lane for meals, health, family, and grounded household support.",
+      "aliases": [
+        "life_health",
+        "family_support"
+      ],
+      "owner_lane": "zeus",
+      "category": "life-ops",
+      "stack": "private_life_ops",
+      "runtime_shape": "personal_operations_lane",
+      "priority": 69,
+      "audience": "Alex, Zeus, and authorized life-ops helpers",
+      "purpose_template": "{{title}} is a private Olympus lane for food, health, family, and household support with protected context and concise summaries.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "docs",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "manual_or_local_only",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Private life-ops lane for household, family, food, and health follow-through."
+      },
+      "verification_profile": {
+        "local_test_commands": [
+          "powershell -NoProfile -Command \"Get-Content nameplate.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content details.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content portal.json | Out-Null\""
+        ],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize the Life Food Health Family lane and confirm private breadcrumb metadata is present."
+        ],
+        "rollback_notes": [
+          "Restore the prior life-ops metadata before changing health or household follow-through routines."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "content_publish"
+      ],
+      "visibility": "admin_only",
+      "workspace_directories": [
+        "docs",
+        "Feedback"
+      ],
+      "runtime_directories": [
+        "docs"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## Purpose\n- Keep food, health, and family planning grounded.\n- Preserve private context.\n- Use concise summaries and breadcrumbed follow-through.\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/RUNBOOK.md",
+          "content": "# Runbook\n\nPrimary goal:\n- {{goal}}\n\nUse this lane for family, food, health, and household support with breadcrumbed operator updates.\n"
+        }
+      ]
+    },
+    {
+      "key": "life_motivation_fitness_lane",
+      "display_name": "Life Motivation Fitness Lane",
+      "summary": "Private Olympus lane for exercise, motivation, and momentum-building.",
+      "aliases": [
+        "life_fitness",
+        "motivation_lane"
+      ],
+      "owner_lane": "zeus",
+      "category": "life-ops",
+      "stack": "private_life_ops",
+      "runtime_shape": "personal_operations_lane",
+      "priority": 68,
+      "audience": "Alex, Zeus, and authorized life-ops helpers",
+      "purpose_template": "{{title}} is a private Olympus lane for exercise, motivation, and momentum-building with concise summaries and breadcrumbed check-ins.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "docs",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "manual_or_local_only",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Private life-ops lane for exercise, accountability, and motivation follow-through."
+      },
+      "verification_profile": {
+        "local_test_commands": [
+          "powershell -NoProfile -Command \"Get-Content nameplate.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content details.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content portal.json | Out-Null\""
+        ],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize the Life Motivation Fitness lane and confirm breadcrumb metadata is present."
+        ],
+        "rollback_notes": [
+          "Restore the prior life-ops metadata before changing exercise or motivation routines."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "content_publish"
+      ],
+      "visibility": "admin_only",
+      "workspace_directories": [
+        "docs",
+        "Feedback"
+      ],
+      "runtime_directories": [
+        "docs"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## Purpose\n- Keep exercise and accountability loops simple.\n- Encourage momentum without noise.\n- Summarize need-to-know details by default.\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/RUNBOOK.md",
+          "content": "# Runbook\n\nPrimary goal:\n- {{goal}}\n\nUse this lane for exercise, motivation, and accountability support with breadcrumbed operator updates.\n"
+        }
+      ]
+    },
+    {
+      "key": "smart_cart_lane",
+      "display_name": "Smart Cart Lane",
+      "summary": "Olympus-native commerce lane for cart intelligence, coupon checks, substitution planning, and savings verification.",
+      "aliases": [
+        "commerce_lane",
+        "smartcart"
+      ],
+      "owner_lane": "zeus",
+      "category": "commerce-ops",
+      "stack": "commerce_ops",
+      "runtime_shape": "commerce_operations_lane",
+      "priority": 72,
+      "audience": "operators, commerce builders, and authorized shopping-assistant helpers",
+      "purpose_template": "{{title}} is an Olympus-native commerce lane for cart optimization, coupon intelligence, substitutions, and savings verification.",
+      "create_site_default": false,
+      "publish_site_default": false,
+      "default_workdir": ".",
+      "mutable_paths": [
+        "docs",
+        "assets",
+        "Feedback",
+        "README.md",
+        "nameplate.txt",
+        "details.txt",
+        "portal.json"
+      ],
+      "excluded_paths": [],
+      "deploy_target": {
+        "host_ref": "server_brain",
+        "kind": "manual_or_local_only",
+        "workdir": ".",
+        "verify_after_apply": true
+      },
+      "arrangement": {
+        "primary_root": ".",
+        "notes": "Commerce lane for shopping intelligence, savings workflows, and breadcrumbed verification."
+      },
+      "verification_profile": {
+        "local_test_commands": [
+          "powershell -NoProfile -Command \"Get-Content nameplate.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content details.txt | Out-Null\"",
+          "powershell -NoProfile -Command \"Get-Content portal.json | Out-Null\""
+        ],
+        "remote_test_commands": [],
+        "health_urls": [],
+        "smoke_prompts": [
+          "Summarize the Smart Cart lane and confirm savings-oriented breadcrumb metadata is present."
+        ],
+        "rollback_notes": [
+          "Restore the prior commerce metadata before changing shopping-assistant or savings routines."
+        ]
+      },
+      "capability_bundles": [
+        "project_task",
+        "asset_sync",
+        "content_publish"
+      ],
+      "visibility": "admin_only",
+      "workspace_directories": [
+        "docs",
+        "assets",
+        "Feedback"
+      ],
+      "runtime_directories": [
+        "docs",
+        "assets"
+      ],
+      "workspace_files": [
+        {
+          "path": "README.md",
+          "content": "# {{title}}\n\nThis project was seeded through the Mount Olympus starter template `{{starter_display_name}}`.\n\n## Goal\n- {{goal}}\n\n## Purpose\n- Track shopping intelligence and savings plans.\n- Keep cart substitutions and coupon checks reviewable.\n- Preserve concise summaries and breadcrumbed outcomes.\n"
+        }
+      ],
+      "runtime_files": [
+        {
+          "path": "docs/RUNBOOK.md",
+          "content": "# Runbook\n\nPrimary goal:\n- {{goal}}\n\nUse this lane for cart optimization, coupon checks, substitutions, and savings verification.\n"
+        }
+      ]
+    }
+  ]
+}

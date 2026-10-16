@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "account-worker",
+  "display_name": "Harmonia Accounts",
+  "public_name": "Harmonia Accounts",
+  "persona_key": "harmonia_accounts",
+  "rank": "steward",
+  "startup": "manual",
+  "role": "Managed account, identity, and credential-adjacent operations lane.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

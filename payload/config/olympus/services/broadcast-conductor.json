@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "broadcast-conductor",
+  "display_name": "Apollo Signal",
+  "public_name": "Apollo Signal",
+  "persona_key": "apollo_signal",
+  "rank": "creator-service",
+  "startup": "manual",
+  "role": "Broadcast overlays, commentary, and show-flow coordination.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

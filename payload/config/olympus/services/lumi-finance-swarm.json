@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "lumi-finance-swarm",
+  "display_name": "Midas Ledger",
+  "public_name": "Midas Ledger",
+  "persona_key": "midas_ledger",
+  "rank": "steward",
+  "startup": "manual",
+  "role": "Finance intelligence, watchlists, and risk briefings.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

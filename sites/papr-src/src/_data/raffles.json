@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Neighborhood Arts Vault",
+    "status": "open",
+    "statusLabel": "Open",
+    "price": "$10 entry",
+    "inventory": "412 of 1,000 left",
+    "drawMode": "Scheduled public draw",
+    "drawTime": "Saturday, March 28, 2026 at 8:00 PM ET",
+    "impact": "Funds youth art supplies and studio access grants.",
+    "slug": "/raffles/#arts-vault"
+  },
+  {
+    "title": "Summer Strings Benefit Pack",
+    "status": "low",
+    "statusLabel": "Low Inventory",
+    "price": "$25 bundle",
+    "inventory": "34 of 500 left",
+    "drawMode": "Immediate after sellout",
+    "drawTime": "Winner posted right after the final valid ticket closes.",
+    "impact": "Supports free orchestra seats and instrument repair aid.",
+    "slug": "/raffles/#strings-benefit"
+  },
+  {
+    "title": "Winter Care Mission Bundle",
+    "status": "scheduled",
+    "statusLabel": "Sold Out / Scheduled",
+    "price": "$20 entry",
+    "inventory": "Sold out and locked",
+    "drawMode": "Queued for the next public event",
+    "drawTime": "Assigned to Community Draw Night on April 4, 2026 at 7:30 PM ET.",
+    "impact": "Helps stock emergency warmth kits and shelter deliveries.",
+    "slug": "/draw-schedule/"
+  }
+]

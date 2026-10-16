@@ -1,0 +1,10 @@
+{
+  "service_key": "mount-olympus-ui",
+  "checkout_root": "workspace",
+  "checkout_path": "payload/luminax-ui",
+  "checkout_scope_kind": "tree",
+  "owned_paths": [
+    "payload/luminax-ui",
+    "sites/welcome2olympus"
+  ]
+}

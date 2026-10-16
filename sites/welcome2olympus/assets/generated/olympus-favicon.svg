@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Mount Olympus mark">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08111d"/>
+      <stop offset="100%" stop-color="#11314b"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7cb78"/>
+      <stop offset="100%" stop-color="#7ce8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
+  <path d="M44 176L128 54l84 122" fill="none" stroke="#7ce8ff" stroke-opacity="0.38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M118 40h20l-14 54h28l-38 88 10-56H96l22-86z" fill="url(#bolt)"/>
+  <circle cx="128" cy="36" r="14" fill="#f7cb78" fill-opacity="0.8"/>
+</svg>

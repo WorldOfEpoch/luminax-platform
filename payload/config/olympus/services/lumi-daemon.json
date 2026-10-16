@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "lumi-daemon",
+  "display_name": "Hestia Watch",
+  "public_name": "Hestia Watch",
+  "persona_key": "hestia_watch",
+  "rank": "watcher",
+  "startup": "manual",
+  "role": "Resident watcher for runtime safety, maintenance flow, and stack healing triggers.",
+  "reads": [
+    "config/olympus-identity.json",
+    "config/review-cycle-policy.json"
+  ]
+}

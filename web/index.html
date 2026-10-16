@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mount Olympus | Agent Swarm</title>
+  <meta name="description" content="Mount Olympus live coding swarm board with coordinators, builders, reviewers, and scouts orchestrating project execution.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23091522'/%3E%3Cpath d='M8 19l5-10h2l-5 10H8zm10 0l5-10h2l-5 10h-2z' fill='%2346d8ff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+
+  <main class="page">
+    <section class="hero panel">
+      <p class="eyebrow">Mount Olympus Version 1.0</p>
+      <h1>Agent Swarm Control for live coding operations.</h1>
+      <p class="lede">Each game keeps its own engine and authority. Mount Olympus coordinates the agent swarm: coordinators route missions, builders patch code, reviewers gate quality, and scouts surface risks before merge.</p>
+      <p class="lede">Access path: the Mount Olympus product page points here at <code>web/index.html</code>. Choose Refresh Live to connect this board to your own <code>/api/codex/bridge/dashboard</code>; offline sample data is shown until you connect.</p>
+      <div class="hero-chips">
+        <span class="chip">Coordinators</span>
+        <span class="chip">Builders</span>
+        <span class="chip">Reviewers</span>
+        <span class="chip">Scouts</span>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article class="panel metric-card">
+        <p class="eyebrow">Agents Online</p>
+        <h2 id="metricAgents">0</h2>
+      </article>
+      <article class="panel metric-card">
+        <p class="eyebrow">In Flight</p>
+        <h2 id="metricInFlight">0</h2>
+      </article>
+      <article class="panel metric-card">
+        <p class="eyebrow">Completed</p>
+        <h2 id="metricCompleted">0</h2>
+      </article>
+      <article class="panel metric-card">
+        <p class="eyebrow">Critical Queue</p>
+        <h2 id="metricCritical">0</h2>
+      </article>
+    </section>
+
+    <section class="intel-grid">
+      <article class="panel intel-card">
+        <p class="eyebrow">Maintenance</p>
+        <h2 id="intelMaintenanceMode">normal</h2>
+        <p id="intelMaintenanceReason" class="status">No maintenance override active.</p>
+      </article>
+      <article class="panel intel-card">
+        <p class="eyebrow">Incidents</p>
+        <h2 id="intelIncidentCount">0</h2>
+        <p id="intelIncidentSummary" class="status">No open incidents reported.</p>
+      </article>
+      <article class="panel intel-card">
+        <p class="eyebrow">Contracts</p>
+        <h2 id="intelContractStatus">ok</h2>
+        <p id="intelContractSummary" class="status">Feature contract checks are clean.</p>
+      </article>
+      <article class="panel intel-card">
+        <p class="eyebrow">Checkouts</p>
+        <h2 id="intelCheckoutCount">0</h2>
+        <p id="intelCheckoutSummary" class="status">No active write locks.</p>
+      </article>
+    </section>
+
+    <section class="panel swarm-stage">
+      <div class="stage-head">
+        <div>
+          <p class="eyebrow">Realtime Topology</p>
+          <h2>Code Swarm Graph</h2>
+          <p id="dataModeHint" class="mode-hint">Checking data source...</p>
+        </div>
+        <div>
+          <p id="dataModeBadge" class="data-badge">Unknown</p>
+          <div class="legend">
+            <span><i class="tone-command"></i> command</span>
+            <span><i class="tone-build"></i> build</span>
+            <span><i class="tone-review"></i> review</span>
+            <span><i class="tone-scout"></i> scout</span>
+          </div>
+        </div>
+      </div>
+      <div class="swarm-frame">
+        <div id="swarmNetwork" class="swarm-network">
+          <svg id="swarmLinks" class="swarm-links" aria-hidden="true"></svg>
+          <div id="swarmNodes" class="swarm-nodes"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ops-grid">
+      <article class="panel dispatch-panel">
+        <p class="eyebrow">Dispatch Mission</p>
+        <h2>Push work into the swarm</h2>
+        <form id="dispatchForm" class="dispatch-form">
+          <label>Mission Title
+            <input id="missionTitle" maxlength="90" placeholder="Ex: Harden OAuth callback validation" required>
+          </label>
+          <label>API Base URL
+            <input id="apiBaseUrl" value="/" placeholder="Ex: https://worldofepoch.com">
+          </label>
+          <label>Control Token (for live dispatch)
+            <input id="controlToken" placeholder="HailZeus">
+          </label>
+          <label>Project Key
+            <input id="projectKey" placeholder="luminax">
+          </label>
+          <label>Workdir
+            <input id="missionWorkdir" placeholder="Ex: sites/papr or my-project">
+          </label>
+          <label>Priority
+            <select id="missionPriority">
+              <option value="P1">P1 Critical</option>
+              <option value="P2">P2 High</option>
+              <option value="P3">P3 Normal</option>
+              <option value="P4">P4 Low</option>
+            </select>
+          </label>
+          <label>Lane
+            <select id="missionLane">
+              <option value="coordinator">Coordinator</option>
+              <option value="builder">Builder</option>
+              <option value="reviewer">Reviewer</option>
+              <option value="scout">Scout</option>
+            </select>
+          </label>
+          <label>Context
+            <textarea id="missionContext" rows="4" placeholder="Expected output, constraints, and risk notes."></textarea>
+          </label>
+          <label class="inline-check">
+            <input id="missionAllowWrite" type="checkbox">
+            Allow write lane
+          </label>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Dispatch</button>
+            <button class="btn btn-secondary" id="refreshLiveBtn" type="button">Refresh Live</button>
+            <button class="btn btn-secondary" id="simulateTickBtn" type="button">Simulate Tick</button>
+          </div>
+        </form>
+        <p id="dispatchStatus" class="status">No mission dispatched yet.</p>
+        <hr class="panel-divider">
+        <p class="eyebrow">Model Policy</p>
+        <h3 class="policy-title">Role model mix</h3>
+        <form id="policyForm" class="dispatch-form">
+          <label>Coordinator model
+            <input id="modelCoordinator" placeholder="gpt-4.1">
+          </label>
+          <label>Builder fast model
+            <input id="modelBuilderFast" placeholder="gpt-5.3-codex">
+          </label>
+          <label>Builder strong model
+            <input id="modelBuilderStrong" placeholder="gpt-5.4">
+          </label>
+          <label>Builder strong share (0-1)
+            <input id="builderStrongShare" type="number" min="0" max="1" step="0.01" placeholder="0.33">
+          </label>
+          <label>Reviewer model
+            <input id="modelReviewer" placeholder="gpt-5.4">
+          </label>
+          <label>Scout model
+            <input id="modelScout" placeholder="gpt-5.3">
+          </label>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Apply Policy</button>
+          </div>
+        </form>
+        <p id="policyStatus" class="status">Policy defaults loaded.</p>
+      </article>
+
+      <article class="panel events-panel">
+        <div class="events-head">
+          <p class="eyebrow">Live Output</p>
+          <button class="btn btn-secondary" id="clearEventsBtn" type="button">Clear</button>
+        </div>
+        <h2>Swarm Event Stream</h2>
+        <ul id="eventsList" class="events-list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

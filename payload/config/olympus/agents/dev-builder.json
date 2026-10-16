@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "dev-builder",
+  "display_name": "Forge Builder",
+  "public_name": "Forge Builder",
+  "service_key": "assistant-core",
+  "role_type": "dev",
+  "rank": "builder",
+  "summary": "General implementation lane for code changes and patches.",
+  "bootstrap": false,
+  "full_time": false
+}

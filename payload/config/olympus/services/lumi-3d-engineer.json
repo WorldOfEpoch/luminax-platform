@@ -1,0 +1,13 @@
+{
+  "kind": "service",
+  "key": "lumi-3d-engineer",
+  "display_name": "Hephaestus Forge",
+  "public_name": "Hephaestus Forge",
+  "persona_key": "hephaestus_forge",
+  "rank": "forge",
+  "startup": "manual",
+  "role": "3D, game, and asset generation forge.",
+  "reads": [
+    "config/olympus-identity.json"
+  ]
+}

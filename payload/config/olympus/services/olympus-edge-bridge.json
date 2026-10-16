@@ -1,0 +1,14 @@
+{
+  "kind": "service",
+  "key": "olympus-edge-bridge",
+  "display_name": "Aegis Edge Bridge",
+  "public_name": "Aegis Edge Bridge",
+  "persona_key": "aegis_edge_bridge",
+  "rank": "bridge",
+  "startup": "manual",
+  "role": "PC edge worker registration, GPU/model availability reporting, and approved remote worker bridge for the server brain.",
+  "reads": [
+    "config/discord-channel-modes.json",
+    "config/workspace-connections.json"
+  ]
+}

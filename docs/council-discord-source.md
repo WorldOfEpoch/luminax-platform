@@ -56,7 +56,7 @@ All four service Python files also compiled in memory during preparation. These 
 
 ## External dependencies and configuration
 
-The existing platform depends on Redis, MySQL, and Qdrant, plus optional model and worker APIs. The complete platform deployment and its private configuration are deliberately absent. A contributor must supply a fresh isolated configuration before any runtime test.
+The existing platform depends on Redis, MySQL, and Qdrant, plus optional model and worker APIs. The expanded public edition includes the platform service source, deployment recipes and synthetic configuration examples. Use [full platform setup](full-platform-setup.md) to create a fresh isolated configuration before a runtime test; personal installation records and accounts are not prerequisites for obtaining the source.
 
 | Configuration | Meaning |
 | --- | --- |
@@ -73,7 +73,7 @@ The existing platform depends on Redis, MySQL, and Qdrant, plus optional model a
 
 Optional service endpoints such as `OLLAMA_HOST`, `EDGE_BRIDGE_URL`, `VOICE_AGENT_URL`, `IMAGE_AGENT_URL`, `VISION_AGENT_URL`, `ACCOUNT_WORKER_URL`, `ADMIN_API_INTERNAL_URL`, `ADMIN_API_URL`, `RESEARCH_WORKER_URL`, `BROWSER_AGENT_URL`, `LUMINAX_BRAIN_URL`, `AFFECT_CONTROLLER_URL`, `MCP_ROUTER_URL`, and the hive/worker URLs now require explicit configuration. Existing private endpoint aliases are not automatically reused. Optional services are not promised to work simply because their client paths are present.
 
-Assistant-core also has integrations with workspace registries, role policies, model catalogs, worker registries, project storage, approval records, and the Codex CLI. Those first-party runtime dependencies are not all present in this extraction. Several requirement files retain their existing unpinned dependency references, so a reproducible full-runtime dependency lock is still needed.
+Assistant-core also has integrations with workspace registries, role policies, model catalogs, worker registries, project storage, approval records, and the Codex CLI. The public configuration and [service inventory](platform-services.md) identify the supplied source and examples; optional companion projects and operator accounts remain separate. Several requirement files retain their existing unpinned dependency references, so a reproducible full-runtime dependency lock is still needed.
 
 The existing service notes described compilation plus manual private-pairing and sanitized-public-reply checks. No automated full Discord/council integration suite was found in the selected source. The publication tests above add bounded regression coverage; they do not substitute for those future runtime checks.
 

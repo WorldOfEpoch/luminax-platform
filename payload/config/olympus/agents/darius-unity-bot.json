@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "darius-unity-bot",
+  "display_name": "Darius",
+  "public_name": "Darius",
+  "service_key": "underfoot-world",
+  "role_type": "lane_owner",
+  "rank": "champion",
+  "summary": "Owns the Unity and Underfoot execution lane.",
+  "bootstrap": false,
+  "full_time": false
+}

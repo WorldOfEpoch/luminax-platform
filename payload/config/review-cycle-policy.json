@@ -1,0 +1,209 @@
+{
+  "version": "2026-03-20",
+  "campaign_hours": 8,
+  "wave_count": 11,
+  "wave_minutes": 55,
+  "bootstrap_minutes": 40,
+  "stop_phrase": "stop",
+  "git_mode": "read_only_unless_recovery_required",
+  "edit_source_of_truth": "payload",
+  "allow_cross_project": false,
+  "max_files_per_wave": 12,
+  "max_steps_per_run": 8,
+  "approval_rule": {
+    "require_approve_votes": 2,
+    "critic_reject_blocks": true,
+    "summary": "Auto-implementation requires 2/3 approve and no Critic reject."
+  },
+  "trust_zone_policy": {
+    "mode": "manual",
+    "summary": "Safe classes auto-run inside scoped trust zones. Sentinel-risk actions must block for approval.",
+    "zones": [
+      {
+        "zone_key": "pc-companion",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": [
+          "credential_change",
+          "public_exposure_change"
+        ]
+      },
+      {
+        "zone_key": "dev-control",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": [
+          "destructive_delete",
+          "prod_deploy",
+          "credential_change"
+        ]
+      },
+      {
+        "zone_key": "home-read",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": []
+      },
+      {
+        "zone_key": "home-write",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": [
+          "lock_state_change",
+          "alarm_state_change",
+          "public_exposure_change"
+        ]
+      },
+      {
+        "zone_key": "camera-security",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": [
+          "camera_export",
+          "camera_share",
+          "identity_sensitive_processing"
+        ]
+      },
+      {
+        "zone_key": "browser-use",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": [
+          "purchase",
+          "external_submit",
+          "credential_change"
+        ]
+      },
+      {
+        "zone_key": "public-external",
+        "default_action_class": "checkpoint_required",
+        "sentinel_actions": [
+          "purchase",
+          "public_exposure_change",
+          "credential_change"
+        ]
+      }
+    ],
+    "action_classes": [
+      "safe_auto",
+      "checkpoint_required",
+      "sentinel_blocked"
+    ],
+    "sentinel_risk_classes": [
+      "purchase",
+      "lock_state_change",
+      "alarm_state_change",
+      "destructive_delete",
+      "prod_deploy",
+      "credential_change",
+      "public_exposure_change",
+      "camera_export",
+      "camera_share"
+    ]
+  },
+  "supervision_policy": {
+    "breadcrumb_required": true,
+    "breadcrumb_scope": [
+      "route_resolution",
+      "assignment_change",
+      "avatar_binding_change",
+      "fallback_choice"
+    ],
+    "receipt_on_degradation": true,
+    "requires_stale_resource_cleanup": true,
+    "summary": "Critical Olympus flows must leave structured breadcrumbs in the local diagnostics trail and in Olympus when available."
+  },
+  "diagnostic_breadcrumbs": [
+    "policy_load",
+    "wave_start",
+    "route_resolution",
+    "assignment_change",
+    "receipt_emit"
+  ],
+  "naming_audit": {
+    "enabled": true,
+    "required_identity_path": "payload/config/olympus-identity.json",
+    "required_project_files": [
+      "nameplate.txt",
+      "details.txt"
+    ]
+  },
+  "asset_gates": {
+    "require_asset_reference": true,
+    "require_fallback_path": true,
+    "require_visible_integration": true
+  },
+  "waves": [
+    {
+      "index": 1,
+      "title": "Stop-safe Olympus control plane",
+      "owner": "zeus",
+      "target": "luminax",
+      "goal": "Worker pause, drain behavior, and review-cycle ledger"
+    },
+    {
+      "index": 2,
+      "title": "Olympus identity propagation",
+      "owner": "zeus",
+      "target": "luminax",
+      "goal": "Identity map, naming propagation, and public/private name separation"
+    },
+    {
+      "index": 3,
+      "title": "Workspace registry and path enforcement",
+      "owner": "zeus",
+      "target": "workspace",
+      "goal": "Whole-workspace registry, writable roots, and review targets"
+    },
+    {
+      "index": 4,
+      "title": "Olympus art pack integration",
+      "owner": "zeus",
+      "target": "luminax",
+      "goal": "Hero art, role avatars, and control-board visuals"
+    },
+    {
+      "index": 5,
+      "title": "Mount Olympus core hardening",
+      "owner": "zeus",
+      "target": "luminax",
+      "goal": "Zeus Core, admin spine, Hestia Watch, and mirror drift controls"
+    },
+    {
+      "index": 6,
+      "title": "Darius Underfoot lane",
+      "owner": "darius",
+      "target": "underfoot",
+      "goal": "Unity routing, Underfoot assignment, and workspace correctness"
+    },
+    {
+      "index": 7,
+      "title": "Hermes Discord workflows",
+      "owner": "hermes_ops",
+      "target": "luminax",
+      "goal": "Discord communication, server setup, roles, and safe Hermes privilege boundaries"
+    },
+    {
+      "index": 8,
+      "title": "Cross-project revalidation",
+      "owner": "zeus",
+      "target": "workspace",
+      "goal": "Naming audit, cross-project regression pass, and cycle closeout"
+    },
+    {
+      "index": 9,
+      "title": "Zeus omnipresence and Discord relay",
+      "owner": "zeus",
+      "target": "luminax",
+      "goal": "Discord presence routing, breadcrumbed status handoffs, and Zeus relay coverage"
+    },
+    {
+      "index": 10,
+      "title": "Life Ops portfolio supervision",
+      "owner": "zeus",
+      "target": "workspace",
+      "goal": "Business, wealth, food, health, family, and fitness lane supervision"
+    },
+    {
+      "index": 11,
+      "title": "Smart Cart commerce lane",
+      "owner": "zeus",
+      "target": "workspace",
+      "goal": "Smart cart catalog, commerce copy, asset sync, and breadcrumbed verification"
+    }
+  ]
+}

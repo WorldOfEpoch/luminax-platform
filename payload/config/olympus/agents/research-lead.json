@@ -1,0 +1,12 @@
+{
+  "kind": "agent",
+  "key": "research-lead",
+  "display_name": "Clio Research Lead",
+  "public_name": "Clio Research Lead",
+  "service_key": "research-worker",
+  "role_type": "research",
+  "rank": "archivist",
+  "summary": "Deep web verification, current-state checks, and evidence-backed reporting.",
+  "bootstrap": false,
+  "full_time": false
+}
