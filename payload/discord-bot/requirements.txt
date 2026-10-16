@@ -1,0 +1,6 @@
+discord.py[voice]
+discord-ext-voice-recv
+httpx
+PyNaCl
+mysql-connector-python
+redis>=5.0

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+redis
+qdrant-client
+pydantic
+python-multipart
+apscheduler
+mysql-connector-python
