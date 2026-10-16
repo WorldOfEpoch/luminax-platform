@@ -130,6 +130,19 @@ def validate_compose_model(payload: Path, model: dict) -> int:
     return len(services)
 
 
+def write_validation_recipe(source: Path, target: Path, synthetic_env: Path) -> None:
+    """Redirect the canonical recipe's service env files before Compose sees it."""
+    text = source.read_text(encoding='utf-8')
+    # This checker owns the public recipe's simple env_file layout. Fail closed
+    # if it changes, rather than let an older Compose client inspect private files.
+    block = re.compile(r'(?m)^    env_file:[ \t]*\n    - \.env[ \t]*$')
+    if 'env_file' in block.sub('', text) or re.search(r'(?m)^\s*(include|extends)\s*:', text):
+        raise ValueError('Unsupported Compose env_file/include layout; validation must remain isolated from private files.')
+    replacement = '    env_file:\n    - ' + json.dumps(str(synthetic_env.resolve()))
+    recipe = block.sub(lambda match: replacement, text)
+    target.write_text(recipe, encoding='utf-8', newline='\n')
+
+
 def check_compose(payload: Path) -> dict[str, object]:
     docker = shutil.which('docker')
     if not docker:
@@ -137,7 +150,7 @@ def check_compose(payload: Path) -> dict[str, object]:
     values = template_values(payload)
     for key in PRIVATE_KEYS:
         values[key] = 'synthetic-check-value-' + '0' * 48
-    # Explicit file and no-env-resolution prevent reading a real service .env.
+    # Supply synthetic interpolation values and remove inherited app settings.
     env = dict(os.environ)
     interpolation_keys = set(values)
     for path in payload.glob('*.yml'):
@@ -149,8 +162,13 @@ def check_compose(payload: Path) -> dict[str, object]:
     with tempfile.TemporaryDirectory(prefix='luminax-compose-check-') as folder:
         sample = Path(folder) / 'synthetic.env'
         sample.write_text('\n'.join(f'{k}={v}' for k, v in values.items()) + '\n', encoding='utf-8')
+        recipe = Path(folder) / 'compose.validation.yml'
+        # Some Compose versions check service env_file existence even with
+        # --no-env-resolution. Redirect every reference to our existing fixture;
+        # --project-directory keeps build contexts and binds at their real owners.
+        write_validation_recipe(payload / 'docker-compose.yml', recipe, sample)
         command = [docker, 'compose', '--project-directory', str(payload), '--env-file', str(sample),
-                   '--profile', '*', '-f', str(payload / 'docker-compose.yml'),
+                   '--profile', '*', '-f', str(recipe),
                    'config', '--format', 'json', '--no-env-resolution']
         result = subprocess.run(command, env=env, capture_output=True, text=True, timeout=45)
         if result.returncode:

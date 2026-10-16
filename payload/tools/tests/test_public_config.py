@@ -1,5 +1,6 @@
 """Offline setup regression checks. No app imports, providers, services, or Docker starts."""
 import importlib.util
+import json
 import os
 from pathlib import Path
 import shutil
@@ -110,7 +111,7 @@ class ConfigurationTests(unittest.TestCase):
         openssl.parent.mkdir(parents=True)
         openssl.touch()
         with patch.object(setup.shutil, 'which', side_effect=lambda name: str(git) if name == 'git' else None):
-            self.assertEqual(Path(setup.find_openssl()), openssl)
+            self.assertTrue(Path(setup.find_openssl()).samefile(openssl))
 
     def test_real_openssl_generates_hash_in_temporary_fixture(self):
         try:
@@ -129,21 +130,69 @@ class ConfigurationTests(unittest.TestCase):
             check.check_compose(PAYLOAD)
 
     def test_checker_never_loads_private_env_or_starts_services(self):
-        (self.payload / '.env').write_text('SECRET=must-not-be-read\n')
-        (self.payload / 'docker-compose.yml').write_text('services: {}\n')
+        private_env = self.payload / '.env'
+        private_env.write_text('SECRET=must-not-be-read\n')
+        self.write_compose_fixture()
+        original_open = Path.open
+        def reject_private_read(path, *args, **kwargs):
+            if path.resolve() == private_env.resolve():
+                self.fail('Checker attempted to open the private service .env.')
+            return original_open(path, *args, **kwargs)
+        with patch.object(check.shutil, 'which', return_value='fixture-docker'), patch.object(
+                check.subprocess, 'run', side_effect=self.legacy_compose_config), patch.dict(
+                    os.environ, {'CONTROL_TOKEN': 'private'}), patch.object(Path, 'open', reject_private_read):
+            self.assertEqual(check.check_compose(self.payload)['containers_started'], 0)
+        self.assertEqual(private_env.read_text(), 'SECRET=must-not-be-read\n')
+
+    def write_compose_fixture(self):
+        text = ('services:\n  fixture:\n    profiles: [core]\n    restart: "no"\n'
+                '    env_file:\n    - .env\n')
+        (self.payload / 'docker-compose.yml').write_text(text)
+        return text
+
+    def legacy_compose_config(self, command, **kwargs):
+        """Emulate clients that inspect env_file despite --no-env-resolution."""
+        self.assertEqual(command[-4:], ['config', '--format', 'json', '--no-env-resolution'])
+        self.assertEqual(Path(command[command.index('--project-directory') + 1]), self.payload)
+        sample = Path(command[command.index('--env-file') + 1])
+        recipe = Path(command[command.index('-f') + 1])
+        self.assertFalse(recipe.is_relative_to(self.payload))
+        self.assertNotIn('CONTROL_TOKEN', kwargs['env'])
+        lines = recipe.read_text().splitlines()
+        self.assertEqual(sum(line.strip() == 'env_file:' for line in lines), 1)
+        for index, line in enumerate(lines):
+            if line.strip() != 'env_file:':
+                continue
+            scalar = lines[index + 1].strip().removeprefix('- ')
+            reference = json.loads(scalar) if scalar.startswith('"') else scalar
+            env_file = self.payload / reference
+            if not env_file.is_file():
+                return subprocess.CompletedProcess(command, 1, '', 'Service env file is missing.')
+            self.assertTrue(env_file.samefile(sample))
+            synthetic = env_file.read_text()
+            self.assertNotIn('must-not-be-read', synthetic)
+            self.assertIn('synthetic-check-value-', synthetic)
         model = {'services': {'fixture': {'profiles': ['core'], 'restart': 'no',
                                          'ports': [{'host_ip': '127.0.0.1'}]}}}
-        import json
-        def fake_run(command, **kwargs):
-            self.assertEqual(command[-4:], ['config', '--format', 'json', '--no-env-resolution'])
-            self.assertIn('--env-file', command)
-            synthetic = Path(command[command.index('--env-file') + 1]).read_text()
-            self.assertNotIn('must-not-be-read', synthetic)
-            self.assertNotIn('CONTROL_TOKEN', kwargs['env'])
-            return subprocess.CompletedProcess(command, 0, json.dumps(model), '')
+        return subprocess.CompletedProcess(command, 0, json.dumps(model), '')
+
+    def test_legacy_compose_validates_with_missing_private_env(self):
+        original_recipe = self.write_compose_fixture()
+        self.assertFalse((self.payload / '.env').exists())
         with patch.object(check.shutil, 'which', return_value='fixture-docker'), patch.object(
-                check.subprocess, 'run', side_effect=fake_run), patch.dict(os.environ, {'CONTROL_TOKEN': 'private'}):
-            self.assertEqual(check.check_compose(self.payload)['containers_started'], 0)
+                check.subprocess, 'run', side_effect=self.legacy_compose_config) as run:
+            self.assertEqual(check.check_compose(self.payload)['services'], 1)
+            self.assertEqual(run.call_count, 1)
+        self.assertFalse((self.payload / '.env').exists())
+        self.assertEqual((self.payload / 'docker-compose.yml').read_text(), original_recipe)
+
+    def test_unsupported_env_file_layout_fails_before_compose(self):
+        (self.payload / 'docker-compose.yml').write_text('services:\n  fixture:\n    env_file: .env\n')
+        with patch.object(check.shutil, 'which', return_value='fixture-docker'), patch.object(
+                check.subprocess, 'run') as run:
+            with self.assertRaisesRegex(ValueError, 'isolated from private files'):
+                check.check_compose(self.payload)
+            run.assert_not_called()
 
     def test_rejects_external_port_socket_and_host_bind(self):
         for extra in [{'ports': [{'host_ip': '0.0.0.0'}]}, {'privileged': True},
