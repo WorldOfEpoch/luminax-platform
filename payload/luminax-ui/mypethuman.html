@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="no-referrer">
+  <title>MyPetHuman · Home</title>
+  <style>
+    :root{--paper:#faf9f6;--ink:#242725;--muted:#70746e;--line:#e2e3dc;--blue:#2861c7;--wash:#edf2fb;--red:#a63d32;--green:#3b7954;--radius:18px;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
+    *{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button,a{touch-action:manipulation}a{color:var(--blue);text-underline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #a8c2f1;outline-offset:4px}button{color:inherit}button.plain{border:0;background:none;padding:8px 0}button.primary{border:1px solid var(--blue);background:var(--blue);color:white;padding:11px 19px;border-radius:100px;font-weight:600}button.secondary{border:1px solid var(--line);background:transparent;padding:10px 18px;border-radius:100px}button.text-button{border:0;background:none;color:var(--blue);padding:8px 0;font-weight:600}button.quiet{border:0;background:none;color:var(--muted);padding:8px 0}button.icon{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:transparent;font-size:24px;line-height:1}button:hover:enabled{filter:brightness(.94)}[hidden]{display:none!important}.wrap{width:min(660px,calc(100% - 40px));margin:0 auto}.site-header{padding:30px 0 0}.topline{display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{font-size:17px;font-weight:750;letter-spacing:-.6px;display:flex;align-items:center;gap:9px}.brand-mark{width:23px;height:23px;border:2px solid var(--ink);border-radius:8px 8px 10px 10px;position:relative}.brand-mark:after{content:"";position:absolute;inset:7px 4px 4px;border-bottom:2px solid var(--ink);border-radius:50%}.connection{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);text-align:right}.dot{width:6px;height:6px;border-radius:50%;background:#b2b7ac;flex:none}.dot.ready{background:var(--green)}.dot.error{background:var(--red)}nav{display:flex;gap:26px;border-bottom:1px solid var(--line);margin-top:24px}nav button{border:0;border-bottom:2px solid transparent;background:none;padding:14px 1px 13px;color:var(--muted);font-size:14px;font-weight:600}nav button[aria-current="page"]{border-bottom-color:var(--ink);color:var(--ink)}main{min-height:calc(100vh - 270px);padding:55px 0 45px}.eyebrow{color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 13px}h1,h2,h3,p{margin-top:0}h1{font-weight:550;letter-spacing:-1.7px;font-size:clamp(32px,7vw,42px);line-height:1.14;margin-bottom:16px}h2{font-size:27px;font-weight:550;letter-spacing:-.75px;line-height:1.3;overflow-wrap:anywhere}h3{font-size:16px;font-weight:650;letter-spacing:-.2px;margin-bottom:8px}.muted{color:var(--muted)}.intro{max-width:440px;font-size:16px;color:var(--muted);margin-bottom:35px}.focus{padding:29px 0 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.focus h2{margin-bottom:12px}.focus .eyebrow{margin-bottom:15px}.source-line{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;margin-bottom:21px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 23px}.subline{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:20px;font-size:13px}.subline p{margin:0}.empty{padding:19px 0 30px}.empty p{max-width:450px;color:var(--muted)}.empty h2{font-size:24px}.notice{margin-top:20px;color:var(--muted);font-size:13px}.notice.error{color:var(--red)}.footer{padding:20px 0 30px;border-top:1px solid var(--line);margin-top:10px}.capture-row{display:flex;gap:12px;align-items:center}.capture-row input{width:100%;min-width:0;border:0;background:transparent;color:var(--ink);padding:10px 0;font-size:16px}.capture-row input:focus{outline:0}.capture-row:focus-within{border-radius:5px;outline:2px solid #a8c2f1;outline-offset:7px}.capture-row button{padding:8px 16px}.capture-note{font-size:12px;margin:9px 0 0;color:var(--muted)}.section-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:27px 0 7px}.section-top p{margin:0}.list{list-style:none;margin:0;padding:0}.list li{border-bottom:1px solid var(--line)}.repo-row{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;text-align:left;padding:20px 0;border:0;background:none}.repo-row strong{display:block;font-size:17px;font-weight:600;overflow-wrap:anywhere}.repo-row small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.repo-row .arrow{color:var(--muted);font-size:20px}.purpose{font-size:14px;color:var(--muted);margin:6px 0 0;overflow-wrap:anywhere}.section-foot{margin-top:23px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;font-size:13px}.pill{font-size:11px;line-height:1.5;padding:3px 8px;border:1px solid var(--line);border-radius:20px;color:var(--muted)}dialog{width:min(600px,calc(100% - 24px));max-height:min(88vh,850px);overflow:auto;border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--paper);color:var(--ink);box-shadow:0 20px 100px #17251a22}dialog::backdrop{background:#18221955;backdrop-filter:blur(3px)}.dialog-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.dialog-top h2{font-size:21px;margin:0}.dialog-copy{font-size:14px;color:var(--muted)}.field{display:block;margin:19px 0;font-size:13px;font-weight:600}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;background:#fffefa;color:var(--ink);border:1px solid #d9ddd3;border-radius:10px;padding:11px 12px;font-weight:400;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#92978e}.field small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:6px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pair .field{margin-top:0}.sheet-section{border-top:1px solid var(--line);margin-top:24px;padding-top:23px}.sheet-section p{font-size:14px}.detail-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}.detail-title{font-size:25px;line-height:1.3;font-weight:550;letter-spacing:-.7px;overflow-wrap:anywhere;margin-bottom:13px}.definition{display:grid;grid-template-columns:100px 1fr;gap:11px 15px;margin:23px 0;font-size:13px}.definition dt{color:var(--muted)}.definition dd{margin:0;overflow-wrap:anywhere}.status-list{font-size:13px;list-style:none;padding:0;margin:17px 0}.status-list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:20px;justify-content:space-between}.status-list span:last-child{text-align:right;color:var(--muted)}.inline-error{font-size:13px;color:var(--red);margin-top:15px}.inline-ok{font-size:13px;color:var(--green);margin-top:15px}.issue-list button{border:0;background:none;text-align:left;padding:17px 0;width:100%;font-size:15px;line-height:1.4}.issue-list small{display:block;color:var(--muted);font-size:12px;margin-top:7px}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.loading-dot{display:inline-block;animation:breathe 1.3s ease-in-out infinite}@keyframes breathe{50%{opacity:.35}}@media(max-width:520px){.wrap{width:calc(100% - 36px)}.site-header{padding-top:20px}main{padding-top:38px;min-height:calc(100svh - 255px)}.focus h2{font-size:26px}dialog{padding:22px}.pair{grid-template-columns:1fr;gap:0}.connection{max-width:130px}.definition{grid-template-columns:78px 1fr}.subline{align-items:flex-start}}@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header wrap">
+    <div class="topline"><div class="brand"><span class="brand-mark" aria-hidden="true"></span>MyPetHuman</div><button class="plain connection" id="connections-button" aria-label="Open connections"><span class="dot" id="connection-dot"></span><span id="connection-label">Connect your work</span></button></div>
+    <nav aria-label="Main"><button data-view="home" aria-current="page">Home</button><button data-view="agents">Agents</button></nav>
+  </header>
+  <main class="wrap">
+    <section id="home-view" aria-labelledby="home-heading">
+      <p class="eyebrow">Your home base</p><h1 id="home-heading">One thing at a time.</h1><p class="intro" id="home-intro">Bring your tasks and projects into one quiet place.</p>
+      <div id="focus"></div>
+      <div class="subline"><p class="muted" id="freshness"></p><div class="actions"><button class="quiet" id="home-tasks-button" hidden>Home base tasks</button><button class="text-button" id="refresh-button" hidden>Refresh</button></div></div>
+      <p class="notice" id="home-notice" hidden></p>
+    </section>
+    <section id="agents-view" aria-labelledby="agents-heading" hidden>
+      <p class="eyebrow">Separate focus. Shared home.</p><h1 id="agents-heading">Your agents.</h1><p class="intro">Give each project or business its own place to track work.</p>
+      <div class="section-top"><p class="eyebrow">Repositories</p><button class="text-button" id="add-repository-button">Add a repository</button></div>
+      <ul class="list" id="repository-list"></ul><p class="notice" id="repository-notice"></p>
+      <div class="section-foot"><button class="text-button" id="registry-button" hidden>Home base registry</button><button class="text-button" id="agents-home-server" hidden>Home server</button><button class="quiet" id="agents-connections">Connections</button></div>
+    </section>
+  </main>
+  <footer class="footer wrap">
+    <form id="capture-form"><div class="capture-row"><label class="sr-only" for="capture-input">Task to save</label><input id="capture-input" type="text" placeholder="Add something to do…" maxlength="2000" autocomplete="off" disabled><button class="primary" type="submit" id="capture-button" disabled>Add</button></div><p class="capture-note" id="capture-note">Connect your home base to save a task.</p></form>
+  </footer>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="connections-dialog" aria-labelledby="connections-title">
+    <div class="dialog-top"><h2 id="connections-title">Connections</h2><button class="icon" data-close aria-label="Close connections">×</button></div>
+    <h3>Luminax home base</h3><p class="dialog-copy" id="local-description">Use the signed-in session on this Luminax page to reach your tasks and configured repositories.</p>
+    <div class="actions"><button class="primary" id="connect-local-button">Connect home base</button><button class="quiet" id="disconnect-local-button" hidden>Disconnect</button></div>
+    <p class="inline-error" id="local-error" hidden></p><ul class="status-list" id="local-status-list"></ul><button class="secondary" id="connection-home-server">Home server</button>
+    <div class="sheet-section"><h3>Public GitHub repositories</h3><p class="dialog-copy">Read current open issues from repositories you choose. Checks run when you open a repository or refresh it.</p><button class="text-button" id="connection-add-repo">Add a repository</button></div>
+    <div class="sheet-section"><h3>Task destination</h3><label class="field">Project key<input id="default-project-key" type="text" maxlength="100" placeholder="Choose a project key"><small>Tasks use this key unless the selected repository has its own.</small></label><button class="secondary" id="save-project-key">Save choice</button></div>
+    <p class="dialog-copy" style="margin:23px 0 0">This browser saves connection choices only. Private repositories use the home base’s server connection.</p>
+  </dialog>
+
+  <dialog id="repository-dialog" aria-labelledby="repository-title">
+    <div class="dialog-top"><h2 id="repository-title">Add a repository</h2><button class="icon" data-close aria-label="Close repository setup">×</button></div>
+    <p class="dialog-copy">Give this focus a name. Its open issues become the work you can check here.</p>
+    <form id="repository-form">
+      <label class="field">Public GitHub repository<input name="repository" required maxlength="140" placeholder="owner/repository" autocapitalize="off" spellcheck="false"></label>
+      <label class="field">Name <span class="muted">(optional)</span><input name="displayName" maxlength="80" placeholder="What you call this project"></label>
+      <label class="field">Purpose <span class="muted">(optional)</span><textarea name="purpose" rows="2" maxlength="240" placeholder="What should this focus look after?"></textarea></label>
+      <div class="pair"><label class="field">Focus<select name="kind"><option value="project">Project</option><option value="business">Business</option><option value="research">Research</option></select></label><label class="field">Task project key <span class="muted">(optional)</span><input name="projectKey" maxlength="100" placeholder="A home base project key"></label></div>
+      <p class="inline-error" id="repository-form-error" hidden></p><button class="primary" type="submit">Add &amp; check</button>
+    </form>
+  </dialog>
+
+  <dialog id="detail-dialog" aria-labelledby="detail-dialog-title"><div class="dialog-top"><h2 id="detail-dialog-title">Details</h2><button class="icon" data-close aria-label="Close details">×</button></div><div id="detail-content"></div></dialog>
+  <dialog id="home-server-dialog" aria-labelledby="home-server-title"><div class="dialog-top"><h2 id="home-server-title">Home server</h2><button class="icon" data-close aria-label="Close home server">×</button></div><div id="home-server-content"></div></dialog>
+  <dialog id="capture-dialog" aria-labelledby="capture-title"><div class="dialog-top"><h2 id="capture-title">Save this task</h2><button class="icon" data-close aria-label="Close task review">×</button></div><p class="detail-text" id="capture-review-text"></p><label class="field">Project key<input id="capture-project" type="text" maxlength="100" required></label><p class="dialog-copy">This creates a task in your home base. It does not start an agent.</p><button class="primary" id="confirm-capture">Save task</button><p id="capture-result" class="inline-error" hidden></p></dialog>
+
+  <script id="mypethuman-app">
+  (() => {
+    'use strict';
+    const STORAGE_KEY = 'mypethuman.connections.v1';
+    const MAX_PUBLIC_REPOS = 12;
+    const ISSUE_PAGE_SIZE = 20;
+    const TASK_LIMIT = 120;
+    const TERMINAL = new Set(['completed', 'canceled', 'failed']);
+    const cleanText = (value, limit = 500) => typeof value === 'string' ? value.trim().slice(0, limit) : '';
+    function normalizeRepo(value) {
+      let candidate = cleanText(value, 250);
+      if (candidate.startsWith('https://github.com/')) {
+        try { const url = new URL(candidate); if (url.search || url.hash || url.username || url.password || url.port) return null; candidate = url.pathname.replace(/^\//, '').replace(/\/$/, ''); } catch { return null; }
+      }
+      const parts = candidate.split('/');
+      if (parts.length !== 2 || !/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/.test(parts[0]) || !/^[A-Za-z0-9_.-]{1,100}$/.test(parts[1]) || ['.', '..'].includes(parts[1]) || parts[0].includes('--')) return null;
+      return parts.join('/');
+    }
+    function safeGithubUrl(value, repository, issueNumber) {
+      const repo = normalizeRepo(repository);
+      if (!repo || !value) return null;
+      try {
+        const url = new URL(value);
+        if (url.protocol !== 'https:' || url.hostname !== 'github.com' || url.port || url.username || url.password || url.search || url.hash) return null;
+        const expected = '/' + repo + (issueNumber === undefined ? '' : '/issues/' + issueNumber);
+        return url.pathname.replace(/\/$/, '').toLowerCase() === expected.toLowerCase() ? url.href : null;
+      } catch { return null; }
+    }
+    function normalizeChoice(value) {
+      const repository = normalizeRepo(value && value.repository);
+      if (!repository) return null;
+      return { repository, displayName: cleanText(value.displayName, 80), purpose: cleanText(value.purpose, 240), projectKey: cleanText(value.projectKey, 100), kind: ['project', 'business', 'research'].includes(value.kind) ? value.kind : 'project' };
+    }
+    function normalizeConfig(value) {
+      const choices = [];
+      for (const item of Array.isArray(value && value.repositories) ? value.repositories : []) {
+        const normalized = normalizeChoice(item);
+        if (normalized && !choices.some(r => r.repository.toLowerCase() === normalized.repository.toLowerCase())) choices.push(normalized);
+        if (choices.length === MAX_PUBLIC_REPOS) break;
+      }
+      return { version: 1, repositories: choices, projectKey: cleanText(value && value.projectKey, 100), connectLocal: value && value.connectLocal === true, selectedRepository: normalizeRepo(value && value.selectedRepository) || '' };
+    }
+    function normalizeIssues(rows, repository, server = false) {
+      if (!Array.isArray(rows)) throw new Error('The issue response was not a list.');
+      return rows.filter(row => row && !Object.prototype.hasOwnProperty.call(row, 'pull_request') && row.state === 'open').map(row => {
+        const number = Number(row.number);
+        if (!Number.isSafeInteger(number) || number <= 0) return null;
+        const url = safeGithubUrl(server ? row.url : row.html_url, repository, number);
+        if (!url) return null;
+        return { type: 'issue', key: repository.toLowerCase() + '#' + number, repository, number, title: cleanText(row.title, 1000) || 'Untitled issue', url, updatedAt: row.updated_at, labels: (Array.isArray(row.labels) ? row.labels : []).map(label => cleanText(typeof label === 'string' ? label : label && label.name, 80)).filter(Boolean).slice(0, 12) };
+      }).filter(Boolean);
+    }
+    function normalizeTasks(payload, overview) {
+      if (!payload || !Array.isArray(payload.rows) || !overview || !overview.summary || overview.summary.db_error) throw new Error('Task storage could not be confirmed.');
+      return payload.rows.filter(row => row && cleanText(row.task_uid) && cleanText(row.goal)).map(row => ({ type: 'task', key: cleanText(row.task_uid), uid: cleanText(row.task_uid), title: cleanText(row.goal, 2000), entails: cleanText(row.entails, 6000), projectKey: cleanText(row.project_key, 100), status: cleanText(row.status, 40), dueDate: cleanText(row.due_date, 80), updatedAt: row.updated_at, createdAt: row.created_at, completionNote: cleanText(row.completion_note, 2000) }));
+    }
+    function activeTasks(rows) {
+      const weight = { in_progress: 0, blocked: 1, queued: 2 };
+      return rows.filter(task => !TERMINAL.has(task.status)).slice().sort((a, b) => (weight[a.status] ?? 3) - (weight[b.status] ?? 3) || (Number(a.createdAt) || 0) - (Number(b.createdAt) || 0));
+    }
+    function requestIsCurrent(current, expected, generation, connected) {
+      return current === expected && (expected.transport !== 'server' || expected.generation === generation && connected);
+    }
+    function trustedSession(ping) {
+      return !!(ping && ping.status === 'ok' && ping.service === 'assistant-core' && ping.web_control_auto_granted === true && ping.control_granted === true && cleanText(ping.trusted_web_control_user));
+    }
+    const SERVICE_ACTIONS = Object.freeze(['start', 'stop', 'restart']);
+    const ADMIN_READ_ROUTES = new Set(['/admin/services/control', '/admin/services/status']);
+    const ADMIN_WRITE_ROUTES = new Set(SERVICE_ACTIONS.map(action => '/admin/services/' + action));
+    const validServiceName = value => typeof value === 'string' && /^[A-Za-z0-9_-]{1,64}$/.test(value);
+    function internalRouteAllowed(url, write) {
+      if (url.startsWith('/admin/')) return (write ? ADMIN_WRITE_ROUTES : ADMIN_READ_ROUTES).has(url);
+      return /^\/api\/[a-zA-Z0-9_/?=&.%+-]+$/.test(url) && !url.startsWith('//');
+    }
+    function normalizeServices(payload) {
+      if (!payload || !Array.isArray(payload.services)) throw new RequestFailure('The service owner did not return a service list.', 'invalid_response');
+      return payload.services.filter(item => item && validServiceName(item.name)).slice(0, 200).map(item => ({ name: item.name, displayName: cleanText(item.public_name || item.display_name, 100) || item.name, role: cleanText(item.role, 240), kind: cleanText(item.kind, 40), status: cleanText(item.status, 50) || 'unknown', startup: cleanText(item.startup, 50), dependencies: (Array.isArray(item.dependencies) ? item.dependencies : []).filter(validServiceName).slice(0, 30) }));
+    }
+    function normalizeServiceControl(payload) {
+      if (!payload || payload.status !== 'ok' || !Array.isArray(payload.allowed_services) || !Array.isArray(payload.profiles)) throw new RequestFailure('The service owner did not return a control catalog.', 'invalid_response');
+      return {
+        runtimeEnabled: payload.runtime_enabled === true, hostExecutionEnabled: payload.host_execution_enabled === true, operatorAuthenticated: payload.operator_authenticated === true, authenticationMode: cleanText(payload.authentication_mode, 40), controlGranted: payload.control_granted === true, controlState: cleanText(payload.control_state, 40), actionsEnabled: payload.actions_enabled === true,
+        maintenance: { mode: cleanText(payload.maintenance && payload.maintenance.mode, 40), serviceActionsAllowed: !!(payload.maintenance && payload.maintenance.service_actions_allowed === true) },
+        allowedServices: payload.allowed_services.filter(item => item && validServiceName(item.name) && item.kind === 'docker').slice(0, 200).map(item => ({ name: item.name, kind: item.kind, allowedActions: (Array.isArray(item.allowed_actions) ? item.allowed_actions : []).filter(action => SERVICE_ACTIONS.includes(action)) })),
+        profilesStatus: cleanText(payload.profiles_status, 40), checkedAt: payload.checked_at,
+        profiles: payload.profiles.filter(item => item && cleanText(item.key)).slice(0, 200).map(item => ({ key: cleanText(item.key, 100), displayName: cleanText(item.display_name, 100) || cleanText(item.key, 100), role: cleanText(item.role, 500), startup: cleanText(item.startup, 80), availability: 'declared', capabilities: (Array.isArray(item.capabilities) ? item.capabilities : []).map(value => cleanText(value, 160)).filter(Boolean).slice(0, 80), routes: (Array.isArray(item.routes) ? item.routes : []).filter(route => route && typeof route.path === 'string' && /^\/(?!\/)[A-Za-z0-9_/{}/:.*-]+$/.test(route.path)).slice(0, 80).map(route => ({ owner: cleanText(route.owner, 100), path: cleanText(route.path, 240) })) }))
+      };
+    }
+    function serviceControlAllowed(control, ping, service, action) {
+      if (!control || !trustedSession(ping) || !service || service.kind !== 'docker' || !validServiceName(service.name) || !SERVICE_ACTIONS.includes(action)) return false;
+      if (control.runtimeEnabled !== true || control.hostExecutionEnabled !== true || control.operatorAuthenticated !== true || control.authenticationMode !== 'trusted_ingress' || control.controlGranted !== true || control.actionsEnabled !== true || control.maintenance?.serviceActionsAllowed !== true) return false;
+      return Array.isArray(control.allowedServices) && control.allowedServices.some(item => item.name === service.name && item.kind === 'docker' && Array.isArray(item.allowedActions) && item.allowedActions.includes(action));
+    }
+    function retryTime(headers, now = Date.now()) {
+      const retry = headers.get('retry-after');
+      const reset = Number(headers.get('x-ratelimit-reset')) * 1000;
+      let until = 0;
+      if (retry) until = /^\d+$/.test(retry) ? now + Number(retry) * 1000 : Date.parse(retry) || 0;
+      return Math.max(now + 60000, until, Number.isFinite(reset) ? reset : 0);
+    }
+    class RequestFailure extends Error {
+      constructor(message, code, retryAt = 0) { super(message); this.name = 'RequestFailure'; this.code = code; this.retryAt = retryAt; }
+    }
+    let publicGithubRetryAt = 0;
+    async function requestJSON(url, options = {}) {
+      const external = options.external === true;
+      if (external) {
+        const parsed = new URL(url);
+        if (options.body || parsed.origin !== 'https://api.github.com' || !parsed.pathname.startsWith('/repos/') || parsed.username || parsed.password) throw new RequestFailure('Unsupported source or method.', 'invalid_source');
+        if (publicGithubRetryAt > Date.now()) throw new RequestFailure('GitHub asked this browser connection to wait before refreshing.', 'rate_limit', publicGithubRetryAt);
+      } else if (!internalRouteAllowed(url, !!options.body)) throw new RequestFailure('Unsupported home base route or method.', 'invalid_source');
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), options.timeoutMs || 12000);
+      try {
+        const response = await fetch(url, { method: options.body ? 'POST' : 'GET', mode: external ? 'cors' : 'same-origin', credentials: external ? 'omit' : 'same-origin', cache: 'no-store', redirect: 'error', referrerPolicy: 'no-referrer', headers: { Accept: external ? 'application/vnd.github+json' : 'application/json', ...(options.body ? { 'Content-Type': 'application/json' } : {}) }, ...(options.body ? { body: JSON.stringify(options.body) } : {}), signal: controller.signal });
+        if (!response.ok) {
+          if (external && (response.status === 429 || response.status === 403)) { publicGithubRetryAt = retryTime(response.headers); throw new RequestFailure('GitHub has limited or refused this request. Try again after the time shown.', 'rate_limit', publicGithubRetryAt); }
+          if (response.status === 401 || response.status === 403) throw new RequestFailure('Sign in to your Luminax operator session, then reconnect.', 'auth');
+          if (response.status === 404) throw new RequestFailure(external ? 'This public repository was not found. Check its name or use the home base for private access.' : 'This home base route is not available in the running version.', 'not_found');
+          if (response.status === 409 && ADMIN_WRITE_ROUTES.has(url)) throw new RequestFailure('Service commands are blocked by the current maintenance policy. Refresh Home server to check its permissions.', 'maintenance_blocked');
+          let detail = null; try { detail = await response.json(); } catch { /* Error bodies are optional. */ }
+          const code = cleanText(detail && detail.detail && detail.detail.code, 80) || (typeof detail?.detail === 'string' && ['runtime_disabled', 'feature_disabled'].includes(detail.detail) ? detail.detail : '') || (['runtime_disabled', 'feature_disabled'].includes(detail?.status) ? detail.status : '');
+          const messages = { runtime_disabled: 'The home base runtime is disabled.', feature_disabled: 'The required service feature is disabled in this home base.', configuration_invalid: 'The server repository configuration needs attention.', github_rate_limited: 'The server GitHub connection is rate limited.', github_unavailable: 'GitHub could not be reached from the home base.' };
+          const seconds = Number(detail && detail.detail && detail.detail.retry_after_seconds);
+          const retryAt = code === 'github_rate_limited' ? Math.max(retryTime(response.headers), Date.now() + (Number.isFinite(seconds) && seconds > 0 ? seconds * 1000 : 0)) : 0;
+          throw new RequestFailure(messages[code] || 'The source is unavailable. Refresh when the connection is restored.', code || 'unavailable', retryAt);
+        }
+        let data; try { data = await response.json(); } catch { throw new RequestFailure('The source did not return valid data. Check the running service and sign-in session.', 'invalid_response'); }
+        return { data, hasNext: /rel="next"/.test(response.headers.get('link') || '') };
+      } catch (error) {
+        if (error instanceof RequestFailure) throw error;
+        if (error && error.name === 'AbortError') throw new RequestFailure('This request timed out. Nothing has been retried.', 'timeout');
+        throw new RequestFailure('This source could not be reached. Check the connection and try again.', 'network');
+      } finally { clearTimeout(timer); }
+    }
+    // Keep pure boundaries testable without a DOM, dependencies, or a running service.
+    const testAPI = { normalizeRepo, safeGithubUrl, normalizeChoice, normalizeConfig, normalizeIssues, normalizeTasks, activeTasks, requestIsCurrent, trustedSession, internalRouteAllowed, normalizeServices, normalizeServiceControl, serviceControlAllowed, retryTime, requestJSON, RequestFailure };
+    if (typeof document === 'undefined') { globalThis.MyPetHumanTest = testAPI; return; }
+
+    const $ = id => document.getElementById(id);
+    const state = { view: 'home', homeFocus: 'auto', config: normalizeConfig({}), local: { state: 'idle', ping: null, error: null, checkedAt: null, tasks: [], tasksState: 'idle', agents: [], agentsState: 'idle', repos: [], reposState: 'idle', sourceStatus: null }, server: { state: 'idle', control: null, services: [], checkedAt: null }, serverVisible: 8, repoData: new Map(), selectedRepository: '', itemIndex: 0, refreshBusy: false, writeBusy: false, notice: '', noticeError: false, storageAvailable: true, connectGeneration: 0 };
+    const el = (tag, text, className) => { const node = document.createElement(tag); if (text !== undefined && text !== null) node.textContent = String(text); if (className) node.className = className; return node; };
+    const button = (label, fn, className = 'secondary') => { const node = el('button', label, className); node.type = 'button'; node.addEventListener('click', fn); return node; };
+    const link = (label, url) => { const node = el('a', label); node.href = url; node.target = '_blank'; node.rel = 'noopener noreferrer'; return node; };
+    const announce = message => { $('announcement').textContent = message; };
+    const formatTime = value => { const date = new Date(typeof value === 'number' && value < 1e12 ? value * 1000 : value); return Number.isNaN(date.getTime()) ? '' : date.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); };
+    const repoKey = value => value.toLowerCase();
+    function setNotice(message, isError = false) { state.notice = message; state.noticeError = isError; render(); announce(message); }
+    function saveChoices() {
+      state.config.selectedRepository = state.selectedRepository;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.config)); } catch { state.storageAvailable = false; }
+    }
+    function openDialog(id) { for (const dialog of document.querySelectorAll('dialog[open]')) dialog.close(); $(id).showModal(); }
+    function allRepositories() {
+      const result = state.local.repos.map(item => ({ ...item, transport: 'server' }));
+      for (const choice of state.config.repositories) {
+        const existing = result.find(repo => repoKey(repo.repository) === repoKey(choice.repository));
+        if (existing) { existing.displayName = choice.displayName || existing.displayName; existing.purpose = choice.purpose || existing.purpose; existing.projectKey = choice.projectKey; }
+        else result.push({ ...choice, name: choice.repository.split('/')[1], transport: 'public', status: 'unchecked', url: 'https://github.com/' + choice.repository });
+      }
+      return result;
+    }
+    const selectedRepo = () => allRepositories().find(repo => repoKey(repo.repository) === repoKey(state.selectedRepository));
+    const displayName = repo => repo.displayName || repo.name || repo.repository.split('/')[1];
+    function currentItems() {
+      const tasks = state.local.tasksState === 'ready' ? activeTasks(state.local.tasks) : [];
+      if (tasks.length && state.homeFocus !== 'repository') return tasks;
+      const data = state.repoData.get(repoKey(state.selectedRepository));
+      return data && data.state === 'ready' ? data.issues : [];
+    }
+    function usableWrites() { return state.local.state === 'ready' && state.local.tasksState === 'ready' && trustedSession(state.local.ping) && !state.writeBusy; }
+    function showView(view) { state.view = view; for (const item of document.querySelectorAll('[data-view]')) { if (item.dataset.view === view) item.setAttribute('aria-current', 'page'); else item.removeAttribute('aria-current'); } $('home-view').hidden = view !== 'home'; $('agents-view').hidden = view !== 'agents'; document.title = 'MyPetHuman · ' + (view === 'home' ? 'Home' : 'Agents'); render(); }
+    function clearFocus(heading, copy, action) {
+      const box = el('div', null, 'empty'); box.append(el('h2', heading), el('p', copy)); if (action) box.append(action); $('focus').replaceChildren(box);
+    }
+    function renderHome() {
+      const items = currentItems(), repo = selectedRepo(), data = state.repoData.get(repoKey(state.selectedRepository));
+      if (state.itemIndex >= items.length) state.itemIndex = 0;
+      const item = items[state.itemIndex];
+      if (item) {
+        const box = el('article', null, 'focus');
+        box.append(el('p', item.type === 'task' ? 'Next task' : 'Recently updated issue', 'eyebrow'), el('h2', item.title));
+        const source = el('div', null, 'source-line');
+        source.append(el('span', item.type === 'task' ? item.projectKey || 'Home base task' : item.repository + ' · #' + item.number));
+        if (item.type === 'task') source.append(el('span', item.status.replace(/_/g, ' ')));
+        box.append(source);
+        const actions = el('div', null, 'actions'); actions.append(button('See details', () => openItem(item), 'primary'));
+        if (items.length > 1) actions.append(button('Next', () => { state.itemIndex = (state.itemIndex + 1) % items.length; renderHome(); }, 'text-button'));
+        if (item.type === 'task') actions.append(button('Task list', openTasks, 'quiet'));
+        box.append(actions); $('focus').replaceChildren(box);
+        $('home-intro').textContent = item.type === 'task' ? 'Your current work, with the next step close by.' : 'A current issue from ' + (repo ? displayName(repo) : item.repository) + '.';
+        const checked = item.type === 'task' ? state.local.checkedAt : data && data.checkedAt;
+        $('freshness').textContent = (items.length > 1 ? (state.itemIndex + 1) + ' of ' + items.length + ' shown · ' : '') + (checked ? 'Checked ' + formatTime(checked) : '');
+      } else if (state.local.state === 'loading' || data && data.state === 'loading') {
+        clearFocus('Checking your work…', state.local.state === 'loading' ? 'Reaching your home base.' : 'Reading current open issues from ' + state.selectedRepository + '.'); $('freshness').textContent = '';
+      } else if (data && data.state === 'error') {
+        clearFocus('This source needs attention.', data.error.message, button('View connection', () => openRepository(repo), 'secondary')); $('freshness').textContent = '';
+      } else if (repo && data && data.state === 'ready') {
+        clearFocus(data.hasMore ? 'No issues in this page.' : 'No open issues found.', data.hasMore ? 'The checked page contained no open issues after pull requests were excluded. More GitHub items may remain.' : displayName(repo) + ' returned no open issues in this check.', button('Open repository', () => openRepository(repo), 'secondary')); $('freshness').textContent = 'Checked ' + formatTime(data.checkedAt);
+      } else if (state.local.tasksState === 'error') {
+        clearFocus('Task data is unavailable.', 'Your home base answered, but its task storage could not be confirmed.', button('Check connections', showConnections)); $('freshness').textContent = '';
+      } else if (state.local.state === 'ready') {
+        clearFocus('What would you like to do?', state.local.tasksState === 'ready' ? 'No active tasks were returned in the latest ' + TASK_LIMIT + ' task records. Add something below, or check a repository.' : 'Choose a repository to see its current work.', button('Choose a repository', () => showView('agents'))); $('freshness').textContent = 'Checked ' + formatTime(state.local.checkedAt);
+      } else if (allRepositories().length) {
+        clearFocus('Choose a focus.', 'Open a repository to check its current issues.', button('Choose a repository', () => showView('agents'), 'primary')); $('freshness').textContent = '';
+      } else {
+        clearFocus('Bring your work here.', 'Connect your home base or choose a public GitHub repository.', button('Connect your work', showConnections, 'primary')); $('freshness').textContent = '';
+      }
+      $('refresh-button').hidden = state.local.state === 'idle' && !repo;
+      $('home-tasks-button').hidden = state.homeFocus !== 'repository' || state.local.tasksState !== 'ready';
+      $('refresh-button').disabled = state.writeBusy || state.refreshBusy || state.local.state === 'loading' || !!(data && data.state === 'loading');
+      const warning = state.notice || (state.local.tasksState === 'error' ? 'Home base tasks are unavailable. Repository checks are separate.' : '') || (data && data.state === 'ready' ? 'Open issues from a bounded page; pull requests are excluded.' : '');
+      $('home-notice').textContent = warning; $('home-notice').hidden = !warning; $('home-notice').className = 'notice' + (state.noticeError || state.local.tasksState === 'error' ? ' error' : '');
+    }
+    function renderRepositories() {
+      const repos = allRepositories(); $('repository-list').replaceChildren();
+      for (const repo of repos) {
+        const item = el('li'), row = button('', () => { state.selectedRepository = repo.repository; state.itemIndex = 0; saveChoices(); openRepository(repo); }, 'repo-row');
+        const content = el('span'); content.append(el('strong', displayName(repo)), el('small', repo.repository + ' · On demand'));
+        if (repo.purpose) content.append(el('p', repo.purpose, 'purpose'));
+        row.append(content, el('span', '↗', 'arrow')); item.append(row); $('repository-list').append(item);
+      }
+      $('repository-notice').textContent = !repos.length ? 'Add a repository, or connect the repositories configured in your home base.' : 'Each repository is a separate focus. Checking it reads current work; it does not start a worker.';
+      $('registry-button').hidden = state.local.agentsState === 'idle';
+      $('agents-home-server').hidden = state.local.state !== 'ready';
+    }
+    function renderConnections() {
+      const local = state.local; const isHTTP = ['http:', 'https:'].includes(location.protocol);
+      $('connect-local-button').disabled = !isHTTP || local.state === 'loading' || state.writeBusy;
+      $('disconnect-local-button').disabled = state.writeBusy;
+      $('connect-local-button').textContent = local.state === 'loading' ? 'Connecting…' : local.state === 'ready' ? 'Refresh home base' : 'Connect home base';
+      $('disconnect-local-button').hidden = local.state === 'idle';
+      $('local-description').textContent = isHTTP ? 'Use the signed-in session on this Luminax page to reach your tasks and configured repositories.' : 'Open this page in your Luminax home base to use local tasks. Public GitHub repositories work in this standalone file.';
+      $('local-error').hidden = !local.error; $('local-error').textContent = local.error ? local.error.message : '';
+      const list = $('local-status-list'); list.replaceChildren();
+      if (local.state === 'ready') {
+        const entries = [['Home base', 'Reached ' + formatTime(local.checkedAt)], ['Task storage', local.tasksState === 'ready' ? 'Available · up to ' + TASK_LIMIT + ' recent records' : 'Unavailable'], ['Task access', trustedSession(local.ping) ? 'Signed-in operator' : 'Reading only'], ['Repository connection', local.reposState === 'ready' ? (local.repos.length ? local.repos.length + ' configured' : 'No repositories configured') : 'Unavailable in this session'], ['Registry', local.agentsState === 'ready' ? local.agents.length + ' entries returned' : 'Unavailable']];
+        for (const [name, value] of entries) { const row = el('li'); row.append(el('span', name), el('span', value)); list.append(row); }
+      }
+    }
+    function render() {
+      const sourceReady = state.local.state === 'ready' || [...state.repoData.values()].some(value => value.state === 'ready');
+      $('connection-label').textContent = state.local.state === 'loading' ? 'Connecting…' : state.local.state === 'ready' ? 'Home base connected' : sourceReady ? 'GitHub connected' : state.local.state === 'error' ? 'Connection needed' : 'Connect your work';
+      $('connection-dot').className = 'dot' + (sourceReady ? ' ready' : state.local.state === 'error' ? ' error' : '');
+      $('capture-input').disabled = !usableWrites(); $('capture-button').disabled = !usableWrites();
+      const destination = selectedRepo() && selectedRepo().projectKey || state.config.projectKey;
+      $('capture-note').textContent = state.writeBusy ? 'Saving once. Waiting for confirmation…' : usableWrites() ? 'Save a task' + (destination ? ' in ' + destination : ' to a project you choose') + '.' : state.local.state === 'ready' ? 'Task capture needs an available task store and a signed-in operator session.' : 'Connect your home base to save a task.';
+      renderHome(); renderRepositories(); renderConnections();
+      if ($('home-server-dialog').open) renderHomeServer();
+    }
+    function normalizeServerRepo(item) {
+      const repository = normalizeRepo(item && item.repository); if (!repository) return null;
+      return { repository, name: cleanText(item.name, 100) || repository.split('/')[1], displayName: '', purpose: cleanText(item.purpose, 240), projectKey: '', kind: ['project', 'business', 'research'].includes(item.kind) ? item.kind : 'project', businessName: cleanText(item.business_name, 100), status: item.status === 'unavailable' ? 'unavailable' : 'ok', error: item.error ? new RequestFailure('This repository is unavailable through the server connection.', cleanText(item.error.code, 80) || 'unavailable') : null, url: safeGithubUrl(item.url, repository) || 'https://github.com/' + repository };
+    }
+    async function connectLocal() {
+      if (!['http:', 'https:'].includes(location.protocol) || state.local.state === 'loading' || state.writeBusy) return;
+      const generation = ++state.connectGeneration;
+      for (const [key, data] of state.repoData) if (data.transport === 'server') state.repoData.delete(key);
+      state.server = { state: 'idle', control: null, services: [], checkedAt: null };
+      state.local = { ...state.local, state: 'loading', ping: null, error: null, tasks: [], tasksState: 'loading', agents: [], agentsState: 'loading', repos: [], reposState: 'loading' }; state.config.connectLocal = true; saveChoices(); render();
+      try {
+        const { data: ping } = await requestJSON('/api/ping');
+        if (!ping || ping.status !== 'ok' || ping.service !== 'assistant-core') throw new RequestFailure('This page is not connected to a Luminax assistant core.', 'wrong_service');
+        const results = await Promise.allSettled([requestJSON('/api/projects/tasks?limit=' + TASK_LIMIT), requestJSON('/api/projects/overview'), requestJSON('/api/agents/registry'), requestJSON('/api/mypethuman/status'), requestJSON('/api/mypethuman/projects')]);
+        if (generation !== state.connectGeneration) return;
+        state.local.ping = ping; state.local.state = 'ready'; state.local.checkedAt = new Date().toISOString();
+        try { if (results[0].status !== 'fulfilled' || results[1].status !== 'fulfilled') throw new Error('Unavailable'); state.local.tasks = normalizeTasks(results[0].value.data, results[1].value.data); state.local.tasksState = 'ready'; } catch { state.local.tasks = []; state.local.tasksState = 'error'; }
+        const agents = results[2].status === 'fulfilled' ? results[2].value.data : null;
+        state.local.agentsState = agents && Array.isArray(agents.rows) && !agents.error ? 'ready' : 'error'; state.local.agents = state.local.agentsState === 'ready' ? agents.rows : [];
+        state.local.sourceStatus = results[3].status === 'fulfilled' ? results[3].value.data : null;
+        const projects = results[4].status === 'fulfilled' ? results[4].value.data : null;
+        state.local.reposState = projects && Array.isArray(projects.projects) ? 'ready' : 'error'; state.local.repos = state.local.reposState === 'ready' ? projects.projects.map(normalizeServerRepo).filter(Boolean) : [];
+        if (!selectedRepo()) state.selectedRepository = allRepositories()[0]?.repository || '';
+        render(); announce('Home base reached.' + (state.local.tasksState === 'error' ? ' Task storage is unavailable.' : ''));
+        const selected = selectedRepo(); if (selected && (state.homeFocus === 'repository' || !activeTasks(state.local.tasks).length)) await loadRepository(selected);
+      } catch (error) {
+        if (generation !== state.connectGeneration) return;
+        state.local = { ...state.local, state: 'error', error, ping: null, tasksState: 'error', agentsState: 'error', reposState: 'error' }; render(); announce(error.message);
+      }
+    }
+    function disconnectLocal() {
+      if (state.writeBusy) return;
+      state.connectGeneration++; state.config.connectLocal = false;
+      for (const [key, data] of state.repoData) if (data.transport === 'server') state.repoData.delete(key);
+      state.server = { state: 'idle', control: null, services: [], checkedAt: null };
+      state.local = { state: 'idle', ping: null, error: null, checkedAt: null, tasks: [], tasksState: 'idle', agents: [], agentsState: 'idle', repos: [], reposState: 'idle', sourceStatus: null };
+      if (!selectedRepo()) state.selectedRepository = state.config.repositories[0]?.repository || ''; saveChoices(); render(); announce('Home base disconnected from this view.');
+    }
+    async function loadRepository(repo, force = false) {
+      if (!repo) return;
+      const key = repoKey(repo.repository), previous = state.repoData.get(key);
+      if (previous && previous.transport === repo.transport && previous.state === 'loading') return;
+      if (previous && previous.transport === repo.transport && previous.state === 'ready' && !force) return;
+      if (previous && previous.transport === repo.transport && previous.error && previous.error.retryAt > Date.now()) { render(); return; }
+      const pending = { state: 'loading', issues: [], checkedAt: null, transport: repo.transport, generation: state.connectGeneration };
+      state.repoData.set(key, pending); render();
+      try {
+        let issues, hasMore, project = repo, checkedAt;
+        if (repo.transport === 'server') {
+          const { data } = await requestJSON('/api/mypethuman/projects/' + repo.repository.split('/').map(encodeURIComponent).join('/') + '?limit=' + ISSUE_PAGE_SIZE);
+          if (!data || data.status !== 'ok' || !data.project || normalizeRepo(data.project.repository)?.toLowerCase() !== key) throw new RequestFailure('The server returned an unexpected repository response.', 'invalid_response');
+          issues = normalizeIssues(data.issues, repo.repository, true); hasMore = data.has_more === true; project = { ...repo, ...normalizeServerRepo(data.project), projectKey: repo.projectKey, displayName: repo.displayName, transport: 'server' }; checkedAt = data.checked_at;
+        } else {
+          const path = 'https://api.github.com/repos/' + repo.repository.split('/').map(encodeURIComponent).join('/');
+          // One metadata request and one bounded issue page. GitHub's issues endpoint also returns PRs.
+          const meta = await requestJSON(path, { external: true });
+          if (!meta.data || meta.data.private !== false || normalizeRepo(meta.data.full_name)?.toLowerCase() !== key) throw new RequestFailure('The public repository response could not be confirmed.', 'invalid_response');
+          const result = await requestJSON(path + '/issues?state=open&sort=updated&direction=desc&per_page=' + ISSUE_PAGE_SIZE + '&page=1', { external: true });
+          issues = normalizeIssues(result.data, repo.repository); hasMore = result.hasNext; project = { ...repo, name: cleanText(meta.data.name, 100) || repo.name, updatedAt: meta.data.updated_at, url: safeGithubUrl(meta.data.html_url, repo.repository) || repo.url }; checkedAt = new Date().toISOString();
+        }
+        if (!requestIsCurrent(state.repoData.get(key), pending, state.connectGeneration, state.local.state === 'ready')) return;
+        state.repoData.set(key, { state: 'ready', issues, hasMore, checkedAt: formatTime(checkedAt) ? checkedAt : new Date().toISOString(), project, transport: repo.transport }); announce('Checked ' + displayName(repo) + '. ' + issues.length + ' open issues returned in this page.');
+      } catch (error) { if (!requestIsCurrent(state.repoData.get(key), pending, state.connectGeneration, state.local.state === 'ready')) return; state.repoData.set(key, { state: 'error', issues: [], checkedAt: null, error, transport: repo.transport }); announce(error.message); }
+      render();
+      if ($('detail-dialog').open && $('detail-content').dataset.repository === key) renderRepositoryDetail(repo);
+    }
+    async function refreshCurrent() {
+      if (state.refreshBusy || state.writeBusy) return; state.refreshBusy = true; state.notice = ''; render();
+      try { if (state.local.state !== 'idle') await connectLocal(); const repo = selectedRepo(); if (repo) await loadRepository(repo, true); } finally { state.refreshBusy = false; render(); }
+    }
+    function showConnections() { $('default-project-key').value = state.config.projectKey; renderConnections(); openDialog('connections-dialog'); }
+    function openAddRepository() { $('repository-form').reset(); $('repository-form-error').hidden = true; openDialog('repository-dialog'); }
+    function addDefinition(container, pairs) { const list = el('dl', null, 'definition'); for (const [name, value] of pairs.filter(([, value]) => value)) list.append(el('dt', name), el('dd', value)); container.append(list); }
+    function setDetailTitle(title) { $('detail-dialog-title').textContent = title; $('detail-content').replaceChildren(); delete $('detail-content').dataset.repository; return $('detail-content'); }
+    function openItem(item) {
+      const content = setDetailTitle(item.type === 'task' ? 'Your task' : 'GitHub issue'); content.append(el('h3', item.title, 'detail-title'));
+      if (item.type === 'task') {
+        addDefinition(content, [['Project', item.projectKey], ['Status', item.status.replace(/_/g, ' ')], ['Due', item.dueDate], ['Updated', formatTime(item.updatedAt)], ['Task ID', item.uid]]);
+        if (item.entails) content.append(el('p', item.entails, 'detail-text'));
+        if (item.completionNote) content.append(el('p', item.completionNote, 'detail-text'));
+        if (!TERMINAL.has(item.status)) { const finish = button('Mark completed', () => completeTask(item, finish, content), 'primary'); finish.disabled = !usableWrites(); content.append(finish); }
+      } else {
+        addDefinition(content, [['Repository', item.repository], ['Issue', '#' + item.number], ['Updated', formatTime(item.updatedAt)], ['Labels', item.labels.join(', ')]]);
+        content.append(link('Open issue on GitHub ↗', item.url)); content.append(el('p', 'The issue is read directly from GitHub. Changes to it happen in GitHub.', 'notice'));
+      }
+      openDialog('detail-dialog');
+    }
+    function openTasks() {
+      const content = setDetailTitle('Home base tasks'); content.append(el('p', 'Up to ' + TASK_LIMIT + ' recent records. Active tasks are shown here in progress, blocked, then queued order.', 'dialog-copy'));
+      if (state.local.tasksState !== 'ready') content.append(el('p', 'Task storage is unavailable.', 'inline-error'));
+      else { const list = el('ul', null, 'list issue-list'); for (const task of activeTasks(state.local.tasks)) { const row = el('li'), action = button(task.title, () => openItem(task), ''); action.append(el('small', task.projectKey + ' · ' + task.status.replace(/_/g, ' '))); row.append(action); list.append(row); } content.append(list); }
+      openDialog('detail-dialog');
+    }
+    function openRepository(repo) {
+      if (!repo) return; state.homeFocus = 'repository'; state.selectedRepository = repo.repository; state.itemIndex = 0; saveChoices();
+      setDetailTitle(displayName(repo)); $('detail-content').dataset.repository = repoKey(repo.repository); renderRepositoryDetail(repo); openDialog('detail-dialog'); loadRepository(repo);
+    }
+    function renderRepositoryDetail(repo) {
+      const content = $('detail-content'); content.replaceChildren(); content.dataset.repository = repoKey(repo.repository); const data = state.repoData.get(repoKey(repo.repository));
+      if (repo.purpose) content.append(el('p', repo.purpose, 'detail-text'));
+      addDefinition(content, [['Repository', repo.repository], ['Focus', repo.kind], ['Business', repo.businessName], ['Checking', 'On demand'], ['Task project', repo.projectKey]]);
+      const actions = el('div', null, 'actions'); actions.append(link('Open on GitHub ↗', safeGithubUrl(repo.url, repo.repository) || 'https://github.com/' + repo.repository));
+      const check = button(data && data.state === 'loading' ? 'Checking…' : 'Refresh', () => loadRepository(repo, true), 'text-button'); check.disabled = !!(data && (data.state === 'loading' || data.error && data.error.retryAt > Date.now())); actions.append(check); content.append(actions);
+      if (data && data.state === 'ready') {
+        content.append(el('p', 'Checked ' + formatTime(data.checkedAt) + ' · ' + data.issues.length + ' open issues in this page' + (data.hasMore ? ' · More GitHub items may remain.' : '.'), 'notice'));
+        const list = el('ul', null, 'list issue-list'); for (const issue of data.issues) { const row = el('li'), action = button(issue.title, () => openItem(issue), ''); action.append(el('small', '#' + issue.number + (formatTime(issue.updatedAt) ? ' · Updated ' + formatTime(issue.updatedAt) : ''))); row.append(action); list.append(row); } content.append(list);
+        if (!data.issues.length) content.append(el('p', data.hasMore ? 'No open issues in this page after excluding pull requests.' : 'No open issues were returned.', 'notice'));
+        content.append(button('Show this focus on Home', () => { $('detail-dialog').close(); state.homeFocus = 'repository'; state.itemIndex = 0; showView('home'); }, 'text-button'));
+      } else if (data && data.state === 'error') { content.append(el('p', data.error.message, 'inline-error')); if (data.error.retryAt) content.append(el('p', 'Try after ' + formatTime(data.error.retryAt) + '.', 'notice')); }
+      else content.append(el('p', 'Reading the current repository…', 'notice loading-dot'));
+      content.append(el('p', 'This connection reads open issues. A running agent must be started and managed in your home base.', 'notice'));
+      if (repo.transport === 'public') content.append(button('Remove from this browser', () => { state.config.repositories = state.config.repositories.filter(item => repoKey(item.repository) !== repoKey(repo.repository)); state.repoData.delete(repoKey(repo.repository)); if (repoKey(state.selectedRepository) === repoKey(repo.repository)) state.selectedRepository = allRepositories()[0]?.repository || ''; saveChoices(); $('detail-dialog').close(); render(); }, 'quiet'));
+    }
+    function serverControlReason(snapshot = state.server) {
+      const control = snapshot.control;
+      if (!control) return 'Control permissions could not be read.';
+      if (!trustedSession(state.local.ping) || !control.operatorAuthenticated || control.authenticationMode !== 'trusted_ingress' || !control.controlGranted) return 'Service commands need your signed-in operator session.';
+      if (!control.runtimeEnabled || !control.hostExecutionEnabled) return 'Service commands are disabled in this home base.';
+      if (!control.maintenance.serviceActionsAllowed) return 'Maintenance mode ' + (control.maintenance.mode || '') + ' currently blocks service commands.';
+      if (!control.actionsEnabled) return 'The service owner has not enabled commands.';
+      if (snapshot.servicesError) return 'Current service observations are unavailable.';
+      return '';
+    }
+    function openHomeServer(refresh = true) {
+      renderHomeServer(); openDialog('home-server-dialog');
+      if (refresh && state.local.state === 'ready' && !state.writeBusy) readHomeServer();
+    }
+    async function readHomeServer(duringWrite = false) {
+      if (state.local.state !== 'ready' || state.writeBusy && !duringWrite) return null;
+      const pending = { state: 'loading', control: null, services: [], checkedAt: null, transport: 'server', generation: state.connectGeneration };
+      state.server = pending; render();
+      const results = await Promise.allSettled([requestJSON('/admin/services/control'), requestJSON('/admin/services/status', { timeoutMs: 45000 })]);
+      if (!requestIsCurrent(state.server, pending, state.connectGeneration, state.local.state === 'ready')) return null;
+      let control = null, services = [], controlError = null, servicesError = null;
+      try { if (results[0].status !== 'fulfilled') throw results[0].reason; control = normalizeServiceControl(results[0].value.data); } catch (error) { controlError = error; }
+      try { if (results[1].status !== 'fulfilled') throw results[1].reason; services = normalizeServices(results[1].value.data); } catch (error) { servicesError = error; }
+      const snapshot = { state: controlError && servicesError ? 'error' : controlError || servicesError ? 'partial' : 'ready', control, services, controlError, servicesError, checkedAt: new Date().toISOString(), transport: 'server', generation: state.connectGeneration };
+      state.server = snapshot; render(); return snapshot;
+    }
+    function renderHomeServer() {
+      const content = $('home-server-content'); content.replaceChildren();
+      if (state.local.state !== 'ready') { content.append(el('p', 'Connect this view to your home base to check its services.', 'dialog-copy'), button('Open connections', showConnections, 'primary')); return; }
+      const snapshot = state.server;
+      if (snapshot.state === 'idle' || snapshot.state === 'loading') { content.append(el('p', snapshot.state === 'loading' ? 'Checking services and current permissions…' : 'Check the services registered in your home base.', 'dialog-copy')); if (snapshot.state === 'idle') content.append(button('Check home server', () => readHomeServer(), 'primary')); return; }
+      const top = el('div', null, 'actions'); const refresh = button('Refresh', () => readHomeServer(), 'text-button'); refresh.disabled = state.writeBusy; top.append(refresh);
+      if (snapshot.control) top.append(button('Capabilities & routes', openCapabilityDirectory, 'text-button'));
+      content.append(top, el('p', 'Checked ' + formatTime(snapshot.checkedAt) + '.', 'notice'));
+      if (snapshot.controlError) content.append(el('p', snapshot.controlError.message, 'inline-error'));
+      if (snapshot.servicesError) content.append(el('p', snapshot.servicesError.message, 'inline-error'));
+      const reason = serverControlReason(snapshot); if (reason) content.append(el('p', reason, 'dialog-copy'));
+      const list = el('ul', null, 'list');
+      for (const service of snapshot.services.slice(0, state.serverVisible)) {
+        const item = el('li'), action = button('', () => openService(service.name), 'repo-row'), labels = el('span'); labels.append(el('strong', service.displayName), el('small', 'Reported: ' + service.status.replace(/_/g, ' ') + (service.kind === 'docker' ? '' : ' · ' + service.kind))); action.append(labels, el('span', '›', 'arrow')); item.append(action); list.append(item);
+      }
+      content.append(list);
+      if (!snapshot.services.length && !snapshot.servicesError) content.append(el('p', 'No service observations were returned in this check.', 'notice'));
+      if (snapshot.services.length > state.serverVisible) content.append(button('Show all ' + snapshot.services.length + ' reported services', () => { state.serverVisible = snapshot.services.length; renderHomeServer(); }, 'text-button'));
+      content.append(el('p', 'Commands go through your existing home base service owner. Capabilities and routes describe registered configuration.', 'notice'));
+    }
+    function openService(name) {
+      const service = state.server.services.find(item => item.name === name);
+      if (!service) { openHomeServer(); return; }
+      const content = setDetailTitle(service.displayName);
+      if (service.role) content.append(el('p', service.role, 'detail-text'));
+      addDefinition(content, [['Service', service.name], ['Reported', service.status.replace(/_/g, ' ')], ['Checked', formatTime(state.server.checkedAt)], ['Kind', service.kind], ['Startup', service.startup], ['Depends on', service.dependencies.join(', ')]]);
+      const actions = el('div', null, 'actions');
+      for (const action of SERVICE_ACTIONS) {
+        const command = button(action[0].toUpperCase() + action.slice(1), () => reviewServiceCommand(service.name, action), 'secondary');
+        command.disabled = state.writeBusy || state.server.state !== 'ready' || !serviceControlAllowed(state.server.control, state.local.ping, service, action); actions.append(command);
+      }
+      content.append(actions);
+      const reason = serverControlReason() || (!state.server.control?.allowedServices.some(item => item.name === name && item.allowedActions.length) ? 'This service is view-only in this control catalog.' : '');
+      if (reason) content.append(el('p', reason, 'notice'));
+      content.append(button('Back to home server', () => openHomeServer(false), 'text-button')); openDialog('detail-dialog');
+    }
+    function reviewServiceCommand(name, action) {
+      const service = state.server.services.find(item => item.name === name);
+      if (state.writeBusy || state.server.state !== 'ready' || !serviceControlAllowed(state.server.control, state.local.ping, service, action)) return;
+      const verb = action[0].toUpperCase() + action.slice(1), content = setDetailTitle(verb + ' service');
+      content.append(el('h3', service.displayName, 'detail-title'), el('p', 'Send one ' + action + ' command through your home base. Current permissions and the service catalog will be checked before sending.', 'dialog-copy'));
+      addDefinition(content, [['Exact target', service.name]]);
+      if (action !== 'start') content.append(el('p', 'This can interrupt work using this service.', 'dialog-copy'));
+      if (action !== 'start' && ['admin-api', 'assistant-core', 'luminax-ui'].includes(service.name)) content.append(el('p', 'This can disconnect the current view from your home base.', 'dialog-copy'));
+      const send = button(verb + ' ' + service.displayName, () => sendServiceCommand(name, action, send, content), 'primary'); content.append(send, el('p', 'Current reported status: ' + service.status.replace(/_/g, ' ') + '.', 'notice'));
+      content.append(button('Back to service', () => openService(name), 'text-button')); openDialog('detail-dialog');
+    }
+    async function sendServiceCommand(name, action, send, content) {
+      const service = state.server.services.find(item => item.name === name);
+      if (state.writeBusy || state.server.state !== 'ready' || !serviceControlAllowed(state.server.control, state.local.ping, service, action)) return;
+      state.writeBusy = true; send.disabled = true; const outcome = el('p', 'Checking current permissions…', 'notice'); content.append(outcome); render();
+      try {
+        const before = await readHomeServer(true), current = before?.services.find(item => item.name === name);
+        if (!before || before.state !== 'ready') throw new RequestFailure('Current permissions and service status could not be confirmed. No command was sent.', 'control_unavailable');
+        if (!serviceControlAllowed(before.control, state.local.ping, current, action)) throw new RequestFailure('The current service permissions block this command. No command was sent.', 'control_changed');
+        outcome.textContent = 'Sending one ' + action + ' request…';
+        let receipt = null, commandError = null;
+        try { receipt = (await requestJSON('/admin/services/' + action, { body: { token: '', name } })).data; } catch (error) { commandError = error; }
+        // Read current observations once. An exit code or health check cannot prove a restart occurred.
+        const after = await readHomeServer(true), observed = after?.services.find(item => item.name === name);
+        const observedText = observed ? ' Latest reported status: ' + observed.status.replace(/_/g, ' ') + '.' : ' Current service status could not be read.';
+        if (commandError) { outcome.className = 'inline-error'; outcome.textContent = commandError.message + ' The command result is unconfirmed and was not retried.' + observedText; }
+        else if (!receipt || !Number.isInteger(receipt.returncode)) { outcome.className = 'inline-error'; outcome.textContent = 'The service owner returned no usable command receipt. The command was not retried.' + observedText; }
+        else if (receipt.returncode !== 0) { outcome.className = 'inline-error'; outcome.textContent = 'The service owner reported a command error. It was not retried.' + observedText; }
+        else { outcome.className = 'notice'; outcome.textContent = action[0].toUpperCase() + action.slice(1) + ' request sent.' + observedText + (action === 'restart' ? ' This status check does not confirm that a restart occurred.' : ' The command receipt alone does not confirm the requested state.'); }
+        send.textContent = receipt && Number.isInteger(receipt.returncode) ? 'Request finished' : 'Result unconfirmed'; announce(outcome.textContent);
+      } catch (error) { outcome.className = 'inline-error'; outcome.textContent = error.message; announce(error.message); }
+      finally { state.writeBusy = false; render(); }
+    }
+    function openCapabilityDirectory() {
+      const content = setDetailTitle('Capabilities & routes'), control = state.server.control;
+      if (!control) { content.append(el('p', 'The control catalog is unavailable.', 'inline-error')); openDialog('detail-dialog'); return; }
+      content.append(el('p', 'Declared service profiles from your home base. Registration describes a capability; service health is checked separately.', 'dialog-copy'));
+      if (control.profilesStatus === 'partial') content.append(el('p', 'Some profiles could not be read.', 'inline-error'));
+      const label = el('label', 'Find a service or capability', 'field'), search = el('input'); search.type = 'search'; search.placeholder = 'Search registered capabilities'; label.append(search); content.append(label);
+      const rows = el('div'); content.append(rows);
+      const renderProfiles = () => {
+        rows.replaceChildren(); const query = search.value.trim().toLowerCase(), profiles = control.profiles.filter(profile => [profile.displayName, profile.key, profile.role, ...profile.capabilities, ...profile.routes.map(route => route.owner + ' ' + route.path)].join(' ').toLowerCase().includes(query));
+        const list = el('ul', null, 'list');
+        for (const profile of profiles) { const item = el('li'), action = button('', () => openCapabilityProfile(profile), 'repo-row'), labels = el('span'); labels.append(el('strong', profile.displayName), el('small', profile.capabilities.length + ' declared capabilities · ' + profile.routes.length + ' registered routes')); action.append(labels, el('span', '›', 'arrow')); item.append(action); list.append(item); }
+        rows.append(list); if (!profiles.length) rows.append(el('p', query ? 'No matching profiles were returned.' : 'No declared service profiles were returned.', 'notice'));
+      };
+      search.addEventListener('input', renderProfiles); renderProfiles(); content.append(button('Back to home server', () => openHomeServer(false), 'text-button')); openDialog('detail-dialog');
+    }
+    function openCapabilityProfile(profile) {
+      const content = setDetailTitle(profile.displayName); if (profile.role) content.append(el('p', profile.role, 'detail-text'));
+      addDefinition(content, [['Profile', profile.key], ['Availability', 'Declared configuration'], ['Startup', profile.startup]]);
+      if (profile.capabilities.length) { const section = el('section', null, 'sheet-section'); section.append(el('h3', 'Capabilities')); const list = el('ul'); for (const capability of profile.capabilities) list.append(el('li', capability)); section.append(list); content.append(section); }
+      if (profile.routes.length) { const section = el('section', null, 'sheet-section'); section.append(el('h3', 'Routes')); addDefinition(section, profile.routes.map(route => [route.owner || 'Owner', route.path])); content.append(section); }
+      content.append(el('p', 'Routes are shown as configuration. Opening this profile does not call them or change their routing.', 'notice'), button('Back to capabilities', openCapabilityDirectory, 'text-button')); openDialog('detail-dialog');
+    }
+    function openRegistry() {
+      const content = setDetailTitle('Home base registry'); content.append(el('p', 'These are entries reported by your home base. A configured entry does not confirm a running worker.', 'dialog-copy'));
+      if (state.local.agentsState !== 'ready') content.append(el('p', 'The registry is unavailable in this session.', 'inline-error'));
+      else if (!state.local.agents.length) content.append(el('p', 'No registry entries were returned.', 'notice'));
+      else { const list = el('ul', null, 'list'); for (const agent of state.local.agents) { const item = el('li'); item.style.padding = '17px 0'; item.append(el('h3', cleanText(agent.display_name || agent.agent_key, 120) || 'Unnamed registry entry'), el('p', [cleanText(agent.role_type, 80), cleanText(agent.status, 80)].filter(Boolean).join(' · '), 'dialog-copy')); if (cleanText(agent.goals_text)) item.append(el('p', cleanText(agent.goals_text, 500), 'purpose')); list.append(item); } content.append(list); }
+      openDialog('detail-dialog');
+    }
+    async function confirmedTask(uid, expectedStatus) {
+      const generation = state.connectGeneration;
+      const results = await Promise.all([requestJSON('/api/projects/tasks?limit=' + TASK_LIMIT), requestJSON('/api/projects/overview')]);
+      if (generation !== state.connectGeneration || state.local.state !== 'ready') throw new RequestFailure('The home base connection changed before confirmation.', 'write_unconfirmed');
+      const tasks = normalizeTasks(results[0].data, results[1].data); state.local.tasks = tasks; state.local.tasksState = 'ready'; state.local.checkedAt = new Date().toISOString();
+      const match = tasks.find(task => task.uid === uid); return match && (!expectedStatus || match.status === expectedStatus) ? match : null;
+    }
+    async function completeTask(task, action, content) {
+      if (!usableWrites()) return; state.writeBusy = true; action.disabled = true; render();
+      const outcome = el('p', 'Saving once…', 'notice'); content.append(outcome);
+      try {
+        const { data } = await requestJSON('/api/projects/tasks/update', { body: { token: '', task_uid: task.uid, status: 'completed', completion_note: '' } });
+        if (!data || data.status !== 'ok' || data.updated < 1 || data.task_uid !== task.uid || !await confirmedTask(task.uid, 'completed')) throw new RequestFailure('Completion was not confirmed. Check the task in your home base before trying again.', 'write_unconfirmed');
+        outcome.className = 'inline-ok'; outcome.textContent = 'Completed and confirmed in your home base.'; action.remove(); setNotice('Task completed and confirmed.');
+      } catch (error) { outcome.className = 'inline-error'; outcome.textContent = error.message + ' The action was not retried.'; setNotice('The task update was not confirmed. Check your home base before trying again.', true); }
+      finally { state.writeBusy = false; render(); }
+    }
+    function reviewCapture(event) {
+      event.preventDefault(); if (!usableWrites()) return; const command = cleanText($('capture-input').value, 2000); if (!command) return;
+      $('capture-review-text').textContent = command; $('capture-project').value = selectedRepo()?.projectKey || state.config.projectKey; $('capture-project').disabled = false; $('capture-result').hidden = true; $('confirm-capture').disabled = false; $('confirm-capture').textContent = 'Save task'; openDialog('capture-dialog');
+    }
+    async function saveTask() {
+      if (!usableWrites()) return;
+      const command = cleanText($('capture-review-text').textContent, 2000), projectKey = cleanText($('capture-project').value, 100);
+      if (!projectKey || !command) { $('capture-result').textContent = 'Choose a project key for this task.'; $('capture-result').hidden = false; return; }
+      state.writeBusy = true; $('confirm-capture').disabled = true; $('capture-project').disabled = true; $('capture-result').hidden = false; $('capture-result').className = 'notice'; $('capture-result').textContent = 'Saving once. Waiting for confirmation…'; render();
+      try {
+        const { data } = await requestJSON('/api/projects/tasks/quick_add', { body: { token: '', project_key: projectKey, command, source: 'mypethuman' } });
+        const uid = cleanText(data && data.task && data.task.task_uid);
+        const confirmed = data && data.status === 'ok' && uid && !data.task.db_error ? await confirmedTask(uid) : null;
+        if (!confirmed) throw new RequestFailure('The task may have been saved, but its stored record could not be confirmed. Check your home base before adding it again.', 'write_unconfirmed');
+        const savedProject = confirmed.projectKey || cleanText(data.project_key, 100) || projectKey;
+        $('capture-result').className = 'inline-ok'; $('capture-result').textContent = 'Saved and confirmed in ' + savedProject + '.'; $('confirm-capture').textContent = 'Saved'; $('capture-input').value = ''; state.config.projectKey = savedProject; state.homeFocus = 'auto'; saveChoices(); setNotice('Task saved and confirmed in ' + savedProject + '.');
+      } catch (error) { $('capture-result').className = 'inline-error'; $('capture-result').textContent = error.message + ' This request was not retried.'; $('confirm-capture').textContent = 'Check home base'; setNotice('Task creation was not confirmed. Check your home base before adding it again.', true); }
+      finally { state.writeBusy = false; render(); }
+    }
+    for (const node of document.querySelectorAll('[data-close]')) node.addEventListener('click', () => node.closest('dialog').close());
+    for (const node of document.querySelectorAll('[data-view]')) node.addEventListener('click', () => showView(node.dataset.view));
+    $('connection-home-server').addEventListener('click', () => openHomeServer()); $('agents-home-server').addEventListener('click', () => openHomeServer()); $('connections-button').addEventListener('click', showConnections); $('agents-connections').addEventListener('click', showConnections); $('connect-local-button').addEventListener('click', connectLocal); $('disconnect-local-button').addEventListener('click', disconnectLocal); $('add-repository-button').addEventListener('click', openAddRepository); $('connection-add-repo').addEventListener('click', openAddRepository); $('refresh-button').addEventListener('click', refreshCurrent); $('registry-button').addEventListener('click', openRegistry); $('home-tasks-button').addEventListener('click', () => { state.homeFocus = 'auto'; state.itemIndex = 0; render(); }); $('capture-form').addEventListener('submit', reviewCapture); $('confirm-capture').addEventListener('click', saveTask);
+    $('save-project-key').addEventListener('click', () => { state.config.projectKey = cleanText($('default-project-key').value, 100); saveChoices(); render(); announce('Task destination saved.'); });
+    $('repository-form').addEventListener('submit', event => {
+      event.preventDefault(); const data = Object.fromEntries(new FormData(event.currentTarget)); const choice = normalizeChoice(data);
+      if (!choice) { $('repository-form-error').textContent = 'Enter a GitHub repository as owner/repository.'; $('repository-form-error').hidden = false; return; }
+      const index = state.config.repositories.findIndex(item => repoKey(item.repository) === repoKey(choice.repository));
+      if (index < 0 && state.config.repositories.length >= MAX_PUBLIC_REPOS) { $('repository-form-error').textContent = 'This browser can keep ' + MAX_PUBLIC_REPOS + ' public repositories. Remove one before adding another.'; $('repository-form-error').hidden = false; return; }
+      if (index >= 0) state.config.repositories[index] = choice; else state.config.repositories.push(choice);
+      state.selectedRepository = choice.repository; state.homeFocus = 'repository'; state.itemIndex = 0; saveChoices(); $('repository-dialog').close(); showView('home'); loadRepository(selectedRepo(), true);
+    });
+    try { state.config = normalizeConfig(JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}')); } catch { state.storageAvailable = false; }
+    const params = new URLSearchParams(location.hash.slice(1)), sharedRepos = (params.get('repos') || '').split(',').map(normalizeRepo).filter(Boolean).slice(0, MAX_PUBLIC_REPOS);
+    if (sharedRepos.length) {
+      for (const repository of sharedRepos) if (!state.config.repositories.some(repo => repoKey(repo.repository) === repoKey(repository)) && state.config.repositories.length < MAX_PUBLIC_REPOS) state.config.repositories.push(normalizeChoice({ repository }));
+      state.config.selectedRepository = sharedRepos[0];
+    }
+    state.selectedRepository = state.config.selectedRepository || state.config.repositories[0]?.repository || ''; saveChoices(); render();
+    if (state.config.connectLocal && ['http:', 'https:'].includes(location.protocol)) connectLocal();
+    else if (selectedRepo()) loadRepository(selectedRepo());
+  })();
+  </script>
+</body>
+</html>

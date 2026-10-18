@@ -17,6 +17,7 @@ This repository opens the Mount Olympus / Luminax platform for people to use, in
 | Deployment and registries | Compose profiles, fresh local secrets, synthetic registry examples, storage and ingress | [Full platform setup](docs/full-platform-setup.md) |
 | Windows desktop and operator tools | Desktop shell, node/model/tunnel controls, development integrations | [Windows tools](docs/windows-platform-tools.md) |
 | Command center and project sites | Existing operator UI, swarm board, GroupUp and site examples | [Web sources](docs/web-and-example-sites.md) |
+| MyPetHuman | Focused repository tracking, home-base tasks and service controls | [MyPetHuman connections](docs/mypethuman.md) |
 
 The Discord services and the separate Zeus council engine have different owners. A tested adapter between them remains a milestone. Some legacy game services also need companion modules and game builds that are not part of this platform's source.
 
@@ -31,7 +32,9 @@ node scripts/audit-publication.mjs
 python -m pip install -r payload/olympus-edge-bridge/requirements.txt
 python -m unittest discover -s payload/olympus-edge-bridge -p "test_*.py" -v
 python -m unittest discover -s payload/assistant-core/tests -p "test_*.py" -v
+python -B -m unittest discover -s payload/admin-api/tests -p "test_*.py" -v
 node --test tests/web-publication.test.mjs
+node --test payload/luminax-ui/mypethuman.test.mjs
 ```
 
 On Linux, activate the environment with `source .venv/bin/activate`. These checks use synthetic configuration and mocked or isolated code paths. They do not require Discord, a model, or the original deployment. CI also checks the additional service/configuration owners and builds the example static site.

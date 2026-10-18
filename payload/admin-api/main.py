@@ -3192,6 +3192,141 @@ async def empire_overview():
         "autopilot": autopilot.get("config", {}),
     }
 
+def _service_control_text(value: Any, limit: int = 400) -> str:
+    """Keep profile display metadata bounded and exclude the operator secret."""
+    if not isinstance(value, str):
+        return ""
+    if CONTROL_TOKEN:
+        value = value.replace(CONTROL_TOKEN, "[redacted]")
+    return " ".join(value.split())[:limit]
+
+
+def load_service_control_profiles() -> dict[str, Any]:
+    """Read declared service metadata without creating or repairing profiles.
+
+    The displayed routes are documentation, never destinations for a proxy or
+    proof that an adapter is configured, running, or able to execute an action.
+    """
+    root = OLYMPUS_PROFILE_ROOT / "services"
+    rows: list[dict[str, Any]] = []
+    status = "ok"
+    try:
+        if not root.is_dir():
+            return {"status": "missing", "rows": rows}
+        paths = sorted(root.glob("*.json"))
+        if len(paths) > 100:
+            status = "partial"
+        for path in paths[:100]:
+            try:
+                if path.is_symlink():
+                    status = "partial"
+                    continue
+                with path.open("rb") as profile_file:
+                    raw = profile_file.read(65537)
+                if len(raw) > 65536:
+                    status = "partial"
+                    continue
+                data = json.loads(raw)
+                if not isinstance(data, dict):
+                    status = "partial"
+                    continue
+                key = _service_control_text(data.get("key") or path.stem, 64)
+                if not valid_service_name(key):
+                    status = "partial"
+                    continue
+                capabilities = data.get("capabilities")
+                routes = data.get("validation_routes")
+                declared_routes = []
+                if isinstance(routes, dict):
+                    for owner, route in list(routes.items())[:40]:
+                        if (isinstance(route, str) and route.startswith("/")
+                                and not route.startswith("//") and len(route) <= 240
+                                and all(ch.isascii() and (ch.isalnum() or ch in "/_-{}.~") for ch in route)):
+                            declared_routes.append({
+                                "owner": _service_control_text(owner, 80),
+                                "path": _service_control_text(route, 240),
+                            })
+                rows.append({
+                    "key": key,
+                    "display_name": _service_control_text(data.get("display_name") or data.get("public_name") or key, 120),
+                    "role": _service_control_text(data.get("role")),
+                    "startup": _service_control_text(data.get("startup"), 40),
+                    "capabilities": [
+                        text for value in capabilities[:40]
+                        if (text := _service_control_text(value, 120))
+                    ] if isinstance(capabilities, list) else [],
+                    "routes": declared_routes,
+                    "availability": "declared",
+                })
+            except (OSError, ValueError, UnicodeError, RecursionError):
+                status = "partial"
+    except OSError:
+        status = "partial"
+    return {"status": status, "rows": rows}
+
+
+@app.get("/services/control")
+async def services_control(request: Request, response: Response):
+    """Expose existing owner gates and display targets; never grant control.
+
+    This is a UI selection catalog, not a new per-service authorization layer.
+    Existing lifecycle routes recheck their own operator and maintenance gates.
+    """
+    response.headers["Cache-Control"] = "no-store"
+    if not runtime_enabled():
+        raise HTTPException(status_code=503, detail="runtime_disabled", headers={"Cache-Control": "no-store"})
+    token = request.headers.get("X-Control-Token", "").strip()
+    authorization = request.headers.get("Authorization", "")
+    scheme, _, supplied = authorization.partition(" ")
+    if scheme.lower() == "bearer":
+        token = supplied.strip()
+    try:
+        validate_watch_status(token)
+    except HTTPException:
+        raise HTTPException(status_code=403, detail="operator_auth_required", headers={"Cache-Control": "no-store"}) from None
+
+    trusted = request_has_trusted_web_control()
+    control_granted = trusted
+    control_state = "granted" if trusted else "not_granted"
+    if not trusted:
+        try:
+            control_granted = redis_client.get("luminax_control_granted") == "true"
+            control_state = "granted" if control_granted else "not_granted"
+        except Exception:
+            # A failed lease read is never equivalent to a control grant.
+            control_state = "unavailable"
+    maintenance = load_maintenance_mode()
+    service_actions_allowed = bool((maintenance.get("policy") or {}).get("service_actions_allowed", False))
+    host_execution_enabled = feature_enabled("LUMINAX_HOST_EXECUTION_ENABLED")
+    actions_enabled = host_execution_enabled and control_granted and service_actions_allowed
+    allowed_services = [
+        {"name": name, "kind": "docker", "allowed_actions": ["start", "stop", "restart"] if actions_enabled else []}
+        for name, meta in sorted(SERVICE_WATCH_CATALOG.items())
+        if valid_service_name(name) and name not in {"docker", "nginx"}
+        and not meta.get("external") and meta.get("probe") != "platform"
+    ]
+    profiles = load_service_control_profiles()
+    return {
+        "status": "ok",
+        "runtime_enabled": True,
+        "host_execution_enabled": host_execution_enabled,
+        "operator_authenticated": True,
+        "authentication_mode": "trusted_ingress" if trusted else "operator_token",
+        "control_granted": control_granted,
+        "control_state": control_state,
+        "maintenance": {
+            "mode": str(maintenance.get("mode") or "normal"),
+            "service_actions_allowed": service_actions_allowed,
+        },
+        "actions_enabled": actions_enabled,
+        "allowed_services": allowed_services,
+        "profiles": profiles["rows"],
+        "profiles_status": profiles["status"],
+        "catalog_scope": "configured_services",
+        "checked_at": int(time.time()),
+    }
+
+
 @app.get("/services/status")
 async def services_status():
     watch = evaluate_service_watch_state()
