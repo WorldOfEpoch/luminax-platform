@@ -32,6 +32,7 @@ jobs:
       - run: python -m compileall -q payload tools
       - run: python -m unittest discover -s payload/olympus-edge-bridge -p "test_*.py" -v
       - run: python -m unittest discover -s payload/assistant-core/tests -p "test_*.py" -v
+      - run: python -B -m unittest discover -s payload/admin-api/tests -p "test_*.py" -v
       - run: python -B -m unittest discover -s payload/service-runtime -p "test_*.py" -v
       - run: python -B -m unittest discover -s payload/tools/tests -p "test_*.py" -v
       - run: python -B -m unittest discover -s tools/tests -p "test_*.py" -v
@@ -39,6 +40,7 @@ jobs:
       - if: runner.os == 'Linux'
         run: python payload/tools/check_public_config.py --compose
       - run: node --test tests/web-publication.test.mjs
+      - run: node --test payload/luminax-ui/mypethuman.test.mjs
       - run: npm ci --prefix sites/papr-src --ignore-scripts --no-audit --no-fund
       - run: npm run build --prefix sites/papr-src
       - if: runner.os == 'Linux'

@@ -30,6 +30,7 @@ from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel, Field
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
+from mypethuman import create_mypethuman_router
 
 app = FastAPI(title="Zeus Main Connector")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -21470,3 +21471,24 @@ async def langgraph_graphs_list():
 @app.post("/api/langgraph/graphs/run")
 async def langgraph_graphs_run(payload: dict[str, Any]):
     return await _request_json("POST", f"{LANGGRAPH_URL}/graphs/run", payload, timeout=30.0)
+
+
+def require_mypethuman_operator(request: Request) -> None:
+    # Read-only provider access uses the existing connector/trusted-ingress
+    # owner. The separate provider secret never comes from the browser.
+    if request_has_trusted_web_control():
+        return
+    authorization = request.headers.get("Authorization", "")
+    if authorization:
+        scheme, _, supplied = authorization.partition(" ")
+        token = supplied.strip() if scheme.lower() == "bearer" else ""
+    else:
+        token = request.headers.get("X-Control-Token", "").strip()
+    require_connector_token(token, detail="MyPetHuman requires operator authentication")
+
+
+app.include_router(create_mypethuman_router(
+    runtime_is_enabled=lambda: LUMINAX_RUNTIME_ENABLED,
+    authorize_operator=require_mypethuman_operator,
+))
+
